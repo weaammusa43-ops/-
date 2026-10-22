@@ -65,4 +65,10 @@ function validateLoginForm() {
         return false; // يمنع إرسال النموذج إذا كانت الحقول فارغة
     }
     return true;
+}const themeToggleBtn = document.getElementById('themeToggleBtn');
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        themeToggleBtn.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+    });
 }
