@@ -4,27 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal - إدارة المحاضرات | Lectures</title>
+    <title>بوابة الطالب - إدارة المحاضرات</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .main-header {
-            position: relative;
-            padding-top: 50px !important;
-        }
-
-        .header-buttons {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            left: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 5px;
-        }
-
         .lecture-section {
-            background: #fff;
+            background: var(--card-bg, #fff);
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             margin-bottom: 20px;
@@ -34,22 +18,15 @@
             transition: all 0.4s ease;
         }
 
-        /* 🌟 تأثير تغيير اللون والإضاءة التلقائي للمادة المستهدفة عند الضغط عليها من المواد */
+        /* 🌟 تأثير التظليل وتغيير الإضاءة للمادة المستهدفة عند النقر عليها من صفحة المواد */
         .lecture-section:target {
             border-right: 8px solid #b8860b !important;
             box-shadow: 0 0 20px rgba(184, 134, 11, 0.4) !important;
-            animation: highlightPulse 2s ease-in-out;
         }
 
         .lecture-section:target summary {
             background-color: #fef3c7 !important;
             color: #b8860b !important;
-        }
-
-        @keyframes highlightPulse {
-            0% { transform: scale(1.01); }
-            50% { transform: scale(1); }
-            100% { transform: scale(1); }
         }
 
         details { width: 100%; }
@@ -72,12 +49,12 @@
 
         .lecture-content {
             padding: 20px;
-            background: #ffffff;
+            background: inherit;
         }
 
-        /* لوحة الرفع المباشر */
+        /* صندوق لوحة الرفع المباشر المتجاوب */
         .admin-controls-box {
-            background: #f0fdf4;
+            background: rgba(16, 185, 129, 0.08);
             border: 2px dashed #10b981;
             padding: 15px;
             border-radius: 8px;
@@ -110,9 +87,10 @@
         .input-group input[type="file"] {
             font-size: 12px;
             background: #fff;
-            padding: 5px;
+            padding: 6px;
             border: 1px solid #cbd5e1;
             border-radius: 6px;
+            color: #333;
         }
 
         .btn-add {
@@ -124,14 +102,24 @@
             cursor: pointer;
             font-size: 13px;
             font-weight: bold;
+            transition: background 0.3s;
         }
 
         .btn-add:hover { background: #2c4a3e; }
 
+        /* 🌟 حاوية الجداول المتجاومة لمنع أي لخبطة على شاشات الموبايل */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
         .lectures-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
+            min-width: 450px;
         }
 
         .lectures-table th, .lectures-table td {
@@ -156,7 +144,10 @@
             font-size: 12px;
             font-weight: bold;
             display: inline-block;
+            transition: opacity 0.2s;
         }
+
+        .pdf-btn:hover { opacity: 0.9; }
 
         .delete-btn {
             background: #ef4444;
@@ -167,6 +158,7 @@
             cursor: pointer;
             font-size: 12px;
             font-weight: bold;
+            transition: background 0.2s;
         }
 
         .delete-btn:hover { background: #dc2626; }
@@ -175,32 +167,37 @@
 
 <body>
 
-    <header class="main-header">
-        <div class="header-buttons">
-            <button id="langToggleBtn" class="lang-toggle-btn">En / عربي</button>
-            <button id="themeToggleBtn" class="theme-toggle-btn">🌙</button>
-            <a href="login.html" class="logout-btn">تسجيل الخروج | Logout</a>
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="header-actions">
+            <div>
+                <button id="themeToggleBtn" class="theme-toggle-btn">🌙 الوضع</button>
+            </div>
+            <div>
+                <a href="login.html" class="logout-btn">تسجيل الخروج</a>
+            </div>
         </div>
-        <div class="header-text-content">
-            <h1>Student Portal | بوابة الطالب</h1>
-            <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (رفع وإدارة المحاضرات للدفعة 43)</p>
-        </div>
+        
+        <h1>بوابة الطالب الأكاديمية</h1>
+        <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (إدارة المحاضرات - الدفعة 43)</p>
     </header>
 
+    <!-- ================= NAVIGATION ================= -->
     <nav>
         <ul>
-            <li><a href="index.html">الرئيسية | Home</a></li>
-            <li><a href="lectures.html">المحاضرات | Lectures</a></li>
-            <li><a href="schedules.html">الجداول | Schedules</a></li>
-            <li><a href="exams.html">الامتحانات السابقة | Past Exams</a></li>
-            <li><a href="subjects.html">المواد | Subjects</a></li>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="lectures.html">المحاضرات</a></li>
+            <li><a href="schedules.html">الجداول</a></li>
+            <li><a href="exams.html">الامتحانات السابقة</a></li>
+            <li><a href="subjects.html">المواد</a></li>
         </ul>
     </nav>
 
+    <!-- ================= MAIN CONTENT ================= -->
     <main>
         <section id="lectures">
             <h2>📚 لوحة تحكم وإدارة المحاضرات</h2>
-            <p>يمكنك رفع ملفات PDF مباشرة من جهازك أو حذفها بسهولة:</p>
+            <p>يمكنك رفع ملفات PDF مباشرة من هاتفك أو جهازك أو حذفها بكل سهولة:</p>
 
             <!-- 1. برمجة تطبيقات الإنترنت -->
             <div id="web-sec" class="lecture-section">
@@ -211,23 +208,25 @@
                             <h4>➕ رفع محاضرة جديدة لمادة برمجة الإنترنت</h4>
                             <div class="input-group">
                                 <input type="text" id="title-web" placeholder="عنوان المحاضرة...">
-                                <input type="file" id="file-web" accept=".pdf,.doc,.docx">
+                                <input type="file" id="file-web" accept=".pdf,.doc,.docx,.ppt,.pptx">
                                 <button class="btn-add" onclick="addLecture('web')">رفع ورابط المحاضرة</button>
                             </div>
                         </div>
 
-                        <table class="lectures-table">
-                            <thead>
-                                <tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr>
-                            </thead>
-                            <tbody id="tbody-web">
-                                <tr>
-                                    <td>المقدمة ومراجعة HTML/CSS وتجهيز البيئة</td>
-                                    <td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td>
-                                    <td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="lectures-table">
+                               <thead>
+                                    <tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr>
+                                </thead>
+                                <tbody id="tbody-web">
+                                    <tr>
+                                        <td>المقدمة ومراجعة HTML/CSS وتجهيز البيئة</td>
+                                        <td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td>
+                                        <td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </details>
             </div>
@@ -241,22 +240,24 @@
                             <h4>➕ رفع محاضرة جديدة لمادة نظرية الحوسبة</h4>
                             <div class="input-group">
                                 <input type="text" id="title-theory" placeholder="عنوان المحاضرة...">
-                                <input type="file" id="file-theory" accept=".pdf,.doc,.docx">
+                                <input type="file" id="file-theory" accept=".pdf,.doc,.docx,.ppt,.pptx">
                                 <button class="btn-add" onclick="addLecture('theory')">رفع ورابط المحاضرة</button>
                             </div>
                         </div>
-                        <table class="lectures-table">
-                            <thead>
-                                <tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr>
-                            </thead>
-                            <tbody id="tbody-theory">
-                                <tr>
-                                    <td>مقدمة في الآلات المنتظمة والمجموعات</td>
-                                    <td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td>
-                                    <td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="lectures-table">
+                                <thead>
+                                    <tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr>
+                                </thead>
+                                <tbody id="tbody-theory">
+                                    <tr>
+                                        <td>مقدمة في الآلات المنتظمة والمجموعات</td>
+                                        <td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td>
+                                        <td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </details>
             </div>
@@ -270,22 +271,24 @@
                             <h4>➕ رفع محاضرة جديدة لمادة الوسائط المتعددة</h4>
                             <div class="input-group">
                                 <input type="text" id="title-multimedia" placeholder="عنوان المحاضرة...">
-                                <input type="file" id="file-multimedia" accept=".pdf,.doc,.docx">
+                                <input type="file" id="file-multimedia" accept=".pdf,.doc,.docx,.ppt,.pptx">
                                 <button class="btn-add" onclick="addLecture('multimedia')">رفع ورابط المحاضرة</button>
                             </div>
                         </div>
-                        <table class="lectures-table">
-                            <thead>
-                                <tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr>
-                            </thead>
-                            <tbody id="tbody-multimedia">
-                                <tr>
-                                    <td>مفاهيم الوسائط المتعددة وعناصرها</td>
-                                    <td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td>
-                                    <td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="lectures-table">
+                                <thead>
+                                    <tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr>
+                                </thead>
+                                <tbody id="tbody-multimedia">
+                                    <tr>
+                                        <td>مفاهيم الوسائط المتعددة وعناصرها</td>
+                                        <td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td>
+                                        <td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </details>
             </div>
@@ -293,12 +296,15 @@
         </section>
     </main>
 
+    <!-- ================= FOOTER ================= -->
     <footer>
-        <p>Student Portal & بوابة الطالب - جامعة الجزيرة © 2026</p>
+        <p>بوابة الطالب - كلية العلوم الرياضية والحاسوب - جامعة الجزيرة © 2026</p>
     </footer>
 
+    <!-- ربط ملف الجافاسكريبت المشترك -->
+    <script src="script.js"></script>
     <script>
-        // دالة تفتح القائمة المنسدلة تلقائياً للمادة القادمة من الـ Link
+        // دالة فتح قسم المادة تلقائياً عند القدوم من رابط المواد
         function autoOpenTargetDetails() {
             const hash = window.location.hash;
             if (hash) {
@@ -313,7 +319,7 @@
         window.addEventListener('hashchange', autoOpenTargetDetails);
         window.addEventListener('load', autoOpenTargetDetails);
 
-        // رفع الملفات وإضافتها برابط مباشر
+        // نظام رفع الملفات المباشر الفعال من الجوال والكمبيوتر
         function addLecture(subjectId) {
             const titleInput = document.getElementById(`title-${subjectId}`);
             const fileInput = document.getElementById(`file-${subjectId}`);
@@ -325,7 +331,7 @@
             }
 
             if (fileInput.files.length === 0) {
-                alert("الرجاء اختيار ملف من جهازك!");
+                alert("الرجاء اختيار ملف (PDF أو مستند) من جهازك!");
                 return;
             }
 
@@ -345,13 +351,14 @@
             alert("تم رفع المحاضرة بنجاح!");
         }
 
-        // حذف المحاضرة
+        // دالة حذف الصف
         function deleteRow(btn) {
-            if (confirm("هل تريدين حذف هذه المحاضرة؟")) {
+            if (confirm("هل تريدين حقاً حذف هذه المحاضرة؟")) {
                 btn.closest('tr').remove();
             }
         }
     </script>
 </body>
-                        </html>
-                        
+
+                                                </html>
+                                                
