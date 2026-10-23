@@ -17,7 +17,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
         .subjects-table th, .subjects-table td {
-            padding: 12px 15px;
+            padding: 14px 16px;
             text-align: right;
             border-bottom: 1px solid #e8e3d5;
         }
@@ -26,22 +26,25 @@
             color: white;
             font-size: 15px;
         }
+        /* جعل اسم المادة رابطاً واضحاً وبارزاً للانتقال */
         .subjects-table td a {
-            color: #1e382d;
-            font-weight: 600;
+            color: #047857;
+            font-weight: bold;
             text-decoration: none;
             display: block;
-            transition: color 0.2s;
+            font-size: 14.5px;
+            transition: all 0.2s;
         }
         .subjects-table td a:hover {
             color: #b8860b;
-            text-decoration: underline;
+            padding-right: 5px;
         }
         .spec-title {
             background: #f4f0e6;
             font-weight: bold;
             color: #1e382d;
             text-align: center !important;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -67,43 +70,43 @@
     <main>
         <section id="subjects">
             <h2>📖 المقررات والمواد الدراسية (الفصل الدراسي الثامن)</h2>
-            <p>قائمة المواد الدراسية المقررة لطلاب الدفعة 43 موزعة حسب التخصصات (اضغط على أي مادة للانتقال إلى محاضراتها مباشرة):</p>
+            <p>قائمة المواد الدراسية المقررة لطلاب الدفعة 43 (اضغط على أي مادة للانتقال المباشر إلى جدول محاضراتها):</p>
 
             <table class="subjects-table">
                 <thead>
                     <tr>
                         <th>التخصص الأكاديمي</th>
-                        <th>اسم المقرر / المادة الدراسية</th>
+                        <th>اسم المقرر / المادة الدراسية (اضغط للانتقال)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- علوم الحاسوب -->
                     <tr>
                         <td rowspan="6" class="spec-title">💻 علوم الحاسوب<br>(Computer Science)</td>
-                        <td><a href="lectures.html#web">برمجة تطبيقات الإنترنت (43)</a></td>
+                        <td><a href="lectures.html#web-sec">🌐 برمجة تطبيقات الإنترنت (43)</a></td>
                     </tr>
-                    <tr><td><a href="lectures.html#theory">نظرية الحوسبة (43)</a></td></tr>
-                    <tr><td><a href="lectures.html#multimedia">تقانة الوسائط المتعددة (43)</a></td></tr>
-                    <tr><td><a href="lectures.html#networks">إدارة وأمن شبكات الحاسوب (43)</a></td></tr>
-                    <tr><td><a href="lectures.html#projects">إدارة مشروعات البرمجيات (43)</a></td></tr>
-                    <tr><td><a href="lectures.html#algorithms">تصميم وتحليل الخوارزميات (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#theory-sec">⚙️ نظرية الحوسبة (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#multimedia-sec">🎬 تقانة الوسائط المتعددة (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#networks-sec">🔒 إدارة وأمن شبكات الحاسوب (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#projects-sec">📊 إدارة مشروعات البرمجيات (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#algorithms-sec">🧮 تصميم وتحليل الخوارزميات (43)</a></td></tr>
 
                     <!-- الإحصاء -->
                     <tr>
                         <td rowspan="3" class="spec-title">📊 الإحصاء<br>(Statistics)</td>
-                        <td><a href="lectures.html#stats1">النماذج الخطية العامة (43)</a></td>
+                        <td><a href="lectures.html#stats1-sec">📈 النماذج الخطية العامة (43)</a></td>
                     </tr>
-                    <tr><td><a href="lectures.html#stats2">إحصاءات بيز (43)</a></td></tr>
-                    <tr><td><a href="lectures.html#stats3">تحليل البيانات التصنيفية (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#stats2-sec">📉 إحصاءات بيز (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#stats3-sec">📋 تحليل البيانات التصنيفية (43)</a></td></tr>
 
                     <!-- الرياضيات -->
                     <tr>
                         <td rowspan="4" class="spec-title">📐 الرياضيات<br>(Mathematics)</td>
-                        <td><a href="lectures.html#math1">تحليل المتغيرات المتعددة (43)</a></td>
+                        <td><a href="lectures.html#math1-sec">📉 تحليل المتغيرات المتعددة (43)</a></td>
                     </tr>
-                    <tr><td><a href="lectures.html#math2">المعادلات التفاضلية الجزئية (43)</a></td></tr>
-                    <tr><td><a href="lectures.html#math3">التحليل الدالي (43)</a></td></tr>
-                    <tr><td><a href="lectures.html#math4">الأمثلية (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#math2-sec">📐 المعادلات التفاضلية الجزئية (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#math3-sec">📊 التحليل الدالي (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#math4-sec">⚡ الأمثلية (43)</a></td></tr>
                 </tbody>
             </table>
         </section>
