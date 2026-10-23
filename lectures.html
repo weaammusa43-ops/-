@@ -190,9 +190,9 @@
     <main>
         <section id="lectures">
             <h2>📚 المحاضرات الدراسية ورفع الملفات (الدفعة 43)</h2>
-            <p>يمكنك استعراض المواد ورفع ملفات الـ PDF أو حذفها مباشرة لكل مقرر:</p>
+            <p>يمكنك استعراض جميع المواد لكافة التخصصات (حاسوب، إحصاء، رياضيات) ورفع ملفات الـ PDF أو حذفها مباشرة:</p>
 
-            <!-- 1. برمجة تطبيقات الإنترنت -->
+            <!-- 1. علوم الحاسوب -->
             <div id="web-sec" class="lecture-section">
                 <details>
                     <summary>🌐 برمجة تطبيقات الإنترنت (43) — أ. محمد عبد الرحمن</summary>
@@ -217,7 +217,6 @@
                 </details>
             </div>
 
-            <!-- 2. نظرية الحوسبة -->
             <div id="theory-sec" class="lecture-section" style="border-right-color: #b8860b;">
                 <details>
                     <summary>⚙️ نظرية الحوسبة (43) — أ. حسين</summary>
@@ -234,5 +233,197 @@
                             <table class="lectures-table">
                                 <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
                                 <tbody id="tbody-theory">
-                                    <tr><td>مقدمة في الآلات المنتظمة</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete
-                            
+                                    <tr><td>مقدمة في الآلات المنتظمة</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <div id="multimedia-sec" class="lecture-section" style="border-right-color: #2c4a3e;">
+                <details>
+                    <summary>🎬 تقانة الوسائط المتعددة (43) — د. هديل</summary>
+                    <div class="lecture-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع محاضرة جديدة</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-multimedia" placeholder="عنوان المحاضرة...">
+                                <input type="file" id="file-multimedia" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                <button class="btn-add" onclick="addLecture('multimedia')">رفع ورابط</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="lectures-table">
+                                <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-multimedia">
+                                    <tr><td>مفاهيم الوسائط المتعددة</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <div id="networks-sec" class="lecture-section" style="border-right-color: #1e382d;">
+                <details>
+                    <summary>🔒 إدارة وأمن شبكات الحاسوب (43) — د. سلمى</summary>
+                    <div class="lecture-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع محاضرة جديدة</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-networks" placeholder="عنوان المحاضرة...">
+                                <input type="file" id="file-networks" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                <button class="btn-add" onclick="addLecture('networks')">رفع ورابط</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="lectures-table">
+                                <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-networks">
+                                    <tr><td>أساسيات أمن الشبكات والبروتوكولات</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <div id="projects-sec" class="lecture-section" style="border-right-color: #b8860b;">
+                <details>
+                    <summary>📊 إدارة مشروعات البرمجيات (43) — د. رقية</summary>
+                    <div class="lecture-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع محاضرة جديدة</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-projects" placeholder="عنوان المحاضرة...">
+                                <input type="file" id="file-projects" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                <button class="btn-add" onclick="addLecture('projects')">رفع ورابط</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="lectures-table">
+                                <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-projects">
+                                    <tr><td>مفاهيم دورة حياة المشروع البرمجي</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <div id="algorithms-sec" class="lecture-section" style="border-right-color: #2c4a3e;">
+                <details>
+                    <summary>🧮 تصميم وتحليل الخوارزميات (43) — أ. هدى</summary>
+                    <div class="lecture-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع محاضرة جديدة</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-algorithms" placeholder="عنوان المحاضرة...">
+                                <input type="file" id="file-algorithms" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                <button class="btn-add" onclick="addLecture('algorithms')">رفع ورابط</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="lectures-table">
+                                <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-algorithms">
+                                    <tr><td>كفاءة الخوارزميات والتعقيد الزمني</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- 2. الإحصاء -->
+            <div id="stats1-sec" class="lecture-section" style="border-right-color: #b8860b;">
+                <details>
+                    <summary>📈 النماذج الخطية العامة (43) — أ. سماح</summary>
+                    <div class="lecture-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع محاضرة جديدة</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-stats1" placeholder="عنوان المحاضرة...">
+                                <input type="file" id="file-stats1" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                <button class="btn-add" onclick="addLecture('stats1')">رفع ورابط</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="lectures-table">
+                                <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-stats1">
+                                    <tr><td>مقدمة في الانحدار الخطي المتعدد</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <div id="stats2-sec" class="lecture-section" style="border-right-color: #2c4a3e;">
+                <details>
+                    <summary>📉 إحصاءات بيز (43) — د. سحر</summary>
+                    <div class="lecture-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع محاضرة جديدة</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-stats2" placeholder="عنوان المحاضرة...">
+                                <input type="file" id="file-stats2" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                <button class="btn-add" onclick="addLecture('stats2')">رفع ورابط</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="lectures-table">
+                                <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-stats2">
+                                    <tr><td>مبدأ الاحتمال الشرطي ونظرية بيز</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <div id="stats3-sec" class="lecture-section" style="border-right-color: #1e382d;">
+                <details>
+                    <summary>📋 تحليل البيانات التصنيفية (43) — أ. سمية</summary>
+                    <div class="lecture-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع محاضرة جديدة</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-stats3" placeholder="عنوان المحاضرة...">
+                                <input type="file" id="file-stats3" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                <button class="btn-add" onclick="addLecture('stats3')">رفع ورابط</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="lectures-table">
+                                <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-stats3">
+                                    <tr><td>جداول التوافق واختبارات كاي تربيع</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- 3. الرياضيات -->
+            <div id="math1-sec" class="lecture-section" style="border-right-color: #2c4a3e;">
+                <details>
+                    <summary>📐 تحليل المتغيرات المتعددة (43) — د. إسراء</summary>
+                    <div class="lecture-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع محاضرة جديدة</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-math1" placeholder="عنوان المحاضرة...">
+                                <input type="file" id="file-math1" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                <button class="btn-add" onclick="addLecture('math1')">رفع ورابط</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="lectures-table">
+                                <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                         
