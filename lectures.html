@@ -27,10 +27,29 @@
             background: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             overflow: hidden;
             border-right: 6px solid #1e382d;
-            scroll-margin-top: 20px;
+            scroll-margin-top: 25px;
+            transition: all 0.4s ease;
+        }
+
+        /* 🌟 تأثير تغيير اللون والإضاءة التلقائي للمادة المستهدفة عند الضغط عليها من المواد */
+        .lecture-section:target {
+            border-right: 8px solid #b8860b !important;
+            box-shadow: 0 0 20px rgba(184, 134, 11, 0.4) !important;
+            animation: highlightPulse 2s ease-in-out;
+        }
+
+        .lecture-section:target summary {
+            background-color: #fef3c7 !important;
+            color: #b8860b !important;
+        }
+
+        @keyframes highlightPulse {
+            0% { transform: scale(1.01); }
+            50% { transform: scale(1); }
+            100% { transform: scale(1); }
         }
 
         details { width: 100%; }
@@ -51,17 +70,12 @@
             user-select: none;
         }
 
-        summary:hover {
-            background-color: #f0ebe1;
-            color: #b8860b;
-        }
-
         .lecture-content {
             padding: 20px;
             background: #ffffff;
         }
 
-        /* لوحة التحكم والإضافة البارزة لكل مادة */
+        /* لوحة الرفع المباشر */
         .admin-controls-box {
             background: #f0fdf4;
             border: 2px dashed #10b981;
@@ -110,7 +124,6 @@
             cursor: pointer;
             font-size: 13px;
             font-weight: bold;
-            transition: background 0.2s;
         }
 
         .btn-add:hover { background: #2c4a3e; }
@@ -157,19 +170,6 @@
         }
 
         .delete-btn:hover { background: #dc2626; }
-
-        .online-class-link {
-            display: inline-block;
-            margin-bottom: 15px;
-            background: rgba(0, 242, 254, 0.1);
-            color: #0284c7;
-            padding: 8px 14px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 13px;
-            border: 1px solid rgba(2, 132, 199, 0.3);
-        }
     </style>
 </head>
 
@@ -183,7 +183,7 @@
         </div>
         <div class="header-text-content">
             <h1>Student Portal | بوابة الطالب</h1>
-            <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (إدارة ورفع المحاضرات للدفعة 43)</p>
+            <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (رفع وإدارة المحاضرات للدفعة 43)</p>
         </div>
     </header>
 
@@ -200,37 +200,30 @@
     <main>
         <section id="lectures">
             <h2>📚 لوحة تحكم وإدارة المحاضرات</h2>
-            <p>اضغط على أي مادة لتفتح معك القائمة، حيث يمكنك إضافة ملفات جديدة أو حذفها مباشرة:</p>
+            <p>يمكنك رفع ملفات PDF مباشرة من جهازك أو حذفها بسهولة:</p>
 
             <!-- 1. برمجة تطبيقات الإنترنت -->
             <div id="web-sec" class="lecture-section">
-                <details open>
+                <details>
                     <summary>🌐 برمجة تطبيقات الإنترنت (43) — أ. محمد عبد الرحمن</summary>
                     <div class="lecture-content">
-                        <a href="#" class="online-class-link">🎥 رابط المحاضرة الافتراضية (Google Meet / Zoom)</a>
-                        
-                        <!-- لوحة إضافة محاضرة -->
                         <div class="admin-controls-box">
-                            <h4>➕ لوحة التحكم: إضافة محاضرة جديدة لهذه المادة</h4>
+                            <h4>➕ رفع محاضرة جديدة لمادة برمجة الإنترنت</h4>
                             <div class="input-group">
-                                <input type="text" id="title-web" placeholder="عنوان المحاضرة (مثال: المحاضرة الرابعة)...">
-                                <input type="file" id="file-web" accept=".pdf,.doc,.docx,.ppt,.pptx">
-                                <button class="btn-add" onclick="addLecture('web')">حفظ وإضافة</button>
+                                <input type="text" id="title-web" placeholder="عنوان المحاضرة...">
+                                <input type="file" id="file-web" accept=".pdf,.doc,.docx">
+                                <button class="btn-add" onclick="addLecture('web')">رفع ورابط المحاضرة</button>
                             </div>
                         </div>
 
                         <table class="lectures-table">
                             <thead>
-                                <tr>
-                                    <th>موضوع المحاضرة / الأسبوع</th>
-                                    <th>نوع الملف</th>
-                                    <th>الإجراء / التحكم</th>
-                                </tr>
+                                <tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr>
                             </thead>
                             <tbody id="tbody-web">
                                 <tr>
                                     <td>المقدمة ومراجعة HTML/CSS وتجهيز البيئة</td>
-                                    <td>ملف PDF</td>
+                                    <td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td>
                                     <td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td>
                                 </tr>
                             </tbody>
@@ -244,23 +237,22 @@
                 <details>
                     <summary>⚙️ نظرية الحوسبة (43) — أ. حسين</summary>
                     <div class="lecture-content">
-                        <a href="#" class="online-class-link">🎥 رابط المحاضرة الافتراضية (Google Meet / Zoom)</a>
                         <div class="admin-controls-box">
-                            <h4>➕ لوحة التحكم: إضافة محاضرة جديدة لهذه المادة</h4>
+                            <h4>➕ رفع محاضرة جديدة لمادة نظرية الحوسبة</h4>
                             <div class="input-group">
                                 <input type="text" id="title-theory" placeholder="عنوان المحاضرة...">
-                                <input type="file" id="file-theory" accept=".pdf,.doc,.docx,.ppt,.pptx">
-                                <button class="btn-add" onclick="addLecture('theory')">حفظ وإضافة</button>
+                                <input type="file" id="file-theory" accept=".pdf,.doc,.docx">
+                                <button class="btn-add" onclick="addLecture('theory')">رفع ورابط المحاضرة</button>
                             </div>
                         </div>
                         <table class="lectures-table">
                             <thead>
-                                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء / التحكم</th></tr>
+                                <tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr>
                             </thead>
                             <tbody id="tbody-theory">
                                 <tr>
                                     <td>مقدمة في الآلات المنتظمة والمجموعات</td>
-                                    <td>ملف PDF</td>
+                                    <td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td>
                                     <td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td>
                                 </tr>
                             </tbody>
@@ -274,23 +266,22 @@
                 <details>
                     <summary>🎬 تقانة الوسائط المتعددة (43) — د. هديل</summary>
                     <div class="lecture-content">
-                        <a href="#" class="online-class-link">🎥 رابط المحاضرة الافتراضية (Google Meet / Zoom)</a>
                         <div class="admin-controls-box">
-                            <h4>➕ لوحة التحكم: إضافة محاضرة جديدة لهذه المادة</h4>
+                            <h4>➕ رفع محاضرة جديدة لمادة الوسائط المتعددة</h4>
                             <div class="input-group">
                                 <input type="text" id="title-multimedia" placeholder="عنوان المحاضرة...">
-                                <input type="file" id="file-multimedia" accept=".pdf,.doc,.docx,.ppt,.pptx">
-                                <button class="btn-add" onclick="addLecture('multimedia')">حفظ وإضافة</button>
+                                <input type="file" id="file-multimedia" accept=".pdf,.doc,.docx">
+                                <button class="btn-add" onclick="addLecture('multimedia')">رفع ورابط المحاضرة</button>
                             </div>
                         </div>
                         <table class="lectures-table">
                             <thead>
-                                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء / التحكم</th></tr>
+                                <tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr>
                             </thead>
                             <tbody id="tbody-multimedia">
                                 <tr>
                                     <td>مفاهيم الوسائط المتعددة وعناصرها</td>
-                                    <td>ملف PDF</td>
+                                    <td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td>
                                     <td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td>
                                 </tr>
                             </tbody>
@@ -307,19 +298,34 @@
     </footer>
 
     <script>
-        // دالة إضافة محاضرة جديدة
+        // دالة تفتح القائمة المنسدلة تلقائياً للمادة القادمة من الـ Link
+        function autoOpenTargetDetails() {
+            const hash = window.location.hash;
+            if (hash) {
+                const targetSec = document.querySelector(hash);
+                if (targetSec) {
+                    const details = targetSec.querySelector('details');
+                    if (details) details.open = true;
+                }
+            }
+        }
+
+        window.addEventListener('hashchange', autoOpenTargetDetails);
+        window.addEventListener('load', autoOpenTargetDetails);
+
+        // رفع الملفات وإضافتها برابط مباشر
         function addLecture(subjectId) {
             const titleInput = document.getElementById(`title-${subjectId}`);
             const fileInput = document.getElementById(`file-${subjectId}`);
             const tbody = document.getElementById(`tbody-${subjectId}`);
 
             if (!titleInput.value.trim()) {
-                alert("الرجاء كتابة عنوان المحاضرة أولاً!");
+                alert("الرجاء كتابة عنوان المحاضرة!");
                 return;
             }
 
             if (fileInput.files.length === 0) {
-                alert("الرجاء اختيار ملف المحاضرة من جهازك!");
+                alert("الرجاء اختيار ملف من جهازك!");
                 return;
             }
 
@@ -334,17 +340,15 @@
             `;
 
             tbody.appendChild(tr);
-
             titleInput.value = '';
             fileInput.value = '';
-            alert("تمت إضافة المحاضرة بنجاح!");
+            alert("تم رفع المحاضرة بنجاح!");
         }
 
-        // دالة حذف محاضرة
+        // حذف المحاضرة
         function deleteRow(btn) {
-            if (confirm("هل أنتِ متأكدة من حذف هذه المحاضرة؟")) {
-                const row = btn.closest('tr');
-                row.remove();
+            if (confirm("هل تريدين حذف هذه المحاضرة؟")) {
+                btn.closest('tr').remove();
             }
         }
     </script>
