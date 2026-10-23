@@ -6,6 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portal - المواد الدراسية | Subjects</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .subjects-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .subjects-table th, .subjects-table td {
+            padding: 12px 15px;
+            text-align: right;
+            border-bottom: 1px solid #e8e3d5;
+        }
+        .subjects-table th {
+            background-color: #1e382d;
+            color: white;
+            font-size: 15px;
+        }
+        .subjects-table td a {
+            color: #1e382d;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s;
+        }
+        .subjects-table td a:hover {
+            color: #b8860b;
+            text-decoration: underline;
+        }
+        .spec-title {
+            background: #f4f0e6;
+            font-weight: bold;
+            color: #1e382d;
+            text-align: center !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,38 +67,45 @@
     <main>
         <section id="subjects">
             <h2>📖 المقررات والمواد الدراسية (الفصل الدراسي الثامن)</h2>
-            <p>قائمة المواد الدراسية المقررة لطلاب الدفعة 43 موزعة حسب التخصصات:</p>
+            <p>قائمة المواد الدراسية المقررة لطلاب الدفعة 43 موزعة حسب التخصصات (اضغط على أي مادة للانتقال إلى محاضراتها مباشرة):</p>
 
-            <div style="background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #e2ded4;">
-                <h3 style="color: #1e382d; border-bottom: 2px solid #1e382d; padding-bottom: 5px;">💻 تخصص علوم الحاسوب (Computer Science)</h3>
-                <ul style="line-height: 1.8;">
-                    <li>برمجة تطبيقات الإنترنت (43)</li>
-                    <li>نظرية الحوسبة (43)</li>
-                    <li>تقانة الوسائط المتعددة (43)</li>
-                    <li>إدارة وأمن شبكات الحاسوب (43)</li>
-                    <li>إدارة مشروعات البرمجيات (43)</li>
-                    <li>تصميم وتحليل الخوارزميات (43)</li>
-                </ul>
-            </div>
+            <table class="subjects-table">
+                <thead>
+                    <tr>
+                        <th>التخصص الأكاديمي</th>
+                        <th>اسم المقرر / المادة الدراسية</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- علوم الحاسوب -->
+                    <tr>
+                        <td rowspan="6" class="spec-title">💻 علوم الحاسوب<br>(Computer Science)</td>
+                        <td><a href="lectures.html#web">برمجة تطبيقات الإنترنت (43)</a></td>
+                    </tr>
+                    <tr><td><a href="lectures.html#theory">نظرية الحوسبة (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#multimedia">تقانة الوسائط المتعددة (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#networks">إدارة وأمن شبكات الحاسوب (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#projects">إدارة مشروعات البرمجيات (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#algorithms">تصميم وتحليل الخوارزميات (43)</a></td></tr>
 
-            <div style="background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #e2ded4;">
-                <h3 style="color: #b8860b; border-bottom: 2px solid #b8860b; padding-bottom: 5px;">📊 تخصص الإحصاء (Statistics)</h3>
-                <ul style="line-height: 1.8;">
-                    <li>النماذج الخطية العامة (43)</li>
-                    <li>إحصاءات بيز (43)</li>
-                    <li>تحليل البيانات التصنيفية (43)</li>
-                </ul>
-            </div>
+                    <!-- الإحصاء -->
+                    <tr>
+                        <td rowspan="3" class="spec-title">📊 الإحصاء<br>(Statistics)</td>
+                        <td><a href="lectures.html#stats1">النماذج الخطية العامة (43)</a></td>
+                    </tr>
+                    <tr><td><a href="lectures.html#stats2">إحصاءات بيز (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#stats3">تحليل البيانات التصنيفية (43)</a></td></tr>
 
-            <div style="background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #e2ded4;">
-                <h3 style="color: #2c4a3e; border-bottom: 2px solid #2c4a3e; padding-bottom: 5px;">📐 تخصص الرياضيات (Mathematics)</h3>
-                <ul style="line-height: 1.8;">
-                    <li>تحليل المتغيرات المتعددة (43)</li>
-                    <li>المعادلات التفاضلية الجزئية (43)</li>
-                    <li>التحليل الدالي (43)</li>
-                    <li>الأمثلية (43)</li>
-                </ul>
-            </div>
+                    <!-- الرياضيات -->
+                    <tr>
+                        <td rowspan="4" class="spec-title">📐 الرياضيات<br>(Mathematics)</td>
+                        <td><a href="lectures.html#math1">تحليل المتغيرات المتعددة (43)</a></td>
+                    </tr>
+                    <tr><td><a href="lectures.html#math2">المعادلات التفاضلية الجزئية (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#math3">التحليل الدالي (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#math4">الأمثلية (43)</a></td></tr>
+                </tbody>
+            </table>
         </section>
     </main>
 
