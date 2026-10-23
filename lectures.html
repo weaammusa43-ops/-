@@ -27,7 +27,7 @@
             background: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             overflow: hidden;
             border-right: 6px solid #1e382d;
             scroll-margin-top: 20px;
@@ -61,41 +61,56 @@
             background: #ffffff;
         }
 
-        /* لوحة إضافة محاضرة جديدة */
-        .add-lecture-panel {
-            background: #f8fafc;
-            border: 1px dashed #cbd5e1;
+        /* لوحة التحكم والإضافة البارزة لكل مادة */
+        .admin-controls-box {
+            background: #f0fdf4;
+            border: 2px dashed #10b981;
             padding: 15px;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .admin-controls-box h4 {
+            color: #065f46;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .input-group {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             align-items: center;
         }
 
-        .add-lecture-panel input[type="text"] {
-            padding: 8px 12px;
+        .input-group input[type="text"] {
+            padding: 9px 12px;
             border: 1px solid #cbd5e1;
             border-radius: 6px;
             flex: 1;
-            min-width: 200px;
+            min-width: 180px;
             font-size: 13px;
+            outline: none;
         }
 
-        .add-lecture-panel input[type="file"] {
+        .input-group input[type="file"] {
             font-size: 12px;
+            background: #fff;
+            padding: 5px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
         }
 
         .btn-add {
             background: #1e382d;
             color: white;
             border: none;
-            padding: 8px 16px;
+            padding: 9px 16px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 13px;
             font-weight: bold;
+            transition: background 0.2s;
         }
 
         .btn-add:hover { background: #2c4a3e; }
@@ -134,14 +149,27 @@
             background: #ef4444;
             color: white;
             border: none;
-            padding: 6px 10px;
+            padding: 6px 12px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 12px;
-            margin-right: 5px;
+            font-weight: bold;
         }
 
         .delete-btn:hover { background: #dc2626; }
+
+        .online-class-link {
+            display: inline-block;
+            margin-bottom: 15px;
+            background: rgba(0, 242, 254, 0.1);
+            color: #0284c7;
+            padding: 8px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            border: 1px solid rgba(2, 132, 199, 0.3);
+        }
     </style>
 </head>
 
@@ -155,7 +183,7 @@
         </div>
         <div class="header-text-content">
             <h1>Student Portal | بوابة الطالب</h1>
-            <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (رفع وإدارة المحاضرات للدفعة 43)</p>
+            <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (إدارة ورفع المحاضرات للدفعة 43)</p>
         </div>
     </header>
 
@@ -171,33 +199,38 @@
 
     <main>
         <section id="lectures">
-            <h2>📚 رفع وإدارة المحاضرات (رفع مباشر من جهازك)</h2>
-            <p>يمكنكِ رفع ملفات الـ PDF مباشرة وتحديد موضوع المحاضرة وحذف أي عنصر بسهولة:</p>
+            <h2>📚 لوحة تحكم وإدارة المحاضرات</h2>
+            <p>اضغط على أي مادة لتفتح معك القائمة، حيث يمكنك إضافة ملفات جديدة أو حذفها مباشرة:</p>
 
             <!-- 1. برمجة تطبيقات الإنترنت -->
             <div id="web-sec" class="lecture-section">
                 <details open>
                     <summary>🌐 برمجة تطبيقات الإنترنت (43) — أ. محمد عبد الرحمن</summary>
                     <div class="lecture-content">
-                        <!-- نموذج إضافة محاضرة جديدة -->
-                        <div class="add-lecture-panel">
-                            <input type="text" id="title-web" placeholder="عنوان المحاضرة جديد...">
-                            <input type="file" id="file-web" accept=".pdf,.doc,.docx">
-                            <button class="btn-add" onclick="addLecture('web')">➕ إضافة المحاضرة</button>
+                        <a href="#" class="online-class-link">🎥 رابط المحاضرة الافتراضية (Google Meet / Zoom)</a>
+                        
+                        <!-- لوحة إضافة محاضرة -->
+                        <div class="admin-controls-box">
+                            <h4>➕ لوحة التحكم: إضافة محاضرة جديدة لهذه المادة</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-web" placeholder="عنوان المحاضرة (مثال: المحاضرة الرابعة)...">
+                                <input type="file" id="file-web" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                <button class="btn-add" onclick="addLecture('web')">حفظ وإضافة</button>
+                            </div>
                         </div>
 
                         <table class="lectures-table">
                             <thead>
                                 <tr>
-                                    <th>عنوان المحاضرة</th>
-                                    <th>الملف</th>
-                                    <th>إدارة / تحكم</th>
+                                    <th>موضوع المحاضرة / الأسبوع</th>
+                                    <th>نوع الملف</th>
+                                    <th>الإجراء / التحكم</th>
                                 </tr>
                             </thead>
                             <tbody id="tbody-web">
                                 <tr>
                                     <td>المقدمة ومراجعة HTML/CSS وتجهيز البيئة</td>
-                                    <td><a href="#" class="pdf-btn">عرض / تحميل 📄</a></td>
+                                    <td>ملف PDF</td>
                                     <td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td>
                                 </tr>
                             </tbody>
@@ -211,19 +244,23 @@
                 <details>
                     <summary>⚙️ نظرية الحوسبة (43) — أ. حسين</summary>
                     <div class="lecture-content">
-                        <div class="add-lecture-panel">
-                            <input type="text" id="title-theory" placeholder="عنوان المحاضرة جديد...">
-                            <input type="file" id="file-theory" accept=".pdf,.doc,.docx">
-                            <button class="btn-add" onclick="addLecture('theory')">➕ إضافة المحاضرة</button>
+                        <a href="#" class="online-class-link">🎥 رابط المحاضرة الافتراضية (Google Meet / Zoom)</a>
+                        <div class="admin-controls-box">
+                            <h4>➕ لوحة التحكم: إضافة محاضرة جديدة لهذه المادة</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-theory" placeholder="عنوان المحاضرة...">
+                                <input type="file" id="file-theory" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                <button class="btn-add" onclick="addLecture('theory')">حفظ وإضافة</button>
+                            </div>
                         </div>
                         <table class="lectures-table">
                             <thead>
-                                <tr><th>عنوان المحاضرة</th><th>الملف</th><th>إدارة / تحكم</th></tr>
+                                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء / التحكم</th></tr>
                             </thead>
                             <tbody id="tbody-theory">
                                 <tr>
                                     <td>مقدمة في الآلات المنتظمة والمجموعات</td>
-                                    <td><a href="#" class="pdf-btn">عرض / تحميل 📄</a></td>
+                                    <td>ملف PDF</td>
                                     <td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td>
                                 </tr>
                             </tbody>
@@ -237,19 +274,23 @@
                 <details>
                     <summary>🎬 تقانة الوسائط المتعددة (43) — د. هديل</summary>
                     <div class="lecture-content">
-                        <div class="add-lecture-panel">
-                            <input type="text" id="title-multimedia" placeholder="عنوان المحاضرة جديد...">
-                            <input type="file" id="file-multimedia" accept=".pdf,.doc,.docx">
-                            <button class="btn-add" onclick="addLecture('multimedia')">➕ إضافة المحاضرة</button>
+                        <a href="#" class="online-class-link">🎥 رابط المحاضرة الافتراضية (Google Meet / Zoom)</a>
+                        <div class="admin-controls-box">
+                            <h4>➕ لوحة التحكم: إضافة محاضرة جديدة لهذه المادة</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-multimedia" placeholder="عنوان المحاضرة...">
+                                <input type="file" id="file-multimedia" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                <button class="btn-add" onclick="addLecture('multimedia')">حفظ وإضافة</button>
+                            </div>
                         </div>
                         <table class="lectures-table">
                             <thead>
-                                <tr><th>عنوان المحاضرة</th><th>الملف</th><th>إدارة / تحكم</th></tr>
+                                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء / التحكم</th></tr>
                             </thead>
                             <tbody id="tbody-multimedia">
                                 <tr>
                                     <td>مفاهيم الوسائط المتعددة وعناصرها</td>
-                                    <td><a href="#" class="pdf-btn">عرض / تحميل 📄</a></td>
+                                    <td>ملف PDF</td>
                                     <td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td>
                                 </tr>
                             </tbody>
@@ -265,16 +306,15 @@
         <p>Student Portal & بوابة الطالب - جامعة الجزيرة © 2026</p>
     </footer>
 
-    <!-- سكريبت الرفع المباشر والحذف والتحكم -->
     <script>
-        // دالة إضافة محاضرة جديدة برفع ملف مباشر
+        // دالة إضافة محاضرة جديدة
         function addLecture(subjectId) {
             const titleInput = document.getElementById(`title-${subjectId}`);
             const fileInput = document.getElementById(`file-${subjectId}`);
             const tbody = document.getElementById(`tbody-${subjectId}`);
 
             if (!titleInput.value.trim()) {
-                alert("الرجاء كتابة عنوان للمحاضرة أولاً!");
+                alert("الرجاء كتابة عنوان المحاضرة أولاً!");
                 return;
             }
 
@@ -284,9 +324,8 @@
             }
 
             const file = fileInput.files[0];
-            const fileURL = URL.createObjectURL(file); // إنشاء رابط مباشر للملف المرفوع من الهاتف/الكمبيوتر
+            const fileURL = URL.createObjectURL(file);
 
-            // إضافة الصف الجديد للجدول
             const tr = document.createElement('tr');
             tr.innerHTML = `
                 <td>${titleInput.value}</td>
@@ -296,10 +335,9 @@
 
             tbody.appendChild(tr);
 
-            // تفريغ الحقول بعد الإضافة
             titleInput.value = '';
             fileInput.value = '';
-            alert("تمت إضافة المحاضرة والملف بنجاح! 🎉");
+            alert("تمت إضافة المحاضرة بنجاح!");
         }
 
         // دالة حذف محاضرة
