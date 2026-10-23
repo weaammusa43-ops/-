@@ -7,25 +7,43 @@
     <title>Student Portal - المحاضرات والمقررات | Lectures</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* تنسيق الهيدر والأزرار العلوية المتجاوبة */
+        .main-header {
+            position: relative;
+            padding-top: 50px !important;
+        }
+
+        .header-buttons {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            left: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* تنسيق شرائح المحاضرات */
         .lecture-section {
             background: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             overflow: hidden;
             border-right: 6px solid #1e382d;
             scroll-margin-top: 20px;
         }
 
-        /* تنسيق القائمة المنسدلة لكل مادة */
+        /* القائمة المنسدلة لكل مادة */
         details {
             width: 100%;
         }
 
         summary {
             background-color: #f9f8f5;
-            padding: 18px 20px;
-            font-size: 16px;
+            padding: 16px 20px;
+            font-size: 15px;
             font-weight: bold;
             color: #1e382d;
             cursor: pointer;
@@ -35,6 +53,7 @@
             border-bottom: 1px solid #e8e3d5;
             transition: background 0.3s;
             outline: none;
+            user-select: none;
         }
 
         summary:hover {
@@ -42,7 +61,7 @@
             color: #b8860b;
         }
 
-        /* محتوى القائمة المنسدلة (المحاضرات) */
+        /* محتوى القائمة المنسدلة */
         .lecture-content {
             padding: 20px;
             background: #ffffff;
@@ -106,12 +125,20 @@
 
 <body>
 
-    <header>
-        <a href="login.html" class="logout-btn">تسجيل الخروج | Logout</a>
-        <h1>Student Portal | بوابة الطالب</h1>
-        <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (جداول المحاضرات للدفعة 43)</p>
+    <!-- ================= HEADER ================= -->
+    <header class="main-header">
+        <div class="header-buttons">
+            <button id="langToggleBtn" class="lang-toggle-btn" title="تغيير اللغة">En / عربي</button>
+            <button id="themeToggleBtn" class="theme-toggle-btn" title="تبديل الوضع">🌙</button>
+            <a href="login.html" class="logout-btn">تسجيل الخروج | Logout</a>
+        </div>
+        <div class="header-text-content">
+            <h1>Student Portal | بوابة الطالب</h1>
+            <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (جداول المحاضرات للدفعة 43)</p>
+        </div>
     </header>
 
+    <!-- ================= NAVIGATION ================= -->
     <nav>
         <ul>
             <li><a href="index.html">الرئيسية | Home</a></li>
@@ -122,10 +149,11 @@
         </ul>
     </nav>
 
+    <!-- ================= MAIN CONTENT ================= -->
     <main>
         <section id="lectures">
-            <h2>📚 الشرائح والمقررات الدراسية (الفصل الدراسي الثامن)</h2>
-            <p>اضغط على اسم المادة لتنسدل لك قائمة المحاضرات وروابط الحصص الافتراضية وأزرار تحميل الـ PDF:</p>
+            <h2>📚 شرائح المقررات الدراسية (الفصل الدراسي الثامن)</h2>
+            <p>اضغط على أي مادة لتنسدل لك قائمة المحاضرات وروابط الحصص الافتراضية وأزرار التحميل:</p>
 
             <!-- 1. برمجة تطبيقات الإنترنت -->
             <div id="web-sec" class="lecture-section">
@@ -335,6 +363,38 @@
     <footer>
         <p>Student Portal & بوابة الطالب - جامعة الجزيرة © 2026</p>
     </footer>
-<script src="script.js"></script>
+
+    <!-- سكريبت التفاعل (الوضع الليلي واللغة) -->
+    <script>
+        const themeBtn = document.getElementById('themeToggleBtn');
+        if(themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                document.body.classList.toggle('light-mode');
+                themeBtn.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+            });
+        }
+
+        const langBtn = document.getElementById('langToggleBtn');
+        let isEn = false;
+        if(langBtn) {
+            langBtn.addEventListener('click', () => {
+                isEn = !isEn;
+                if(isEn) {
+                    document.documentElement.setAttribute('dir', 'ltr');
+                    document.documentElement.setAttribute('lang', 'en');
+                    document.querySelector('header h1').textContent = "Student Portal";
+                    document.querySelector('header p').textContent = "University of Gezira - Faculty of Mathematical and Computer Sciences (Batch 43)";
+                    langBtn.textContent = "عربي / En";
+                } else {
+                    document.documentElement.setAttribute('dir', 'rtl');
+                    document.documentElement.setAttribute('lang', 'ar');
+                    document.querySelector('header h1').textContent = "بوابة الطالب | Student Portal";
+                    document.querySelector('header p').textContent = "جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (جداول المحاضرات للدفعة 43)";
+                    langBtn.textContent = "En / عربي";
+                }
+            });
+        }
+    </script>
 </body>
-</html>
+    </html>
+    
