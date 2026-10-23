@@ -1,86 +1,59 @@
-/* ================= الألوان والتنسيقات المستوحاة من شعار الكلية ================= */
+/* ================= إعدادات التجاوب الشاملة لكل الشاشات ================= */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f4ed; /* خلفية عاجية هادئة متناسقة مع لون خلفية الشعار */
+    font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f4ed;
+    color: #333;
     margin: 0;
     padding: 0;
-    color: #2b2b2b;
     direction: rtl;
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
-/* ================= الهيدر (Header) ================= */
-header {
-    background: linear-gradient(135deg, #1e382d, #2c4a3e); /* أخضر داكن مستوحى من أوراق الشجر في الشعار */
-    color: #f7f4ed;
-    padding: 25px 20px;
+/* الهيدر المتجاوب */
+header, .main-header {
+    background-color: #1e382d;
+    color: white;
+    padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    border-bottom: 4px solid #b8860b; /* لمسة برونزية نحاسية */
     position: relative;
+    border-bottom: 4px solid #b8860b;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-header p {
-    margin: 8px 0 0 0;
-    font-size: 14px;
-    opacity: 0.9;
-}
-
-/* 🌟 الأزرار العلوية مرتبة ومنسقة بحيث لا تتداخل مع العنوان أبداً على الموبايل */
-.header-actions {
+.header-buttons {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    left: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
     gap: 8px;
 }
 
-.logout-btn {
-    background-color: #a0522d; /* زر خروج بلون نحاسي متناسق */
+/* الأزرار العلوية */
+.logout-btn, .theme-toggle-btn, .lang-toggle-btn {
+    background: rgba(255, 255, 255, 0.15);
     color: white;
     padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 12px;
-    transition: background 0.3s;
-    font-weight: 600;
-}
-
-.logout-btn:hover {
-    background-color: #8b4513;
-}
-
-.theme-toggle-btn, .lang-toggle-btn {
-    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
     font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
     transition: background 0.3s;
 }
 
-.theme-toggle-btn:hover, .lang-toggle-btn:hover {
+.logout-btn:hover, .theme-toggle-btn:hover, .lang-toggle-btn:hover {
     background: rgba(255, 255, 255, 0.3);
 }
 
-/* ================= القائمة الرئيسية (Navigation) ================= */
+/* القائمة الرئيسية (Navigation) */
 nav {
-    background-color: #2b2b2b;
-    padding: 12px 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #2c4a3e;
+    padding: 10px;
 }
 
 nav ul {
@@ -90,128 +63,87 @@ nav ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-nav ul li {
-    margin: 4px 12px;
+    gap: 15px;
 }
 
 nav ul li a {
-    color: #f7f4ed;
+    color: white;
     text-decoration: none;
-    font-weight: 600;
     font-size: 14px;
-    transition: color 0.3s;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
 }
 
 nav ul li a:hover {
-    color: #d4af37; /* ذهبي برونزي عند التحويم */
+    background-color: #b8860b;
 }
 
-/* ================= المحتوى الرئيسي (Main Content) ================= */
+/* المحتوى الرئيسي */
 main {
-    padding: 30px 20px;
-    max-width: 950px;
-    margin: auto;
-    min-height: 60vh;
-    width: 100%;
-    box-sizing: border-box;
-    flex: 1;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 15px;
 }
 
-/* بطاقة الترحيب والواجهة البارزة للشعار */
-.welcome-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    margin-bottom: 30px;
-    text-align: center;
-    border-top: 6px solid #1e382d;
-    border-bottom: 6px solid #b8860b;
-}
-
-.welcome-card h2 {
-    color: #1e382d;
-    font-size: 26px;
-    margin-top: 15px;
-}
-
-/* تنسيق الشعار ليكون واضحاً وكبيراً ومسيطراً على الواجهة */
-.hero-logo-container {
-    margin-bottom: 20px;
-}
-
-.college-logo-large {
-    width: 220px; /* حجم كبير وواضح جداً */
-    height: 220px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #b8860b; /* إطار برونزي فخم يحيط بالشعار */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.college-logo-large:hover {
-    transform: scale(1.03); /* تأثير تفاعلي خفيف عند المرور فوق الشعار */
-}
-
-/* الأقسام والمقالات */
-section {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    margin-bottom: 25px;
-}
-
-section h2 {
-    color: #1e382d;
-    border-bottom: 2px solid #e8e3d5;
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
-/* 🌟 حاوية الجداول المتجاوبة لمنع اقتطاع أي جدول في الهواتف */
-.table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-top: 15px;
-}
-
-/* تنسيق الجداول (Tables) */
+/* الجداول والبطاقات المتجاوبة لمنع الخروج عن الشاشة */
 table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-    min-width: 500px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-th, td {
-    padding: 12px 15px;
-    text-align: center;
-    border-bottom: 1px solid #e8e3d5;
-}
+/* ================= استعلامات الشاشات الصغيرة (Mobile Responsiveness) ================= */
+@media (max-width: 768px) {
+    header, .main-header {
+        padding-top: 60px !important; /* لترك مساحة للأزرار في الموبايل */
+    }
 
-th {
-    background-color: #1e382d;
-    color: white;
-    font-weight: 600;
-}
+    .header-buttons {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+    }
 
-tr:hover {
-    background-color: #f4f0e6;
-}
+    .logout-btn, .theme-toggle-btn, .lang-toggle-btn {
+        font-size: 11px !important;
+        padding: 4px 8px !important;
+    }
 
-/* الروابط والقوائم */
-ul {
-    padding-right: 20px;
-}
+    h1 {
+        font-size: 1.2rem;
+    }
 
-li {
-    margin-bottom: 8px;
-}
+    header p {
+        font-size: 0.8rem;
+    }
 
-a {
-    
+    /* تحويل القائمة العلوية لتكون عمودية أو متراصة بمرونة على الموبايل */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* جعل الجداول تتمرن أفقياً أو تصغر خطوطها لتناسب الشاشات الضيقة */
+    table th, table td {
+        padding: 10px 8px;
+        font-size: 12.5px;
+    }
+
+    .admin-controls-box .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .admin-controls-box input[type="text"], 
+    .admin-controls-box input[type="file"], 
+    .admin-controls-box button {
+        width: 100%;
+    }
+}
