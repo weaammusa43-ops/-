@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal - الرئيسية | Home</title>
+    <title>بوابة الطالب - الرئيسية</title>
     <!-- ربط ملف التنسيقات الخارجي -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,26 +12,29 @@
 <body>
 
     <!-- ================= HEADER ================= -->
-    <header class="main-header">
-        <div class="header-buttons">
-            <button id="langToggleBtn" class="lang-toggle-btn" title="تغيير اللغة">En / عربي</button>
-            <button id="themeToggleBtn" class="theme-toggle-btn" title="تبديل الوضع">🌙</button>
-            <a href="login.html" class="logout-btn">تسجيل الخروج | Logout</a>
+    <header>
+        <div class="header-actions">
+            <div>
+                <button id="themeToggleBtn" class="theme-toggle-btn">🌙 الوضع</button>
+                <button id="langToggleBtn" class="lang-toggle-btn">En / عربي</button>
+            </div>
+            <div>
+                <a href="login.html" class="logout-btn">تسجيل الخروج</a>
+            </div>
         </div>
-        <div class="header-text-content">
-            <h1>Student Portal | بوابة الطالب</h1>
-            <p>جميع معلوماتك الأكاديمية في مكان واحد | Your Academic Information in One Place</p>
-        </div>
+        
+        <h1>بوابة الطالب الأكاديمية</h1>
+        <p>جميع معلوماتك الأكاديمية في مكان واحد</p>
     </header>
 
     <!-- ================= NAVIGATION ================= -->
     <nav>
         <ul>
-            <li><a href="index.html">الرئيسية | Home</a></li>
-            <li><a href="lectures.html">المحاضرات | Lectures</a></li>
-            <li><a href="schedules.html">الجداول | Schedules</a></li>
-            <li><a href="exams.html">الامتحانات السابقة | Past Exams</a></li>
-            <li><a href="subjects.html">المواد | Subjects</a></li>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="lectures.html">المحاضرات</a></li>
+            <li><a href="schedules.html">الجداول</a></li>
+            <li><a href="exams.html">الامتحانات السابقة</a></li>
+            <li><a href="subjects.html">المواد</a></li>
         </ul>
     </nav>
 
@@ -50,7 +53,7 @@
             <p style="color: #b8860b; font-size: 13px; font-weight: bold; margin-top: 8px;">نتمنى لك فصلاً دراسياً موفقاً مليئاً بالتفوق والنجاح.</p>
         </div>
 
-        <!-- قسم الإعلانات المهمة (متطابقة مع مقرراتك الفعلية) -->
+        <!-- قسم الإعلانات المهمة -->
         <section class="announcements-section">
             <h2>📢 أحدث الإعلانات والأخبار الأكاديمية</h2>
             
@@ -59,7 +62,7 @@
                 <p style="margin: 5px 0 0 0;">تم تحديث الجداول الدراسية للفصل الدراسي الثامن (الدفعة 43)، يرجى مراجعة قسم الجداول لمعرفة مواعيد القاعات.</p>
             </div>
 
-            <div class="announcement-box" style="background: #e8f4ec; border-right-color: #1e382d;">
+            <div class="announcement-box" style="background: #fdf6e2; border-right-color: #b8860b;">
                 <strong>رفع محاضرات جديدة:</strong>
                 <p style="margin: 5px 0 0 0;">تم إضافة المحاضرات الأسبوعية لمقررات برمجة تطبيقات الإنترنت، تقانة الوسائط المتعددة، وتحليل المتغيرات المتعددة في قسم المحاضرات.</p>
             </div>
@@ -68,7 +71,7 @@
 
     <!-- ================= FOOTER ================= -->
     <footer>
-        <p>Student Portal & بوابة الطالب - كلية العلوم الرياضية والحاسوب © 2026</p>
+        <p>بوابة الطالب - كلية العلوم الرياضية والحاسوب - جامعة الجزيرة © 2026</p>
     </footer>
 
 <script src="script.js"></script>
