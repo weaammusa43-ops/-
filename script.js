@@ -72,3 +72,33 @@ if (themeToggleBtn) {
         themeToggleBtn.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
     });
 }
+const langToggleBtn = document.getElementById('langToggleBtn');
+let currentLang = 'ar';
+
+if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', () => {
+        const titleEl = document.querySelector('header h1');
+        const descEl = document.querySelector('header p');
+        const welcomeHeading = document.querySelector('.welcome-card h2');
+        
+        if (currentLang === 'ar') {
+            // التحويل إلى الإنجليزية
+            document.documentElement.setAttribute('dir', 'ltr');
+            document.documentElement.setAttribute('lang', 'en');
+            if (titleEl) titleEl.textContent = "Computer Science Portal";
+            if (descEl) descEl.textContent = "Faculty of Mathematical and Computer Sciences - Batch 43";
+            if (welcomeHeading) welcomeHeading.textContent = "Welcome, Student!";
+            langToggleBtn.textContent = "عربي / En";
+            currentLang = 'en';
+        } else {
+            // العودة إلى العربية
+            document.documentElement.setAttribute('dir', 'rtl');
+            document.documentElement.setAttribute('lang', 'ar');
+            if (titleEl) titleEl.textContent = "بوابة علوم الحاسوب";
+            if (descEl) descEl.textContent = "كلية العلوم الرياضية والحاسوب - الدفعة 43";
+            if (welcomeHeading) welcomeHeading.textContent = "أهلاً بك يا مهندسة!";
+            langToggleBtn.textContent = "En / عربي";
+            currentLang = 'ar';
+        }
+    });
+}
