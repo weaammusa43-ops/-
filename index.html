@@ -12,14 +12,16 @@
 <body>
 
     <!-- ================= HEADER ================= -->
-    <header>
-        <button id="langToggleBtn" class="lang-toggle-btn" title="تغيير اللغة">En / عربي</button>
-        
-        <button id="themeToggleBtn" class="theme-toggle-btn" title="تبديل الوضع">🌙</button>
-        
-        <a href="login.html" class="logout-btn">تسجيل الخروج | Logout</a>
-        <h1>Student Portal | بوابة الطالب</h1>
-        <p>جميع معلوماتك الأكاديمية في مكان واحد | Your Academic Information in One Place</p>
+    <header class="main-header">
+        <div class="header-buttons">
+            <button id="langToggleBtn" class="lang-toggle-btn" title="تغيير اللغة">En / عربي</button>
+            <button id="themeToggleBtn" class="theme-toggle-btn" title="تبديل الوضع">🌙</button>
+            <a href="login.html" class="logout-btn">تسجيل الخروج | Logout</a>
+        </div>
+        <div class="header-text-content">
+            <h1>Student Portal | بوابة الطالب</h1>
+            <p>جميع معلوماتك الأكاديمية في مكان واحد | Your Academic Information in One Place</p>
+        </div>
     </header>
 
     <!-- ================= NAVIGATION ================= -->
@@ -39,27 +41,27 @@
         <div class="welcome-card">
             
             <div class="hero-logo-container">
-                <!-- صورة شعار الكلية بحجم كبير وواضح مغطي للواجهة -->
-                <img src="image.jpg" alt="شعار كلية العلوم الرياضية والحاسوب" class="college-logo-large">
+                <!-- صورة شعار الكلية بحجم كبير وواضح مع حماية لظهورها في أي مسار -->
+                <img src="image.jpg" alt="شعار كلية العلوم الرياضية والحاسوب" class="college-logo-large" onerror="this.onerror=null; this.src='image/image.jpg';">
             </div>
             
             <h2>مرحباً بك في بوابة الطالب الأكاديمية! 👋</h2>
-            <p>يسعدنا انضمامك لموقع كلية العلوم الرياضية والحاسوب. هنا يمكنك متابعة جدول المحاضرات، الاطلاع على المواد الدراسية، ومعرفة مواعيد الامتحانات والإعلانات الهامة أولاً بأول.</p>
-            <p style="color: #555; font-size: 13px; font-weight: bold;">نتمنى لك فصلاً دراسياً موفقاً مليئاً بالتفوق والنجاح.</p>
+            <p>يسعدنا انضمامك لموقع كلية العلوم الرياضية والحاسوب (الدفعة 43). هنا يمكنك متابعة جدول المحاضرات، الاطلاع على المواد الدراسية للفصل الدراسي الثامن، ومعرفة مواعيد الامتحانات والإعلانات الهامة أولاً بأول.</p>
+            <p style="color: #b8860b; font-size: 13px; font-weight: bold; margin-top: 8px;">نتمنى لك فصلاً دراسياً موفقاً مليئاً بالتفوق والنجاح.</p>
         </div>
 
-        <!-- قسم الإعلانات المهمة -->
+        <!-- قسم الإعلانات المهمة (متطابقة مع مقرراتك الفعلية) -->
         <section class="announcements-section">
             <h2>📢 أحدث الإعلانات والأخبار الأكاديمية</h2>
             
             <div class="announcement-box">
-                <strong>تحديث جدول الامتحانات:</strong>
-                <p style="margin: 5px 0 0 0;">تم تعديل جدول امتحانات منتصف الترم للفصل الدراسي الحالي، يرجى مراجعة قسم الجداول لمعرفة المواعيد الجديدة.</p>
+                <strong>تحديث جدول الامتحانات والجداول الدراسية:</strong>
+                <p style="margin: 5px 0 0 0;">تم تحديث الجداول الدراسية للفصل الدراسي الثامن (الدفعة 43)، يرجى مراجعة قسم الجداول لمعرفة مواعيد القاعات.</p>
             </div>
 
             <div class="announcement-box" style="background: #e8f4ec; border-right-color: #1e382d;">
                 <strong>رفع محاضرات جديدة:</strong>
-                <p style="margin: 5px 0 0 0;">تم إضافة المحاضرات الأسبوعية لمادة قواعد البيانات وهندسة البرمجيات في قسم المحاضرات.</p>
+                <p style="margin: 5px 0 0 0;">تم إضافة المحاضرات الأسبوعية لمقررات برمجة تطبيقات الإنترنت، تقانة الوسائط المتعددة، وتحليل المتغيرات المتعددة في قسم المحاضرات.</p>
             </div>
         </section>
     </main>
@@ -68,6 +70,7 @@
     <footer>
         <p>Student Portal & بوابة الطالب - كلية العلوم الرياضية والحاسوب © 2026</p>
     </footer>
+
 <script src="script.js"></script>
 </body>
 
