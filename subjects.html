@@ -17,7 +17,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
         .subjects-table th, .subjects-table td {
-            padding: 0; /* إلغاء الحشو وجعله كاملاً على الرابط لسهولة اللمس */
+            padding: 0;
             border-bottom: 1px solid #e8e3d5;
         }
         .subjects-table th {
@@ -28,7 +28,6 @@
             text-align: right;
         }
         
-        /* تصميم الرابط داخل الخلية ليملأ المساحة ويصبح تفاعلياً 100% */
         .subject-link {
             color: #1e382d;
             font-weight: 600;
@@ -37,21 +36,19 @@
             padding: 14px 16px;
             font-size: 14.5px;
             transition: all 0.3s ease;
-            position: relative;
         }
 
-        /* تأثير المرور (Hover) - تحريك وتغيير اللون لإعطاء إيحاء تفاعلي */
+        /* التأثير والتفاعل عند التمرير والضغط */
         .subject-link:hover {
             background-color: #f0fdf4;
             color: #059669;
-            padding-right: 22px; /* حركة خفيفة لليمين عند المرور */
+            padding-right: 22px;
             border-right: 4px solid #10b981;
         }
 
-        /* تأثير الضغط (Active/Click) */
         .subject-link:active {
-            background-color: #d1fae5;
-            color: #047857;
+            background-color: #b8860b;
+            color: #ffffff;
         }
 
         .spec-title {
@@ -86,17 +83,16 @@
     <main>
         <section id="subjects">
             <h2>📖 المقررات والمواد الدراسية (الفصل الدراسي الثامن)</h2>
-            <p>قائمة المواد الدراسية المقررة لطلاب الدفعة 43 (اضغط على أي مادة لتشعر بالتفاعل وتنتقل مباشرة لجدول محاضراتها):</p>
+            <p>اضغطي على أي مادة للانتقال المباشر لجدولها وتظليلها في صفحة المحاضرات:</p>
 
             <table class="subjects-table">
                 <thead>
                     <tr>
                         <th style="width: 30%;">التخصص الأكاديمي</th>
-                        <th>اسم المقرر / المادة الدراسية</th>
+                        <th>اسم المقرر / المادة الدراسية (اضغطي للتنسيق والانتقال)</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- علوم الحاسوب -->
                     <tr>
                         <td rowspan="6" class="spec-title">💻 علوم الحاسوب<br>(Computer Science)</td>
                         <td><a href="lectures.html#web-sec" class="subject-link">🌐 برمجة تطبيقات الإنترنت (43)</a></td>
@@ -107,7 +103,6 @@
                     <tr><td><a href="lectures.html#projects-sec" class="subject-link">📊 إدارة مشروعات البرمجيات (43)</a></td></tr>
                     <tr><td><a href="lectures.html#algorithms-sec" class="subject-link">🧮 تصميم وتحليل الخوارزميات (43)</a></td></tr>
 
-                    <!-- الإحصاء -->
                     <tr>
                         <td rowspan="3" class="spec-title">📊 الإحصاء<br>(Statistics)</td>
                         <td><a href="lectures.html#stats1-sec" class="subject-link">📈 النماذج الخطية العامة (43)</a></td>
@@ -115,7 +110,6 @@
                     <tr><td><a href="lectures.html#stats2-sec" class="subject-link">📉 إحصاءات بيز (43)</a></td></tr>
                     <tr><td><a href="lectures.html#stats3-sec" class="subject-link">📋 تحليل البيانات التصنيفية (43)</a></td></tr>
 
-                    <!-- الرياضيات -->
                     <tr>
                         <td rowspan="4" class="spec-title">📐 الرياضيات<br>(Mathematics)</td>
                         <td><a href="lectures.html#math1-sec" class="subject-link">📉 تحليل المتغيرات المتعددة (43)</a></td>
