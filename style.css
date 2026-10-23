@@ -232,3 +232,21 @@ body.light-mode footer {
 }
     
 }
+/* تنسيق زر تغيير اللغة */
+.lang-toggle-btn {
+    background: rgba(0, 242, 254, 0.1);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    color: #00f2fe;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    position: absolute;
+    top: 15px;
+    left: 70px; /* بجانب زر تسجيل الخروج ليكون مرتباً */
+    font-weight: bold;
+}
+.lang-toggle-btn:hover {
+    background: rgba(0, 242, 254, 0.2);
+}
+
