@@ -1,128 +1,96 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal - تسجيل الدخول | Login</title>
+    <title>جامعتي | تسجيل الدخول</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f7f4ed;
-            margin: 0;
-        }
-
-        .login-card {
-            background: white;
-            padding: 35px 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-            border-top: 6px solid #1e382d;
-            border-bottom: 6px solid #b8860b;
-        }
-
-        .login-logo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #b8860b;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            margin-bottom: 15px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: right;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #1e382d;
-            font-size: 14px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #dcd6c8;
-            border-radius: 6px;
-            box-sizing: border-box;
-            font-size: 14px;
-            background-color: #faf8f5;
-        }
-
-        .form-group input:focus {
-            border-color: #1e382d;
-            outline: none;
-            background-color: #fff;
-        }
-
-        .login-btn {
-            background-color: #1e382d;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            width: 100%;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .login-btn:hover {
-            background-color: #2c4a3e;
-        }
-    </style>
 </head>
+<body class="login-body">
 
-<body>
+    <main class="login-card">
+        <!-- شريط النافذة البرمجية -->
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn-dot close"></span>
+                <span class="btn-dot minimize"></span>
+                <span class="btn-dot maximize"></span>
+            </div>
+            <div class="terminal-title">student_portal.cs</div>
+        </div>
 
-    <div class="login-card">
-        <!-- شعار الكلية الواضح -->
-        <img src="image.jpg" alt="شعار كلية العلوم الرياضية والحاسوب" class="login-logo">
-        
-        <h2 style="color: #1e382d; margin-top: 5px; font-size: 22px;">بوابة الطالب</h2>
-        <p style="color: #666; font-size: 13px; margin-bottom: 25px;">تسجيل الدخول للدفعة 43 - جامعة الجزيرة</p>
-
-        <!-- نموذج تسجيل الدخول -->
-        <form action="check_login.php" method="POST" onsubmit="return validateForm()">
-            <div class="form-group">
-                <label for="reg_number">رقم التسجيل الجامعي:</label>
-                <input type="text" id="reg_number" name="reg_number" placeholder="مثال: 2026-43-01" required>
+        <div class="login-content">
+            <div class="login-header-section">
+                <img src="image/image.jpg" alt="شعار الكلية" class="college-logo-small">
+                <div class="cs-badge">&lt;/&gt; Batch 43 Portal</div>
+                <h1>بوابة علوم الحاسوب</h1>
+                <p>تسجيل الدخول - جامعة الجزيرة</p>
             </div>
 
-            <div class="form-group">
-                <label for="password">كلمة المرور:</label>
-                <input type="password" id="password" name="password" placeholder="••••••••" required>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="studentId">رقم التسجيل / الرقم الجامعي</label>
+                    <div class="input-box-wrapper">
+                        <span class="field-icon">🆔</span>
+                        <input type="text" id="studentId" placeholder="مثال: 43..." required autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">كلمة المرور (Password)</label>
+                    <div class="input-box-wrapper">
+                        <span class="field-icon">🔒</span>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                        <button type="button" id="togglePassword" class="eye-toggle-btn" title="إظهار/إخفاء كلمة المرور">👁️</button>
+                    </div>
+                </div>
+
+                <div id="terminalConsole" class="terminal-console">
+                    <div class="console-line"><span class="prompt">&gt;</span> Initializing auth sequence...</div>
+                </div>
+
+                <button type="submit" id="submitBtn" class="login-action-btn">
+                    <span>تشغيل الدخول [Execute]</span>
+                    <span>⚡</span>
+                </button>
+
+                <p id="message" role="status"></p>
+            </form>
+
+            <div class="cs-tags-wrapper">
+                <span>#AI_Lab</span>
+                <span>#Web_Dev</span>
+                <span>#Algorithms</span>
+                <span>#CyberSec</span>
             </div>
 
-            <button type="submit" name="login_btn" class="login-btn">تسجيل الدخول</button>
-        </form>
-    </div>
+            <p class="demo-note-text">
+                <code>// نسخة تجريبية — تصميم طالبة علوم حاسوب 💻</code>
+            </p>
+        </div>
+    </main>
 
-    <!-- كود JavaScript للتحقق من الحقول -->
     <script>
-        function validateForm() {
-            var regNumber = document.getElementById('reg_number').value;
-            var password = document.getElementById('password').value;
-            if (regNumber.trim() === "" || password.trim() === "") {
-                alert("الرجاء إدخال رقم التسجيل وكلمة المرور!");
-                return false;
-            }
-            return true;
-        }
+        // إظهار/إخفاء كلمة المرور
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const pwd = document.getElementById('password');
+            pwd.type = (pwd.type === 'password') ? 'text' : 'password';
+        });
+
+        // الربط المباشر بصفحة index.html عند الضغط على تسجيل الدخول
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const consoleDiv = document.getElementById('terminalConsole');
+            consoleDiv.style.display = 'block';
+            const msg = document.getElementById('message');
+            msg.textContent = "جاري التحقق والتوجيه للبوابة...";
+            msg.className = "success";
+            
+            setTimeout(() => {
+                window.location.href = "index.html"; // التوجيه الفوري للصفحة الرئيسية
+            }, 800);
+        });
     </script>
-<script src="script.js"></script>
 </body>
 </html>
