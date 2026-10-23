@@ -4,21 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal - المحاضرات حسب التخصصات | Lectures</title>
-    <!-- ربط ملف التنسيقات الخارجي -->
+    <title>Student Portal - المحاضرات والمقررات | Lectures</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .lecture-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .lecture-table th, .lecture-table td {
+            padding: 12px 15px;
+            text-align: right;
+            border-bottom: 1px solid #e8e3d5;
+            font-size: 14px;
+        }
+        .lecture-table th {
+            background-color: #1e382d;
+            color: white;
+        }
+        .subject-main-title {
+            background-color: #f4f0e6;
+            color: #1e382d;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center !important;
+            padding: 15px !important;
+            border-bottom: 3px solid #b8860b !important;
+        }
+        .pdf-btn {
+            background: #10b981;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+        .pdf-btn:hover {
+            background: #059669;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
     <header>
         <a href="login.html" class="logout-btn">تسجيل الخروج | Logout</a>
         <h1>Student Portal | بوابة الطالب</h1>
-        <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (المحاضرات والمواد الدراسية للدفعة 43)</p>
+        <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (جداول المحاضرات للدفعة 43)</p>
     </header>
 
-    <!-- ================= NAVIGATION ================= -->
     <nav>
         <ul>
             <li><a href="index.html">الرئيسية | Home</a></li>
@@ -29,47 +73,120 @@
         </ul>
     </nav>
 
-    <!-- ================= MAIN CONTENT ================= -->
     <main>
         <section id="lectures">
-            <h2>📚 المحاضرات الدراسية حسب التخصصات (الدفعة 43)</h2>
-            <p>
-                اختر التخصص للوصول إلى المحاضرات والمواد الدراسية الخاصة بالفصل الدراسي الثامن.
-            </p>
+            <h2>📚 جدول المحاضرات وقوائم الملفات (الفصل الدراسي الثامن)</h2>
+            <p>اختر أي مادة لعرض قائمة محاضراتها وتحميل الملفات مباشرة:</p>
 
-            <!-- تخصص علوم الحاسوب -->
-            <article style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-right: 5px solid #1e382d;">
-                <h3>💻 علوم الحاسوب (Computer Science)</h3>
-                <ul>
-                    <li id="web"><a href="#">برمجة تطبيقات الإنترنت (43) - أ. محمد عبد الرحمن (عرض PDF 📄)</a></li>
-                    <li id="theory"><a href="#">نظرية الحوسبة (43) - أ. حسين (عرض PDF 📄)</a></li>
-                    <li id="multimedia"><a href="#">تقانة الوسائط المتعددة (43) - د. هديل (عرض PDF 📄)</a></li>
-                    <li id="networks"><a href="#">إدارة وأمن شبكات الحاسوب (43) - د. سلمى (عرض PDF 📄)</a></li>
-                    <li id="projects"><a href="#">إدارة مشروعات البرمجيات (43) - د. رقية (عرض PDF 📄)</a></li>
-                    <li id="algorithms"><a href="#">تصميم وتحليل الخوارزميات (43) - أ. هدى (عرض PDF 📄)</a></li>
-                </ul>
-            </article>
+            <!-- 1. برمجة تطبيقات الإنترنت -->
+            <table id="web-sec" class="lecture-table">
+                <tr><th colspan="3" class="subject-main-title">🌐 برمجة تطبيقات الإنترنت (43) - أ. محمد عبد الرحمن</th></tr>
+                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء</th></tr>
+                <tr><td>المقدمة ومراجعة HTML/CSS وتجهيز البيئة</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>أساسيات جافاسكريبت المتقدمة DOM</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>تطبيقات العمل الجماعي والمشروع النهائي</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+            </table>
 
-            <!-- تخصص الإحصاء -->
-            <article style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-right: 5px solid #b8860b;">
-                <h3>📊 الإحصاء (Statistics)</h3>
-                <ul>
-                    <li id="stats1"><a href="#">النماذج الخطية العامة (43) - أ. سماح (عرض PDF 📄)</a></li>
-                    <li id="stats2"><a href="#">إحصاءات بيز (43) - د. سحر (عرض PDF 📄)</a></li>
-                    <li id="stats3"><a href="#">تحليل البيانات التصنيفية (43) - أ. سمية (عرض PDF 📄)</a></li>
-                </ul>
-            </article>
+            <!-- 2. نظرية الحوسبة -->
+            <table id="theory-sec" class="lecture-table">
+                <tr><th colspan="3" class="subject-main-title">⚙️ نظرية الحوسبة (43) - أ. حسين</th></tr>
+                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء</th></tr>
+                <tr><td>مقدمة في الآلات المنتظمة والمجموعات</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>الآلات ذات الحالة المنتهية (DFA / NFA)</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>اللغات خالية السياق (Context-Free Grammars)</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+            </table>
 
-            <!-- تخصص الرياضيات -->
-            <article style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-right: 5px solid #2c4a3e;">
-                <h3>📐 الرياضيات (Mathematics)</h3>
-                <ul>
-                    <li id="math1"><a href="#">تحليل المتغيرات المتعددة (43) - د. إسراء (عرض PDF 📄)</a></li>
-                    <li id="math2"><a href="#">المعادلات التفاضلية الجزئية (43) - د. وحيد (عرض PDF 📄)</a></li>
-                    <li id="math3"><a href="#">التحليل الدالي (43) - د. جمال الخير الأبوي (عرض PDF 📄)</a></li>
-                    <li id="math4"><a href="#">الأمثلية (43) - د. نفيسة (عرض PDF 📄)</a></li>
-                </ul>
-            </article>
+            <!-- 3. تقانة الوسائط المتعددة -->
+            <table id="multimedia-sec" class="lecture-table">
+                <tr><th colspan="3" class="subject-main-title">🎬 تقانة الوسائط المتعددة (43) - د. هديل</th></tr>
+                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء</th></tr>
+                <tr><td>مفاهيم الوسائط المتعددة وعناصرها</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>ضغط الصور والتعامل مع الألوان</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>تقنيات الصوت والفيديو الرقمي</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+            </table>
+
+            <!-- 4. إدارة وأمن شبكات الحاسوب -->
+            <table id="networks-sec" class="lecture-table">
+                <tr><th colspan="3" class="subject-main-title">🔒 إدارة وأمن شبكات الحاسوب (43) - د. سلمى</th></tr>
+                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء</th></tr>
+                <tr><td>مراجعة طبقات الشبكات وأمنها (OSI / TCP-IP)</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>أنظمة جدار الحماية (Firewalls) وإعداداتها</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>بروتوكولات التشفير وأمن المعلومات</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+            </table>
+
+            <!-- 5. إدارة مشروعات البرمجيات -->
+            <table id="projects-sec" class="lecture-table">
+                <tr><th colspan="3" class="subject-main-title">📊 إدارة مشروعات البرمجيات (43) - د. رقية</th></tr>
+                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء</th></tr>
+                <tr><td>مفاهيم إدارة المشاريع ودورة حياة البرمجيات</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>تقدير التكلفة والزمن (Agile & Scrum)</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>إدارة المخاطر في مشاريع البرمجيات</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+            </table>
+
+            <!-- 6. تصميم وتحليل الخوارزميات -->
+            <table id="algorithms-sec" class="lecture-table">
+                <tr><th colspan="3" class="subject-main-title">🧮 تصميم وتحليل الخوارزميات (43) - أ. هدى</th></tr>
+                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء</th></tr>
+                <tr><td>مراجعة كفاءة الخوارزميات وتصنيف Big-O</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>خوارزميات الترتيب (Insertion & Merge Sort)</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>خوارزميات التعيين (Hungarian Algorithm)</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+            </table>
+
+            <!-- 7. النماذج الخطية العامة (إحصاء) -->
+            <table id="stats1-sec" class="lecture-table">
+                <tr><th colspan="3" class="subject-main-title">📈 النماذج الخطية العامة (43) - أ. سماح</th></tr>
+                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء</th></tr>
+                <tr><td>مقدمة في الانحدار الخطي المتعدد</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>تحليل التباين (ANOVA)</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+            </table>
+
+            <!-- 8. إحصاءات بيز -->
+            <table id="stats2-sec" class="lecture-table">
+                <tr><th colspan="3" class="subject-main-title">📉 إحصاءات بيز (43) - د. سحر</th></tr>
+                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء</th></tr>
+                <tr><td>مبدأ الاحتمال الشرطي ونظرية بيز</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>التوزيعات القبلية والبعدية</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+            </table>
+
+            <!-- 9. تحليل البيانات التصنيفية -->
+            <table id="stats3-sec" class="lecture-table">
+                <tr><th colspan="3" class="subject-main-title">📋 تحليل البيانات التصنيفية (43) - أ. سمية</th></tr>
+                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء</th></tr>
+                <tr><td>جداول التوافق واختبار كاي تربيع</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>نماذج الانحدار اللوجستي</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+            </table>
+
+            <!-- 10. تحليل المتغيرات المتعددة -->
+            <table id="math1-sec" class="lecture-table">
+                <tr><th colspan="3" class="subject-main-title">📉 تحليل المتغيرات المتعددة (43) - د. إسراء</th></tr>
+                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء</th></tr>
+                <tr><td>المتجهات والمصفوفات العشوائية</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>توزيع الطبيعي متعدد المتغيرات</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+            </table>
+
+            <!-- 11. المعادلات التفاضلية الجزئية -->
+            <table id="math2-sec" class="lecture-table">
+                <tr><th colspan="3" class="subject-main-title">📐 المعادلات التفاضلية الجزئية (43) - د. وحيد</th></tr>
+                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء</th></tr>
+                <tr><td>مقدمة وتصنيف المعادلات التفاضلية</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>معادلة الحرارة وموجة الحركة</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+            </table>
+
+            <!-- 12. التحليل الدالي -->
+            <table id="math3-sec" class="lecture-table">
+                <tr><th colspan="3" class="subject-main-title">📊 التحليل الدالي (43) - د. جمال الخير الأبوي</th></tr>
+                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء</th></tr>
+                <tr><td>الفضاءات المترية وفضاءات باص</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>المؤثرات الخطية المحدودة</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+            </table>
+
+            <!-- 13. الأمثلية -->
+            <table id="math4-sec" class="lecture-table">
+                <tr><th colspan="3" class="subject-main-title">⚡ الأمثلية (43) - د. نفيسة</th></tr>
+                <tr><th>موضوع المحاضرة / الأسبوع</th><th>نوع الملف</th><th>الإجراء</th></tr>
+                <tr><td>مقدمة في البرمجة الخطية</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+                <tr><td>طريقة السمبلكس (Simplex Method)</td><td>ملف PDF</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td></tr>
+            </table>
 
         </section>
     </main>
