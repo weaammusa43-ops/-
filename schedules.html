@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portal - جدول المحاضرات والامتحانات | Schedules</title>
-    <!-- ربط ملف التنسيقات الخارجي الموحد -->
-<link rel="stylesheet" href="css/style.css">
+    <!-- ربط ملف التنسيقات الخارجي الموحد داخل مجلد css -->
+    <link rel="stylesheet" href="css/style.css">
 
     <style>
         /* تنسيق الجداول باحترافية وحواف دائرية وتجاوب مع جميع الشاشات */
@@ -59,6 +59,43 @@
             margin-bottom: 25px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
+
+        /* شريط التنقل العلوي المتمركز في المنتصف للأزرار التفاعلية */
+        .portal-nav-bar {
+            background-color: #2c4a3e;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .portal-nav-bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .portal-nav-bar a:hover {
+            background-color: #b8860b;
+            border-color: #b8860b;
+            transform: translateY(-2px);
+        }
+        .logout-nav-btn {
+            background: rgba(239, 68, 68, 0.3) !important;
+            border-color: rgba(239, 68, 68, 0.6) !important;
+        }
+        .logout-nav-btn:hover {
+            background: #ef4444 !important;
+            border-color: #ef4444 !important;
+        }
     </style>
 </head>
 
@@ -70,12 +107,11 @@
         <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (جداول الدفعة 43 - الفصل الدراسي الثامن)</p>
     </header>
 
-    <!-- ================= NAVIGATION (العودة للرئيسية فقط) ================= -->
-    <nav>
-        <ul>
-            <li><a href="index.html">🏠 العودة إلى الرئيسية | Home</a></li>
-        </ul>
-    </nav>
+    <!-- شريط الأزرار العلوي التفاعلي (الرئيسية وتسجيل الخروج في المنتصف) -->
+    <div class="portal-nav-bar">
+        <a href="index.html">🏠 الرئيسية | Home</a>
+        <a href="login.html" class="logout-nav-btn">🚪 تسجيل الخروج | Logout</a>
+    </div>
 
     <!-- ================= MAIN CONTENT ================= -->
     <main>
@@ -100,8 +136,8 @@
                         <tr>
                             <td><strong>الأحد</strong></td>
                             <td>B2-117</td>
-                            <td>تحليل المتغيرات المتعددة<br><small>د. إسراء</small><br><span class="badge-math">رياضيات</span>[span_1](start_span)[span_1](end_span)</td>
-                            <td>برمجة تطبيقات الإنترنت<br><small>أ. محمد عبد الرحمن</small><br><span class="badge-common">مقرر مشترك</span>[span_2](start_span)[span_2](end_span)</td>
+                            <td>تحليل المتغيرات المتعددة<br><small>د. إسراء</small><br><span class="badge-math">رياضيات</span></td>
+                            <td>برمجة تطبيقات الإنترنت<br><small>أ. محمد عبد الرحمن</small><br><span class="badge-common">مقرر مشترك</span></td>
                             <td>-</td>
                         </tr>
 
@@ -111,26 +147,26 @@
                             <td>B2-116</td>
                             <td>-</td>
                             <td>-</td>
-                            <td>نظرية الحوسبة<br><small>أ. حسين</small><br><span class="badge-cs">علوم حاسوب</span>[span_3](start_span)[span_3](end_span)</td>
+                            <td>نظرية الحوسبة<br><small>أ. حسين</small><br><span class="badge-cs">علوم حاسوب</span></td>
                         </tr>
                         <tr>
                             <td><strong>الثلاثاء</strong></td>
                             <td>B2-117</td>
-                            <td>تقانة الوسائط المتعددة<br><small>د. هديل</small><br><span class="badge-common">مقرر مشترك</span>[span_4](start_span)[span_4](end_span)</td>
+                            <td>تقانة الوسائط المتعددة<br><small>د. هديل</small><br><span class="badge-common">مقرر مشترك</span></td>
                             <td>-</td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td><strong>الثلاثاء</strong></td>
                             <td>B1-103 / B1-104</td>
-                            <td>إدارة وأمن شبكات الحاسوب<br><small>د. سلمى</small><br><span class="badge-cs">علوم حاسوب</span>[span_5](start_span)[span_5](end_span)</td>
-                            <td>النماذج الخطية العامة<br><small>أ. سماح</small><br><span class="badge-stat">إحصاء</span>[span_6](start_span)[span_6](end_span)</td>
+                            <td>إدارة وأمن شبكات الحاسوب<br><small>د. سلمى</small><br><span class="badge-cs">علوم حاسوب</span></td>
+                            <td>النماذج الخطية العامة<br><small>أ. سماح</small><br><span class="badge-stat">إحصاء</span></td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td><strong>الثلاثاء (تابع)</strong></td>
                             <td>B1-104</td>
-                            <td>المعادلات التفاضلية الجزئية<br><small>د. وحيد</small><br><span class="badge-math">رياضيات</span>[span_7](start_span)[span_7](end_span)</td>
+                            <td>المعادلات التفاضلية الجزئية<br><small>د. وحيد</small><br><span class="badge-math">رياضيات</span></td>
                             <td>-</td>
                             <td>-</td>
                         </tr>
@@ -140,21 +176,21 @@
                             <td><strong>الأربعاء</strong></td>
                             <td>B1-103</td>
                             <td>-</td>
-                            <td>إدارة مشروعات البرمجيات<br><small>د. رقية</small><br><span class="badge-common">مقرر مشترك</span>[span_8](start_span)[span_8](end_span)</td>
+                            <td>إدارة مشروعات البرمجيات<br><small>د. رقية</small><br><span class="badge-common">مقرر مشترك</span></td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td><strong>الأربعاء (تابع)</strong></td>
                             <td>B2-117</td>
                             <td>-</td>
-                            <td>تصميم وتحليل الخوارزميات<br><small>أ. هدى</small><br><span class="badge-cs">علوم حاسوب</span>[span_9](start_span)[span_9](end_span)</td>
+                            <td>تصميم وتحليل الخوارزميات<br><small>أ. هدى</small><br><span class="badge-cs">علوم حاسوب</span></td>
                             <td>-</td>
                         </tr>
                         <tr>
                             <td><strong>الأربعاء (تابع)</strong></td>
                             <td>B1-104</td>
                             <td>-</td>
-                            <td>التحليل الدالي<br><small>د. جمال الخير الأبوي</small><br><span class="badge-math">رياضيات</span>[span_10](start_span)[span_10](end_span)</td>
+                            <td>التحليل الدالي<br><small>د. جمال الخير الأبوي</small><br><span class="badge-math">رياضيات</span></td>
                             <td>-</td>
                         </tr>
 
@@ -162,7 +198,7 @@
                         <tr>
                             <td><strong>الخميس</strong></td>
                             <td>B2-117</td>
-                            <td>إحصاءات بيز<br><small>د. سحر</small><br><span class="badge-stat">إحصاء</span>[span_11](start_span)[span_11](end_span)</td>
+                            <td>إحصاءات بيز<br><small>د. سحر</small><br><span class="badge-stat">إحصاء</span></td>
                             <td>-</td>
                             <td>-</td>
                         </tr>
@@ -170,7 +206,7 @@
                             <td><strong>الخميس (تابع)</strong></td>
                             <td>B1-103</td>
                             <td>-</td>
-                            <td>تحليل البيانات التصنيفية<br><small>أ. سمية</small><br><span class="badge-stat">إحصاء</span>[span_12](start_span)[span_12](end_span)</td>
+                            <td>تحليل البيانات التصنيفية<br><small>أ. سمية</small><br><span class="badge-stat">إحصاء</span></td>
                             <td>-</td>
                         </tr>
                         <tr>
@@ -178,7 +214,7 @@
                             <td>B1-104</td>
                             <td>-</td>
                             <td>-</td>
-                            <td>الأمثلية<br><small>د. نفيسة</small><br><span class="badge-math">رياضيات</span>[span_13](start_span)[span_13](end_span)</td>
+                            <td>الأمثلية<br><small>د. نفيسة</small><br><span class="badge-math">رياضيات</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -222,7 +258,7 @@
         <p>Student Portal & بوابة الطالب - جامعة الجزيرة © 2026</p>
     </footer>
 
-<script src="script.js"></script>
+    <!-- ربط ملف الجافاسكريبت الخارجي -->
+    <script src="js/script.js"></script>
 </body>
-    </html>
-    
+</html>
