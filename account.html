@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - إعدادات الحساب والدعم | Account & Help</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .account-container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-right: 6px solid #1e382d;
+        }
+
+        .account-header {
+            text-align: center;
+            border-bottom: 2px solid #e8e3d5;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .account-header h2 {
+            color: #1e382d;
+            margin: 0 0 8px 0;
+            font-size: 22px;
+        }
+
+        .account-header p {
+            color: #666;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .menu-section {
+            margin-bottom: 25px;
+        }
+
+        .menu-section h3 {
+            color: #b8860b;
+            font-size: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .menu-box {
+            background: #fdfbf7;
+            border: 1px solid #e8e3d5;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .action-btn {
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .btn-help {
+            background: #0369a1;
+            color: white;
+        }
+        .btn-help:hover { background: #0284c7; }
+
+        .btn-contact {
+            background: #10b981;
+            color: white;
+        }
+        .btn-contact:hover { background: #059669; }
+
+        .btn-logout {
+            background: #ef4444;
+            color: white;
+            grid-column: span 2; /* لتكون في سطر منفرد وعريض */
+        }
+        .btn-logout:hover { background: #dc2626; }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Portal | إعدادات الحساب والمساعدة</h1>
+        <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (الدفعة 43)</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 العودة إلى الرئيسية | Home</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="account-container">
+            
+            <div class="account-header">
+                <h2>⚙️ مركز حساب الطالب والدعم</h2>
+                <p>إدارة حسابك الأكاديمي، التواصل مع الدعم، والحصول على المساعدة الفورية</p>
+            </div>
+
+            <!-- قسم المساعدة والدليل السريع -->
+            <div class="menu-section">
+                <h3>❓ زر المساعدة والدليل السريع</h3>
+                <div class="menu-box">
+                    <strong>كيف تستخدم البوابة؟</strong><br>
+                    • انتقل إلى صفحة <strong>المحاضرات</strong> لاستعراض مواد الفصل الثامن ورفع/حذف ملفات PDF.<br>
+                    • استخدم صفحة <strong>الامتحانات</strong> للاطلاع على الأرشيف والأسئلة السابقة.<br>
+                    • يمكنك العودة للرئيسية في أي وقت عبر شريط التنقل أو الأزرار السريعة.
+                </div>
+            </div>
+
+            <!-- قسم تواصل معنا -->
+            <div class="menu-section">
+                <h3>📞 معلومات تواصل معنا</h3>
+                <div class="menu-box">
+                    <strong>الدعم الفني للدفعة 43:</strong><br>
+                    📧 البريد الإلكتروني: cs.math@uofg.edu.sd<br>
+                    🏛️ المقر: مجمع العلوم الرياضية والحاسوب - جامعة الجزيرة
+                </div>
+            </div>
+
+            <!-- أزرار الإجراءات (تواصل، مساعدة، خروج) -->
+            <div class="actions-grid">
+                <a href="#help" onclick="alert('للمساعدة: تصفح المواد من القائمة الرئيسية، أو تواصل معنا عبر البريد الموضح أعلاه.'); return false;" class="action-btn btn-help">❓ دليل الاستخدام</a>
+                <a href="#contact" onclick="alert('البريد الإلكتروني للتمواصل: cs.math@uofg.edu.sd'); return false;" class="action-btn btn-contact">📞 الدعم الفوري</a>
+                <a href="login.html" onclick="return confirm('هل أنت متأكد من رغبتك في تسجيل الخروج؟');" class="action-btn btn-logout">🚪 تسجيل الخروج النهائي</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Student Portal & بوابة الطالب - كلية العلوم الرياضية والحاسوب © 2026</p>
+    </footer>
+
+</body>
+</html>
