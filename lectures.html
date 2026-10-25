@@ -17,19 +17,15 @@
             scroll-margin-top: 25px;
             transition: all 0.4s ease;
         }
-
         .lecture-section:target {
             border-right: 8px solid #b8860b !important;
             box-shadow: 0 0 20px rgba(184, 134, 11, 0.4) !important;
         }
-
         .lecture-section:target summary {
             background-color: #fef3c7 !important;
             color: #b8860b !important;
         }
-
         details { width: 100%; }
-
         summary {
             background-color: #f9f8f5;
             padding: 16px 20px;
@@ -41,16 +37,10 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #e8e3d5;
-            transition: background 0.3s;
             outline: none;
             user-select: none;
         }
-
-        .lecture-content {
-            padding: 20px;
-            background: inherit;
-        }
-
+        .lecture-content { padding: 20px; }
         .admin-controls-box {
             background: rgba(16, 185, 129, 0.08);
             border: 2px dashed #10b981;
@@ -58,20 +48,12 @@
             border-radius: 8px;
             margin-bottom: 20px;
         }
-
-        .admin-controls-box h4 {
-            color: #065f46;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
         .input-group {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             align-items: center;
         }
-
         .input-group input[type="text"] {
             padding: 9px 12px;
             border: 1px solid #cbd5e1;
@@ -79,18 +61,14 @@
             flex: 1;
             min-width: 180px;
             font-size: 13px;
-            outline: none;
         }
-
         .input-group input[type="file"] {
             font-size: 12px;
             background: #fff;
             padding: 6px;
             border: 1px solid #cbd5e1;
             border-radius: 6px;
-            color: #333;
         }
-
         .btn-add {
             background: #1e382d;
             color: white;
@@ -98,97 +76,36 @@
             padding: 9px 16px;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 13px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn-add:hover { background: #2c4a3e; }
-
-        .table-responsive {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin-top: 10px;
-            border-radius: 8px;
-        }
-
-        .lectures-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 450px;
-        }
-
-        .lectures-table th, .lectures-table td {
-            padding: 12px 15px;
-            text-align: right;
-            border-bottom: 1px solid #f1eeec;
-            font-size: 14px;
-        }
-
-        .lectures-table th {
-            background-color: #1e382d;
-            color: white;
-            font-weight: 600;
-        }
-
-        .pdf-btn {
-            background: #10b981;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: bold;
-            display: inline-block;
-        }
-
-        .delete-btn {
-            background: #ef4444;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 12px;
             font-weight: bold;
         }
-
-        .delete-btn:hover { background: #dc2626; }
-
-        .spec-header-title {
-            color: #1e382d;
-            border-bottom: 2px solid #1e382d;
-            padding-bottom: 8px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
+        .table-responsive { width: 100%; overflow-x: auto; margin-top: 10px; }
+        .lectures-table { width: 100%; border-collapse: collapse; min-width: 450px; }
+        .lectures-table th, .lectures-table td { padding: 12px 15px; text-align: right; border-bottom: 1px solid #f1eeec; font-size: 14px; }
+        .lectures-table th { background-color: #1e382d; color: white; }
+        .pdf-btn { background: #10b981; color: white; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: bold; display: inline-block; }
+        .delete-btn { background: #ef4444; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: bold; }
+        .spec-header-title { border-bottom: 2px solid; padding-bottom: 8px; margin-top: 30px; margin-bottom: 15px; font-size: 18px; }
     </style>
 </head>
 
 <body>
-
-    <!-- ================= HEADER ================= -->
     <header>
         <h1>Student Portal | بوابة المحاضرات الأكاديمية</h1>
         <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (إدارة المحاضرات حسب جدول الدفعة 43)</p>
     </header>
 
-    <!-- ================= NAVIGATION (العودة للرئيسية فقط) ================= -->
     <nav>
         <ul>
             <li><a href="index.html">🏠 العودة إلى الرئيسية | Home</a></li>
         </ul>
     </nav>
 
-    <!-- ================= MAIN CONTENT ================= -->
     <main>
         <section id="lectures">
             <h2>📚 المحاضرات الدراسية ورفع الملفات</h2>
-            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">استعرض محاضرات الفصل الدراسي الثامن مصنفة حسب الجدول الرسمي المعتمد، وقم بررفع أو حذف ملفات الـ PDF:</p>
+            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">استعرض محاضرات الفصل الدراسي الثامن كاملة (11 مادة) مصنفة حسب الجدول الرسمي:</p>
 
-            <!-- 1. المقررات المشتركة -->
+            <!-- 1. المقررات المشتركة (3 مواد) -->
             <h3 class="spec-header-title" style="color: #0369a1; border-color: #0369a1;">🔗 المقررات المشتركة (تخص جميع التخصصات)</h3>
 
             <div id="web-sec" class="lecture-section" style="border-right-color: #0369a1;">
@@ -264,7 +181,7 @@
             </div>
 
 
-            <!-- 2. تخصص علوم الحاسوب -->
+            <!-- 2. علوم الحاسوب (3 مواد) -->
             <h3 class="spec-header-title" style="color: #1e382d; border-color: #1e382d;">💻 تخصص علوم الحاسوب (Computer Science)</h3>
 
             <div id="theory-sec" class="lecture-section" style="border-right-color: #1e382d;">
@@ -340,7 +257,7 @@
             </div>
 
 
-            <!-- 3. تخصص الإحصاء -->
+            <!-- 3. تخصص الإحصاء (3 مواد) -->
             <h3 class="spec-header-title" style="color: #b8860b; border-color: #b8860b;">📊 تخصص الإحصاء (Statistics)</h3>
 
             <div id="stats1-sec" class="lecture-section" style="border-right-color: #b8860b;">
@@ -416,7 +333,7 @@
             </div>
 
 
-            <!-- 4. تخصص الرياضيات -->
+            <!-- 4. تخصص الرياضيات (4 مواد كاملة) -->
             <h3 class="spec-header-title" style="color: #2c4a3e; border-color: #2c4a3e;">📐 تخصص الرياضيات (Mathematics)</h3>
 
             <div id="math1-sec" class="lecture-section" style="border-right-color: #2c4a3e;">
@@ -428,4 +345,26 @@
                             <div class="input-group">
                                 <input type="text" id="title-math1" placeholder="عنوان المحاضرة...">
                                 <input type="file" id="file-math1" accept=".pdf,.doc,.docx,.ppt,.pptx">
-                                <button class="btn-add"
+                                <button class="btn-add" onclick="addLecture('math1')">رفع ورابط</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="lectures-table">
+                                <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-math1">
+                                    <tr><td>مدخل إلى الفضاءات المعيارية</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <div id="math2-sec" class="lecture-section" style="border-right-color: #2c4a3e;">
+                <details>
+                    <summary>📐 المعادلات التفاضلية الجزئية (43) — د. وحيد</summary>
+                    <div class="lecture-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع محاضرة جديدة</h4>
+                            <div class="input-group">
+                              
