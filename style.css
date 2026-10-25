@@ -87,6 +87,29 @@ main {
     padding: 0 15px;
 }
 
+/* ================= تنسيق الصورة (الشعار) بشكل دائري احترافي وحواف بارزة ================= */
+.hero-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.college-logo-large, .login-logo, img[src*="image.jpg"] {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #b8860b;
+    box-shadow: 0 6px 20px rgba(30, 56, 45, 0.35), 0 0 0 4px #1e382d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.college-logo-large:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 25px rgba(184, 134, 11, 0.4), 0 0 0 4px #1e382d;
+}
+
 /* الجداول والبطاقات المتجاوبة لمنع الخروج عن الشاشة */
 table {
     width: 100%;
@@ -96,6 +119,11 @@ table {
     overflow: hidden;
     margin-top: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: right;
 }
 
 /* ================= استعلامات الشاشات الصغيرة (Mobile Responsiveness) ================= */
@@ -121,6 +149,14 @@ table {
 
     header p {
         font-size: 0.8rem;
+    }
+
+    /* تصغير حجم الصورة الدائرية تلقائياً على الموبايل لتناسب الشاشة تماماً */
+    .college-logo-large, .login-logo, img[src*="image.jpg"] {
+        width: 130px;
+        height: 130px;
+        border-width: 4px;
+        box-shadow: 0 4px 15px rgba(30, 56, 45, 0.3), 0 0 0 3px #1e382d;
     }
 
     /* تحويل القائمة العلوية لتكون عمودية أو متراصة بمرونة على الموبايل */
