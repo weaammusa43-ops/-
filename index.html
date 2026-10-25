@@ -6,69 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portal - الرئيسية | Home</title>
     
-    <!-- ربط ملف التنسيقات الخارجي المنظم داخل مجلد css -->
+    <!-- ربط ملف الـ CSS الخارجي -->
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- تنسيقاتك الخاصة كما هي تماماً -->
-    <style>
-        /* تنسيق قسم الإبداع والروابط السريعة البديل */
-        .creative-hub {
-            background: linear-gradient(135deg, #1e382d, #2c4a3e);
-            color: #f7f4ed;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-            margin-top: 25px;
-            text-align: center;
-            border-bottom: 5px solid #b8860b;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .creative-hub:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(30, 56, 45, 0.25);
-        }
-        .creative-hub h3 {
-            color: #d4af37;
-            margin-top: 0;
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-        .quick-links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 12px;
-            margin-top: 20px;
-        }
-        .quick-link-btn {
-            background: rgba(255, 255, 255, 0.1);
-            color: #f7f4ed;
-            padding: 12px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: all 0.3s ease;
-        }
-        .quick-link-btn:hover {
-            background: #b8860b;
-            color: #fff;
-            border-color: #b8860b;
-            transform: scale(1.03);
-        }
-        .quick-link-btn:active {
-            transform: scale(0.97);
-        }
-        /* زر خاص لتسجيل الخروج بلون مميز */
-        .logout-quick-btn {
-            background: rgba(239, 68, 68, 0.2) !important;
-            border-color: rgba(239, 68, 68, 0.5) !important;
-        }
-        .logout-quick-btn:hover {
-            background: #ef4444 !important;
-            border-color: #ef4444 !important;
-        }
-    </style>
 </head>
 
 <body>
@@ -95,7 +34,7 @@
             <p style="color: #555; font-size: 13px; font-weight: bold;">نتمنى لك فصلاً دراسياً موفقاً مليئاً بالتفوق والنجاح.</p>
         </div>
 
-        <!-- محطة الإلهام والوصول السريع الشاملة لجميع الأزرار بدون تكرار -->
+        <!-- محطة الإلهام والوصول السريع -->
         <div class="creative-hub">
             <h3>🌟 محطة الإبداع والوصول السريع</h3>
             <p style="font-size: 14px; opacity: 0.9; line-height: 1.6;">
@@ -110,12 +49,8 @@
                 <a href="exams.html" class="quick-link-btn">📝 الامتحانات</a>
                 <a href="subjects.html" class="quick-link-btn">📖 المواد الدراسية</a>
                 
-                <!-- زر تواصل معنا يوجه لصفحة الحساب وينزل مباشرة لقسم التواصل -->
                 <a href="account.html#contact-section" class="quick-link-btn">📞 تواصل معنا</a>
-                
-                <!-- زر الحساب والمساعدة يوجه لقسم المساعد الذكي -->
                 <a href="account.html#help-section" class="quick-link-btn" style="background: rgba(184, 134, 11, 0.2); border-color: #b8860b;">⚙️ الحساب والمساعدة</a>
-                
                 <a href="login.html" class="quick-link-btn logout-quick-btn">🚪 تسجيل الخروج</a>
             </div>
         </div>
@@ -127,9 +62,8 @@
         <p>Student Portal & بوابة الطالب - كلية العلوم الرياضية والحاسوب © 2026</p>
     </footer>
 
-    <!-- ربط ملف الجافاسكريبت داخل مجلد js -->
+    <!-- ربط ملف الجافاسكريبت الخارجي -->
     <script src="js/script.js"></script>
 </body>
 
-                </html>
-                
+</html>
