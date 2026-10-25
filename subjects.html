@@ -27,7 +27,6 @@
             font-size: 15px;
             text-align: right;
         }
-        
         .subject-link {
             color: #1e382d;
             font-weight: 600;
@@ -37,93 +36,87 @@
             font-size: 14.5px;
             transition: all 0.3s ease;
         }
-
-        /* التأثير والتفاعل عند التمرير والضغط */
         .subject-link:hover {
             background-color: #f0fdf4;
             color: #059669;
             padding-right: 22px;
             border-right: 4px solid #10b981;
         }
-
-        .subject-link:active {
-            background-color: #b8860b;
-            color: #ffffff;
-        }
-
         .spec-title {
             background: #f4f0e6;
             font-weight: bold;
             color: #1e382d;
             text-align: center !important;
-            font-size: 15px;
+            font-size: 14px;
             padding: 15px !important;
         }
     </style>
 </head>
 
 <body>
-
-    <!-- ================= HEADER (مخصص ليدل على صفحة المواد) ================= -->
     <header>
         <h1>Student Portal | بوابة المقررات والمواد الدراسية</h1>
         <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (دليل المواد الدراسية - الدفعة 43)</p>
     </header>
 
-    <!-- ================= NAVIGATION (العودة للرئيسية فقط) ================= -->
     <nav>
         <ul>
             <li><a href="index.html">🏠 العودة إلى الرئيسية | Home</a></li>
         </ul>
     </nav>
 
-    <!-- ================= MAIN CONTENT ================= -->
     <main>
         <section id="subjects">
             <h2>📖 المقررات والمواد الدراسية الحصرية (الفصل الدراسي الثامن)</h2>
-            <p>مرحباً بك في ركن المواد الدراسية. اضغطي على أي مادة للانتقال المباشر لجدولها وتظليلها في صفحة المحاضرات:</p>
+            <p>اضغطي على أي مادة للانتقال المباشر لجدولها وتظليلها في صفحة المحاضرات:</p>
 
             <table class="subjects-table">
                 <thead>
                     <tr>
                         <th style="width: 30%;">التخصص الأكاديمي</th>
-                        <th>اسم المقرر / المادة الدراسية (اضغطي للتنسيق والانتقال)</th>
+                        <th>اسم المقرر / المادة الدراسية</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- علوم الحاسوب -->
+                    <!-- المقررات المشتركة (3 مواد) -->
                     <tr>
-                        <td rowspan="6" class="spec-title">💻 علوم الحاسوب<br>(Computer Science)</td>
-                        <td><a href="lectures.html#web-sec" class="subject-link">🌐 برمجة تطبيقات الإنترنت (43)</a></td>
+                        <td rowspan="3" class="spec-title" style="color: #0369a1;">🔗 مقررات مشتركة<br>(جميع التخصصات)</td>
+                        <td><a href="lectures.html#web-sec" class="subject-link">🌐 برمجة تطبيقات الإنترنت (43) — أ. محمد عبد الرحمن</a></td>
                     </tr>
-                    <tr><td><a href="lectures.html#theory-sec" class="subject-link">⚙️ نظرية الحوسبة (43)</a></td></tr>
-                    <tr><td><a href="lectures.html#multimedia-sec" class="subject-link">🎬 تقانة الوسائط المتعددة (43)</a></td></tr>
-                    <tr><td><a href="lectures.html#networks-sec" class="subject-link">🔒 إدارة وأمن شبكات الحاسوب (43)</a></td></tr>
-                    <tr><td><a href="lectures.html#projects-sec" class="subject-link">📊 إدارة مشروعات البرمجيات (43)</a></td></tr>
-                    <tr><td><a href="lectures.html#algorithms-sec" class="subject-link">🧮 تصميم وتحليل الخوارزميات (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#multimedia-sec" class="subject-link">🎬 تقانة الوسائط المتعددة (43) — د. هديل</a></td></tr>
+                    <tr><td><a href="lectures.html#projects-sec" class="subject-link">📊 إدارة مشروعات البرمجيات (43) — د. رقية</a></td></tr>
 
-                    <!-- الإحصاء -->
+                    <!-- علوم الحاسوب (3 مواد) -->
+                    <tr>
+                        <td rowspan="3" class="spec-title">💻 علوم الحاسوب<br>(Computer Science)</td>
+                        <td><a href="lectures.html#theory-sec" class="subject-link">⚙️ نظرية الحوسبة (43) — أ. حسين</a></td>
+                    </tr>
+                    <tr><td><a href="lectures.html#networks-sec" class="subject-link">🔒 إدارة وأمن شبكات الحاسوب (43) — د. سلمى</a></td></tr>
+                    <tr><td><a href="lectures.html#algorithms-sec" class="subject-link">🧮 تصميم وتحليل الخوارزميات (43) — أ. هدى</a></td></tr>
+
+                    <!-- الإحصاء (3 مواد) -->
                     <tr>
                         <td rowspan="3" class="spec-title">📊 الإحصاء<br>(Statistics)</td>
-                        <td><a href="lectures.html#stats1-sec" class="subject-link">📈 النماذج الخطية العامة (43)</a></td>
+                        <td><a href="lectures.html#stats1-sec" class="subject-link">📈 النماذج الخطية العامة (43) — أ. سماح</a></td>
                     </tr>
-                    <tr><td><a href="lectures.html#stats2-sec" class="subject-link">📉 إحصاءات بيز (43)</a></td></tr>
-                    <tr><td><a href="lectures.html#stats3-sec" class="subject-link">📋 تحليل البيانات التصنيفية (43)</a></td></tr>
+                    <tr><td><a href="lectures.html#stats2-sec" class="subject-link">📉 إحصاءات بيز (43) — د. سحر</a></td></tr>
+                    <tr><td><a href="lectures.html#stats3-sec" class="subject-link">📋 تحليل البيانات التصنيفية (43) — أ. سمية</a></td></tr>
 
-                    <!-- الرياضيات -->
+                    <!-- الرياضيات (4 مواد) -->
                     <tr>
-                        <td rowspan="1" class="spec-title">📐 الرياضيات<br>(Mathematics)</td>
-                        <td><a href="lectures.html#math1-sec" class="subject-link">📐 تحليل المتغيرات المتعددة (43)</a></td>
+                        <td rowspan="4" class="spec-title">📐 الرياضيات<br>(Mathematics)</td>
+                        <td><a href="lectures.html#math1-sec" class="subject-link">📐 تحليل المتغيرات المتعددة (43) — د. إسراء</a></td>
                     </tr>
+                    <tr><td><a href="lectures.html#math2-sec" class="subject-link">📐 المعادلات التفاضلية الجزئية (43) — د. وحيد</a></td></tr>
+                    <tr><td><a href="lectures.html#math3-sec" class="subject-link">📐 التحليل الدالي (43) — د. جمال الخير الأبوي</a></td></tr>
+                    <tr><td><a href="lectures.html#math4-sec" class="subject-link">📐 الأمثلية (43) — د. نفيسة</a></td></tr>
                 </tbody>
             </table>
         </section>
     </main>
 
-    <!-- ================= FOOTER ================= -->
     <footer>
         <p>Student Portal & بوابة الطالب - كلية العلوم الرياضية والحاسوب © 2026</p>
     </footer>
-
 </body>
 </html>
