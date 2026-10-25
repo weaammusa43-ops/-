@@ -194,3 +194,15 @@ section h2 {
     -webkit-overflow-scrolling: touch;
     margin-top: 15px;
       
+// حراسة أمنية ذكية بدون تغيير أي أسماء للملفات:
+// لو المستخدم في الصفحة الرئيسية (index.html) ومش مسجل دخول، حوله فوراً لصفحة تسجيل الدخول (login.html)
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.location.pathname.includes("index.html") || window.location.pathname.endsWith("/")) {
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            if (!window.location.pathname.includes("login.html")) {
+                window.location.href = "login.html";
+            }
+        }
+    }
+});
+    
