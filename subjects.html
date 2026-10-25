@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal - المواد الدراسية | Subjects</title>
+    <title>Student Portal - المواد والمقررات الدراسية | Subjects</title>
     <link rel="stylesheet" href="style.css">
     <style>
         .subjects-table {
@@ -12,7 +12,7 @@
             border-collapse: collapse;
             margin-top: 15px;
             background: #fff;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
@@ -64,26 +64,24 @@
 
 <body>
 
+    <!-- ================= HEADER (مخصص ليدل على صفحة المواد) ================= -->
     <header>
-        <a href="login.html" class="logout-btn">تسجيل الخروج | Logout</a>
-        <h1>Student Portal | بوابة الطالب</h1>
-        <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (المواد الدراسية - الدفعة 43)</p>
+        <h1>Student Portal | بوابة المقررات والمواد الدراسية</h1>
+        <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (دليل المواد الدراسية - الدفعة 43)</p>
     </header>
 
+    <!-- ================= NAVIGATION (العودة للرئيسية فقط) ================= -->
     <nav>
         <ul>
-            <li><a href="index.html">الرئيسية | Home</a></li>
-            <li><a href="lectures.html">المحاضرات | Lectures</a></li>
-            <li><a href="schedules.html">الجداول | Schedules</a></li>
-            <li><a href="exams.html">الامتحانات السابقة | Past Exams</a></li>
-            <li><a href="subjects.html">المواد | Subjects</a></li>
+            <li><a href="index.html">🏠 العودة إلى الرئيسية | Home</a></li>
         </ul>
     </nav>
 
+    <!-- ================= MAIN CONTENT ================= -->
     <main>
         <section id="subjects">
-            <h2>📖 المقررات والمواد الدراسية (الفصل الدراسي الثامن)</h2>
-            <p>اضغطي على أي مادة للانتقال المباشر لجدولها وتظليلها في صفحة المحاضرات:</p>
+            <h2>📖 المقررات والمواد الدراسية الحصرية (الفصل الدراسي الثامن)</h2>
+            <p>مرحباً بك في ركن المواد الدراسية. اضغطي على أي مادة للانتقال المباشر لجدولها وتظليلها في صفحة المحاضرات:</p>
 
             <table class="subjects-table">
                 <thead>
@@ -93,6 +91,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- علوم الحاسوب -->
                     <tr>
                         <td rowspan="6" class="spec-title">💻 علوم الحاسوب<br>(Computer Science)</td>
                         <td><a href="lectures.html#web-sec" class="subject-link">🌐 برمجة تطبيقات الإنترنت (43)</a></td>
@@ -103,6 +102,7 @@
                     <tr><td><a href="lectures.html#projects-sec" class="subject-link">📊 إدارة مشروعات البرمجيات (43)</a></td></tr>
                     <tr><td><a href="lectures.html#algorithms-sec" class="subject-link">🧮 تصميم وتحليل الخوارزميات (43)</a></td></tr>
 
+                    <!-- الإحصاء -->
                     <tr>
                         <td rowspan="3" class="spec-title">📊 الإحصاء<br>(Statistics)</td>
                         <td><a href="lectures.html#stats1-sec" class="subject-link">📈 النماذج الخطية العامة (43)</a></td>
@@ -110,21 +110,20 @@
                     <tr><td><a href="lectures.html#stats2-sec" class="subject-link">📉 إحصاءات بيز (43)</a></td></tr>
                     <tr><td><a href="lectures.html#stats3-sec" class="subject-link">📋 تحليل البيانات التصنيفية (43)</a></td></tr>
 
+                    <!-- الرياضيات -->
                     <tr>
-                        <td rowspan="4" class="spec-title">📐 الرياضيات<br>(Mathematics)</td>
-                        <td><a href="lectures.html#math1-sec" class="subject-link">📉 تحليل المتغيرات المتعددة (43)</a></td>
+                        <td rowspan="1" class="spec-title">📐 الرياضيات<br>(Mathematics)</td>
+                        <td><a href="lectures.html#math1-sec" class="subject-link">📐 تحليل المتغيرات المتعددة (43)</a></td>
                     </tr>
-                    <tr><td><a href="lectures.html#math2-sec" class="subject-link">📐 المعادلات التفاضلية الجزئية (43)</a></td></tr>
-                    <tr><td><a href="lectures.html#math3-sec" class="subject-link">📊 التحليل الدالي (43)</a></td></tr>
-                    <tr><td><a href="lectures.html#math4-sec" class="subject-link">⚡ الأمثلية (43)</a></td></tr>
                 </tbody>
             </table>
         </section>
     </main>
 
+    <!-- ================= FOOTER ================= -->
     <footer>
-        <p>Student Portal & بوابة الطالب - جامعة الجزيرة © 2026</p>
+        <p>Student Portal & بوابة الطالب - كلية العلوم الرياضية والحاسوب © 2026</p>
     </footer>
-<script src="script.js"></script>
+
 </body>
 </html>
