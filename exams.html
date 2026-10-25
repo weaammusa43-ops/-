@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portal - أرشيف الامتحانات السابقة | Past Exams</title>
+    <!-- ربط ملف الـ CSS الشامل داخل مجلد css -->
     <link rel="stylesheet" href="css/style.css">
 
     <style>
@@ -77,6 +78,43 @@
         .pdf-btn { background: #10b981; color: white; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: bold; display: inline-block; }
         .delete-btn { background: #ef4444; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: bold; }
         .spec-header-title { border-bottom: 2px solid; padding-bottom: 8px; margin-top: 30px; margin-bottom: 15px; font-size: 18px; }
+
+        /* شريط التنقل العلوي المتمركز في المنتصف للأزرار التفاعلية */
+        .portal-nav-bar {
+            background-color: #2c4a3e;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .portal-nav-bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .portal-nav-bar a:hover {
+            background-color: #b8860b;
+            border-color: #b8860b;
+            transform: translateY(-2px);
+        }
+        .logout-nav-btn {
+            background: rgba(239, 68, 68, 0.3) !important;
+            border-color: rgba(239, 68, 68, 0.6) !important;
+        }
+        .logout-nav-btn:hover {
+            background: #ef4444 !important;
+            border-color: #ef4444 !important;
+        }
     </style>
 </head>
 
@@ -86,16 +124,16 @@
         <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (بنك الامتحانات الشامل للدفعة 43)</p>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">🏠 العودة إلى الرئيسية | Home</a></li>
-        </ul>
-    </nav>
+    <!-- شريط الأزرار العلوي التفاعلي (الرئيسية وتسجيل الخروج في المنتصف) -->
+    <div class="portal-nav-bar">
+        <a href="index.html">🏠 الرئيسية | Home</a>
+        <a href="login.html" class="logout-nav-btn">🚪 تسجيل الخروج | Logout</a>
+    </div>
 
     <main>
         <section id="past-exams">
             <h2>📝 أرشيف الامتحانات السابقة والأوراق الإرشادية</h2>
-            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">تصفح الامتحانات السابقة لكافة مواد الفصل الثامن (11 مادة كاملة) حسب الجدول الرسمي:</p>
+            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">تصفح الامتحانات السابقة لكافة مواد الفصل الثامن مصنفة حسب الجدول الرسمي المعتمد للدفعة 43[span_0](start_span)[span_0](end_span):</p>
             
             <!-- 1. المقررات المشتركة (3 مواد) -->
             <h3 class="spec-header-title" style="color: #0369a1; border-color: #0369a1;">🔗 المقررات المشتركة (تخص جميع التخصصات)</h3>
@@ -325,7 +363,7 @@
             </div>
 
 
-            <!-- 4. تخصص الرياضيات (4 مواد كاملة) -->
+            <!-- 4. تخصص الرياضيات (4 مواد كاملة ومطابقة للجدول) -->
             <h3 class="spec-header-title" style="color: #2c4a3e; border-color: #2c4a3e;">📐 تخصص الرياضيات (Mathematics)</h3>
 
             <div class="exam-section" style="border-right-color: #2c4a3e;">
@@ -337,28 +375,4 @@
                             <div class="input-group">
                                 <input type="text" id="title-math1" placeholder="عنوان النموذج أو السنة...">
                                 <input type="file" id="file-math1" accept=".pdf,.doc,.docx,.jpg,.png">
-                                <button class="btn-add" onclick="addExam('math1')">رفع الملف</button>
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="exams-table">
-                                <thead><tr><th>عنوان الامتحان / السنة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
-                                <tbody id="tbody-math1">
-                                    <tr><td>امتحان تحليل المتغيرات المتعددة (سابقة)</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </details>
-            </div>
-
-            <div class="exam-section" style="border-right-color: #2c4a3e;">
-                <details>
-                    <summary>📁 امتحان المعادلات التفاضلية الجزئية (43) — د. وحيد</summary>
-                    <div class="exam-content">
-                        <div class="admin-controls-box">
-                            <h4>➕ رفع امتحان أو نموذج جديد</h4>
-                            <div class="input-group">
-                                <input type="text" id="title-math2" placeholder="عنوان النموذج أو السنة...">
-                                <input type="file" id="file-math2" accept=".pdf,.doc,.docx,.jpg,.png">
-                                <button class="btn-add"
+                                <button class="btn-add" onclick="addExam('ma
