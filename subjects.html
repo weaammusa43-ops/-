@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portal - المواد والمقررات الدراسية | Subjects</title>
+    <!-- ربط ملف الـ CSS الشامل داخل مجلد css -->
     <link rel="stylesheet" href="css/style.css">
 
     <style>
@@ -51,6 +52,43 @@
             font-size: 14px;
             padding: 15px !important;
         }
+
+        /* شريط التنقل العلوي المتمركز في المنتصف للأزرار التفاعلية */
+        .portal-nav-bar {
+            background-color: #2c4a3e;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .portal-nav-bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .portal-nav-bar a:hover {
+            background-color: #b8860b;
+            border-color: #b8860b;
+            transform: translateY(-2px);
+        }
+        .logout-nav-btn {
+            background: rgba(239, 68, 68, 0.3) !important;
+            border-color: rgba(239, 68, 68, 0.6) !important;
+        }
+        .logout-nav-btn:hover {
+            background: #ef4444 !important;
+            border-color: #ef4444 !important;
+        }
     </style>
 </head>
 
@@ -60,11 +98,11 @@
         <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (دليل المواد الدراسية - الدفعة 43)</p>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">🏠 العودة إلى الرئيسية | Home</a></li>
-        </ul>
-    </nav>
+    <!-- شريط الأزرار العلوي التفاعلي (الرئيسية وتسجيل الخروج في المنتصف) -->
+    <div class="portal-nav-bar">
+        <a href="index.html">🏠 الرئيسية | Home</a>
+        <a href="login.html" class="logout-nav-btn">🚪 تسجيل الخروج | Logout</a>
+    </div>
 
     <main>
         <section id="subjects">
@@ -119,5 +157,8 @@
     <footer>
         <p>Student Portal & بوابة الطالب - كلية العلوم الرياضية والحاسوب © 2026</p>
     </footer>
+
+    <!-- ربط ملف الجافاسكريبت الخارجي -->
+    <script src="js/script.js"></script>
 </body>
 </html>
