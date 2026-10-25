@@ -7,6 +7,56 @@
     <title>Student Portal - الرئيسية | Home</title>
     <!-- ربط ملف التنسيقات الخارجي -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* تنسيق قسم الإبداع والروابط السريعة البديل */
+        .creative-hub {
+            background: linear-gradient(135deg, #1e382d, #2c4a3e);
+            color: #f7f4ed;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            margin-top: 25px;
+            text-align: center;
+            border-bottom: 5px solid #b8860b;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .creative-hub:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(30, 56, 45, 0.25);
+        }
+        .creative-hub h3 {
+            color: #d4af37;
+            margin-top: 0;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .quick-link-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #f7f4ed;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        .quick-link-btn:hover {
+            background: #b8860b;
+            color: #fff;
+            border-color: #b8860b;
+            transform: scale(1.03);
+        }
+        .quick-link-btn:active {
+            transform: scale(0.97);
+        }
+    </style>
 </head>
 
 <body>
@@ -38,21 +88,22 @@
                 <img src="image.jpg" alt="شعار كلية العلوم الرياضية والحاسوب" class="college-logo-large">
             </div>
             
-            <h2>مرحباً بك في بوابة الطالب الأكاديمية! 👋</h2>
+            <h2>مرحباً بك في بوابة الطالب الأكاديمة📜</h2>
             <p>يسعدنا انضمامك لموقع كلية العلوم الرياضية والحاسوب. هنا يمكنك متابعة جدول المحاضرات، الاطلاع على المواد الدراسية، ومعرفة مواعيد الامتحانات والإعلانات الهامة أولاً بأول.</p>
             <p style="color: #555; font-size: 13px; font-weight: bold;">نتمنى لك فصلاً دراسياً موفقاً مليئاً بالتفوق والنجاح.</p>
         </div>
 
-        <!-- قسم الإعلانات المهمة -->
-        <section class="announcements-section">
-            <h2>📢 أحدث الإعلانات والأخبار الأكاديمية</h2>
+        <!-- البديل المبدع والراقي: محطة الإلهام والوصول السريع -->
+        <div class="creative-hub">
+            <h3>🌟 محطة الإبداع والوصول السريع</h3>
+            <p style="font-size: 14px; opacity: 0.9; line-height: 1.6;">
+                "الإبداع هو أن ترى ما يراه الجميع، ولكن تفكر فيما لا يفكّر فيه أحد." <br>
+                صُممت هذه البوابة خصيصاً لتكون رفيقك الأكاديمي الأمثل طوال مسيرتك في الدفعة 43. اختر وجهتك التالية بكل سهولة:
+            </p>
             
-            <div class="announcement-box">
-                <strong>تحديث جدول الامتحانات:</strong>
-                <p style="margin: 5px 0 0 0;">تم تعديل جدول امتحانات منتصف الترم للفصل الدراسي الحالي، يرجى مراجعة قسم الجداول لمعرفة المواعيد الجديدة.</p>
-            </div>
-
-            <div class="announcement-box" style="background: #e8f4ec; border-right-color: #1e382d;">
-                <strong>رفع محاضرات جديدة:</strong>
-                <p style="margin: 5px 0 0 0;">تم إضافة المحاضرات الأسبوعية لمادة قواعد البيانات
+            <div class="quick-links-grid">
+                <a href="lectures.html" class="quick-link-btn">📚 المحاضرات</a>
+                <a href="schedules.html" class="quick-link-btn">📅 الجداول</a>
+                <a href="exams.html" class="quick-link-btn">📝 الامتحانات</a>
+                <a href="
                     
