@@ -1,1 +1,183 @@
 
+/* ================= إعدادات التجاوب الشاملة لكل الشاشات ================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f4ed;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+/* الهيدر المتجاوب */
+header, .main-header {
+    background-color: #1e382d;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    border-bottom: 4px solid #b8860b;
+}
+
+.header-buttons {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    left: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+/* الأزرار العلوية */
+.logout-btn, .theme-toggle-btn, .lang-toggle-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.logout-btn:hover, .theme-toggle-btn:hover, .lang-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* القائمة الرئيسية (Navigation) */
+nav {
+    background-color: #2c4a3e;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: #b8860b;
+}
+
+/* المحتوى الرئيسي */
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* ================= تنسيق الصورة (الشعار) بشكل دائري احترافي وحواف بارزة ================= */
+.hero-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.college-logo-large, .login-logo, img[src*="image.jpg"] {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #b8860b;
+    box-shadow: 0 6px 20px rgba(30, 56, 45, 0.35), 0 0 0 4px #1e382d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.college-logo-large:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 25px rgba(184, 134, 11, 0.4), 0 0 0 4px #1e382d;
+}
+
+/* الجداول والبطاقات المتجاوبة لمنع الخروج عن الشاشة */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: right;
+}
+
+/* ================= استعلامات الشاشات الصغيرة (Mobile Responsiveness) ================= */
+@media (max-width: 768px) {
+    header, .main-header {
+        padding-top: 60px !important; 
+    }
+
+    .header-buttons {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+    }
+
+    .logout-btn, .theme-toggle-btn, .lang-toggle-btn {
+        font-size: 11px !important;
+        padding: 4px 8px !important;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    .college-logo-large, .login-logo, img[src*="image.jpg"] {
+        width: 130px;
+        height: 130px;
+        border-width: 4px;
+        box-shadow: 0 4px 15px rgba(30, 56, 45, 0.3), 0 0 0 3px #1e382d;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    table th, table td {
+        padding: 10px 8px;
+        font-size: 12.5px;
+    }
+
+    .admin-controls-box .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .admin-controls-box input[type="text"], 
+    .admin-controls-box input[type="file"], 
+    .admin-controls-box button {
+        width: 100%;
+    }
+}
