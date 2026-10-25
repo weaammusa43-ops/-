@@ -7,6 +7,11 @@
     <title>Student Portal - إعدادات الحساب والمساعدة | Account & Help</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* إضافة خاصية الانتقال السلس عند الضغط على الروابط الداخلية */
+        html {
+            scroll-behavior: smooth;
+        }
+
         .account-container {
             max-width: 650px;
             margin: 30px auto;
@@ -69,6 +74,24 @@
             color: #25d366;
             text-decoration: underline;
             font-weight: bold;
+            direction: ltr;
+            unicode-bidi: embed;
+            display: inline-block;
+        }
+
+        /* تنسيق أزرار التنقل السريع الداخلية إذا أردتِ استخدامها */
+        .quick-nav-btn {
+            display: inline-block;
+            background-color: #1e382d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .quick-nav-btn:hover {
+            background-color: #2b533f;
         }
 
         /* تنسيق مربع البحث التفاعلي للمشكلات */
@@ -103,7 +126,7 @@
             border-radius: 6px;
             font-size: 13.5px;
             color: #0369a1;
-            display: none; /* مخفي لحين البحث */
+            display: none;
         }
 
         .actions-grid {
@@ -139,6 +162,8 @@
     <nav>
         <ul>
             <li><a href="index.html">🏠 العودة إلى الرئيسية | Home</a></li>
+            <!-- زر تواصل معنا في شريط التنقل العلوي ينقلك مباشرة للقسم في الأسفل -->
+            <li><a href="#contact-section">📞 تواصل معنا</a></li>
         </ul>
     </nav>
 
@@ -150,6 +175,9 @@
                 <p>كل ما يحتاجه طالب الدفعة 43 من إرشادات، تواصل، وحل المشكلات الفورية</p>
             </div>
 
+            <!-- زر سريع داخل الصفحة يوصلك لقسم التواصل أيضاً -->
+            <a href="#contact-section" class="quick-nav-btn">⬇️ الانتقال السريع لقسم تواصل معنا</a>
+
             <!-- 1. صفحة الإرشادات ودليل الاستخدام -->
             <div class="menu-section">
                 <h3>📖 إرشادات استخدام البوابة الأكاديمية</h3>
@@ -160,13 +188,18 @@
                 </div>
             </div>
 
-            <!-- 2. زر وتواصل معنا (الأرقام والبريد الإلكتروني الحقيقية) -->
-            <div class="menu-section">
+            <!-- 2. قسم تواصل معنا (أعطيناه الـ id المطلوب عشان الزر ينقله ليهو تماماً) -->
+            <div class="menu-section" id="contact-section">
                 <h3>📞 تواصل معنا (الأرقام والبريد الإلكتروني)</h3>
                 <div class="menu-box">
-                    للتواصل المباشر مع وئام / لجنة الدفعة 43 والدعم الأكاديمي:<br>
-                    📧 <strong>البريد الإلكتروني:</strong> <a href="mailto:weaammusa43@gmail.com" class="interactive-link">weaammusa43@gmail.com</a><br>
-                    📱 <strong>رقم الهاتف / واتساب:</strong> <a href="https://wa.me/249914946849" target="_blank" class="whatsapp-interactive">+249 914 946 849</a><br>
+                    للتواصل المباشر مع وئام / لجنة الدفعة 43 والدعم الأكاديمي:<br><br>
+                    
+                    📧 <strong>البريد الإلكتروني:</strong> 
+                    <a href="mailto:weaammusa43@gmail.com" class="interactive-link">weaammusa43@gmail.com</a><br><br>
+                    
+                    📱 <strong>رقم الهاتف / واتساب:</strong> 
+                    <a href="https://wa.me/249914946849" target="_blank" class="whatsapp-interactive">+249 914 946 849</a><br><br>
+                    
                     🏛️ <strong>المكان:</strong> مجمع العلوم الرياضية والحاسوب - جامعة الجزيرة
                 </div>
             </div>
