@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portal - إدارة المحاضرات | Lectures</title>
+    <!-- ربط ملف الـ CSS الشامل ومنظم في مجلد css -->
     <link rel="stylesheet" href="css/style.css">
 
     <style>
@@ -86,6 +87,42 @@
         .pdf-btn { background: #10b981; color: white; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: bold; display: inline-block; }
         .delete-btn { background: #ef4444; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: bold; }
         .spec-header-title { border-bottom: 2px solid; padding-bottom: 8px; margin-top: 30px; margin-bottom: 15px; font-size: 18px; }
+
+        /* شريط التنقل العلوي المنسق للأزرار التفاعلية */
+        .portal-nav-bar {
+            background-color: #2c4a3e;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .portal-nav-bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .portal-nav-bar a:hover {
+            background-color: #b8860b;
+            border-color: #b8860b;
+            transform: translateY(-2px);
+        }
+        .logout-nav-btn {
+            background: rgba(239, 68, 68, 0.25) !important;
+            border-color: rgba(239, 68, 68, 0.5) !important;
+        }
+        .logout-nav-btn:hover {
+            background: #ef4444 !important;
+            border-color: #ef4444 !important;
+        }
     </style>
 </head>
 
@@ -95,16 +132,16 @@
         <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (إدارة المحاضرات حسب جدول الدفعة 43)</p>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">🏠 العودة إلى الرئيسية | Home</a></li>
-        </ul>
-    </nav>
+    <!-- شريط الأزرار العلوي التفاعلي (الرئيسية وتسجيل الخروج) -->
+    <div class="portal-nav-bar">
+        <a href="index.html">🏠 العودة إلى الرئيسية | Home</a>
+        <a href="login.html" class="logout-nav-btn">🚪 تسجيل الخروج | Logout</a>
+    </div>
 
     <main>
         <section id="lectures">
             <h2>📚 المحاضرات الدراسية ورفع الملفات</h2>
-            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">استعرض محاضرات الفصل الدراسي الثامن كاملة (11 مادة) مصنفة حسب الجدول الرسمي:</p>
+            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">استعرض محاضرات الفصل الدراسي الثامن كاملة مصنفة حسب الجدول الرسمي المعتمد للدفعة 43[span_1](start_span)[span_1](end_span):</p>
 
             <!-- 1. المقررات المشتركة (3 مواد) -->
             <h3 class="spec-header-title" style="color: #0369a1; border-color: #0369a1;">🔗 المقررات المشتركة (تخص جميع التخصصات)</h3>
@@ -149,7 +186,7 @@
                             <table class="lectures-table">
                                 <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
                                 <tbody id="tbody-multimedia">
-                                    <tr><td>مفاهيم الوسائط المتعددة</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                    <tr><td>مفاهيم الوسائط المتعددة والرسوميات</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -173,7 +210,7 @@
                             <table class="lectures-table">
                                 <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
                                 <tbody id="tbody-projects">
-                                    <tr><td>مفاهيم دورة حياة المشروع البرمجي</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                    <tr><td>مفاهيم دورة حياة المشروع البرمجي وإدارته</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -201,7 +238,7 @@
                             <table class="lectures-table">
                                 <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
                                 <tbody id="tbody-theory">
-                                    <tr><td>مقدمة في الآلات المنتظمة</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                    <tr><td>مقدمة في الآلات المنتظمة والنماذج الحسابية</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -334,7 +371,7 @@
             </div>
 
 
-            <!-- 4. تخصص الرياضيات (4 مواد كاملة) -->
+            <!-- 4. تخصص الرياضيات (4 مواد دقيقة مطابقة للجدول الرسمي) -->
             <h3 class="spec-header-title" style="color: #2c4a3e; border-color: #2c4a3e;">📐 تخصص الرياضيات (Mathematics)</h3>
 
             <div id="math1-sec" class="lecture-section" style="border-right-color: #2c4a3e;">
@@ -344,28 +381,4 @@
                         <div class="admin-controls-box">
                             <h4>➕ رفع محاضرة جديدة</h4>
                             <div class="input-group">
-                                <input type="text" id="title-math1" placeholder="عنوان المحاضرة...">
-                                <input type="file" id="file-math1" accept=".pdf,.doc,.docx,.ppt,.pptx">
-                                <button class="btn-add" onclick="addLecture('math1')">رفع ورابط</button>
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="lectures-table">
-                                <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
-                                <tbody id="tbody-math1">
-                                    <tr><td>مدخل إلى الفضاءات المعيارية</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </details>
-            </div>
-
-            <div id="math2-sec" class="lecture-section" style="border-right-color: #2c4a3e;">
-                <details>
-                    <summary>📐 المعادلات التفاضلية الجزئية (43) — د. وحيد</summary>
-                    <div class="lecture-content">
-                        <div class="admin-controls-box">
-                            <h4>➕ رفع محاضرة جديدة</h4>
-                            <div class="input-group">
-                              
+                                
