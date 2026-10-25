@@ -59,6 +59,18 @@
             line-height: 1.8;
         }
 
+        /* تنسيق الأرقام والروابط التفاعلية */
+        .interactive-link {
+            color: #0066cc;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .whatsapp-interactive {
+            color: #25d366;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
         /* تنسيق مربع البحث التفاعلي للمشكلات */
         .help-search-box {
             display: flex;
@@ -148,13 +160,13 @@
                 </div>
             </div>
 
-            <!-- 2. زر وتواصل معنا (الأرقام والبريد الإلكتروني) -->
+            <!-- 2. زر وتواصل معنا (الأرقام والبريد الإلكتروني الحقيقية) -->
             <div class="menu-section">
                 <h3>📞 تواصل معنا (الأرقام والبريد الإلكتروني)</h3>
                 <div class="menu-box">
-                    للتواصل المباشر مع لجنة الدفعة 43 والدعم الأكاديمي:<br>
-                    📧 <strong>البريد الإلكتروني:</strong> cs.math.batch43@uofg.edu.sd<br>
-                    📱 <strong>رقم الهاتف / واتساب (لجنة الدفعة):</strong> +249 912 345 678<br>
+                    للتواصل المباشر مع وئام / لجنة الدفعة 43 والدعم الأكاديمي:<br>
+                    📧 <strong>البريد الإلكتروني:</strong> <a href="mailto:weaammusa43@gmail.com" class="interactive-link">weaammusa43@gmail.com</a><br>
+                    📱 <strong>رقم الهاتف / واتساب:</strong> <a href="https://wa.me/249914946849" target="_blank" class="whatsapp-interactive">+249 914 946 849</a><br>
                     🏛️ <strong>المكان:</strong> مجمع العلوم الرياضية والحاسوب - جامعة الجزيرة
                 </div>
             </div>
@@ -207,7 +219,7 @@
             } else if (input.includes("جدول") || input.includes("مادة") || input.includes("مواد")) {
                 solutionText = "💡 <strong>الحل:</strong> مواد الفصل الثامن الـ 11 موزعة بالكامل في صفحة 'المواد الدراسية' وصفحة 'المحاضرات' حسب الجدول الرسمي للكلية.";
             } else {
-                solutionText = "💡 <strong>الحل العام:</strong> لم نتمكن من مطابقة مشكلتك بدقة، يمكنك مراسلتنا مباشرة عبر البريد الإلكتروني للكلية الموضح في قسم 'تواصل معنا' وسيقوم الدعم بمساعدتك فوراً!";
+                solutionText = "💡 <strong>الحل العام:</strong> لم نتمكن من مطابقة مشكلتك بدقة، يمكنك مراسلتنا مباشرة عبر الواتساب أو البريد الإلكتروني الموضح أعلاه وسيقوم الدعم بمساعدتك فوراً!";
             }
 
             solutionBox.style.display = "block";
