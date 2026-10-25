@@ -147,6 +147,15 @@
         }
 
         .delete-btn:hover { background: #dc2626; }
+
+        .spec-header-title {
+            color: #1e382d;
+            border-bottom: 2px solid #1e382d;
+            padding-bottom: 8px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
     </style>
 </head>
 
@@ -155,7 +164,7 @@
     <!-- ================= HEADER ================= -->
     <header>
         <h1>Student Portal | أرشيف الامتحانات السابقة</h1>
-        <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (بنك الامتحانات والأوراق الإرشادية - الدفعة 43)</p>
+        <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (بنك الامتحانات الشامل - الدفعة 43)</p>
     </header>
 
     <!-- ================= NAVIGATION (العودة للرئيسية فقط) ================= -->
@@ -168,102 +177,30 @@
     <!-- ================= MAIN CONTENT ================= -->
     <main>
         <section id="past-exams">
-            <h2>📝 أرشيف الامتحانات السابقة والأوراق الإرشادية</h2>
-            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">يمكنك تصفح الامتحانات السابقة للسنوات الماضية، أو رفع ورقة امتحان جديدة مباشرة من هاتفك لمساعدة زملائك في الاستعداد الجيد:</p>
+            <h2>📝 أرشيف الامتحانات السابقة والأوراق الإرشادية لجميع المواد</h2>
+            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">يمكنك تصفح وتحميل الامتحانات السابقة لكافة تخصصات الفصل الدراسي الثامن، أو رفع امتحان جديد مباشرة من هاتفك:</p>
             
-            <!-- 1. أمن الشبكات -->
-            <div class="exam-section">
-                <details>
-                    <summary>📁 امتحان إدارة وأمن شبكات الحاسوب (أرشيف سابقة)</summary>
-                    <div class="exam-content">
-                        <div class="admin-controls-box">
-                            <h4>➕ رفع امتحان أو نموذج إرشادي جديد</h4>
-                            <div class="input-group">
-                                <input type="text" id="title-exam1" placeholder="عنوان النموذج أو السنة (مثال: امتحان 2025)...">
-                                <input type="file" id="file-exam1" accept=".pdf,.doc,.docx,.jpg,.png">
-                                <button class="btn-add" onclick="addExam('exam1')">رفع الملف</button>
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="exams-table">
-                                <thead><tr><th>عنوان الامتحان / السنة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
-                                <tbody id="tbody-exam1">
-                                    <tr><td>امتحان الفصل الدراسي الثامن (دور أول)</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </details>
-            </div>
+            <!-- قسم علوم الحاسوب -->
+            <h3 class="spec-header-title" style="color: #1e382d; border-color: #1e382d;">💻 تخصص علوم الحاسوب (Computer Science)</h3>
 
-            <!-- 2. الخوارزميات -->
-            <div class="exam-section" style="border-right-color: #b8860b;">
-                <details>
-                    <summary>📁 امتحان تصميم وتحليل الخوارزميات (أرشيف سابقة)</summary>
-                    <div class="exam-content">
-                        <div class="admin-controls-box">
-                            <h4>➕ رفع امتحان أو نموذج إرشادي جديد</h4>
-                            <div class="input-group">
-                                <input type="text" id="title-exam2" placeholder="عنوان النموذج أو السنة...">
-                                <input type="file" id="file-exam2" accept=".pdf,.doc,.docx,.jpg,.png">
-                                <button class="btn-add" onclick="addExam('exam2')">رفع الملف</button>
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="exams-table">
-                                <thead><tr><th>عنوان الامتحان / السنة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
-                                <tbody id="tbody-exam2">
-                                    <tr><td>امتحان النصف الأول والنهائي للعام السابق</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </details>
-            </div>
-
-            <!-- 3. الإحصاء -->
-            <div class="exam-section" style="border-right-color: #2c4a3e;">
-                <details>
-                    <summary>📁 امتحان النماذج الخطية العامة وإحصاءات بيز (أرشيف سابقة)</summary>
-                    <div class="exam-content">
-                        <div class="admin-controls-box">
-                            <h4>➕ رفع امتحان أو نموذج إرشادي جديد</h4>
-                            <div class="input-group">
-                                <input type="text" id="title-exam3" placeholder="عنوان النموذج أو السنة...">
-                                <input type="file" id="file-exam3" accept=".pdf,.doc,.docx,.jpg,.png">
-                                <button class="btn-add" onclick="addExam('exam3')">رفع الملف</button>
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="exams-table">
-                                <thead><tr><th>عنوان الامتحان / السنة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
-                                <tbody id="tbody-exam3">
-                                    <tr><td>أوراق إرشادية وامتحانات سابقة لقسم الإحصاء</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </details>
-            </div>
-
-            <!-- 4. الرياضيات -->
+            <!-- 1. برمجة تطبيقات الإنترنت -->
             <div class="exam-section" style="border-right-color: #1e382d;">
                 <details>
-                    <summary>📁 امتحان تحليل المتغيرات المتعددة والمعادلات التفاضلية (أرشيف سابقة)</summary>
+                    <summary>📁 امتحان برمجة تطبيقات الإنترنت (43) — أ. محمد عبد الرحمن</summary>
                     <div class="exam-content">
                         <div class="admin-controls-box">
-                            <h4>➕ رفع امتحان أو نموذج إرشادي جديد</h4>
+                            <h4>➕ رفع امتحان أو نموذج جديد</h4>
                             <div class="input-group">
-                                <input type="text" id="title-exam4" placeholder="عنوان النموذج أو السنة...">
-                                <input type="file" id="file-exam4" accept=".pdf,.doc,.docx,.jpg,.png">
-                                <button class="btn-add" onclick="addExam('exam4')">رفع الملف</button>
+                                <input type="text" id="title-web" placeholder="عنوان النموذج أو السنة...">
+                                <input type="file" id="file-web" accept=".pdf,.doc,.docx,.jpg,.png">
+                                <button class="btn-add" onclick="addExam('web')">رفع الملف</button>
                             </div>
                         </div>
                         <div class="table-responsive">
                             <table class="exams-table">
                                 <thead><tr><th>عنوان الامتحان / السنة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
-                                <tbody id="tbody-exam4">
-                                    <tr><td>امتحانات سابقة وتمارين محلولة للرياضيات</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                <tbody id="tbody-web">
+                                    <tr><td>امتحان الشغل العملي والنظري (سابقة)</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -271,24 +208,24 @@
                 </details>
             </div>
 
-            <!-- 5. الوسائط وبرمجة الإنترنت -->
+            <!-- 2. نظرية الحوسبة -->
             <div class="exam-section" style="border-right-color: #b8860b;">
                 <details>
-                    <summary>📁 امتحان تقانة الوسائط المتعددة وبرمجة تطبيقات الإنترنت (أرشيف سابقة)</summary>
+                    <summary>📁 امتحان نظرية الحوسبة (43) — أ. حسين</summary>
                     <div class="exam-content">
                         <div class="admin-controls-box">
-                            <h4>➕ رفع امتحان أو نموذج إرشادي جديد</h4>
+                            <h4>➕ رفع امتحان أو نموذج جديد</h4>
                             <div class="input-group">
-                                <input type="text" id="title-exam5" placeholder="عنوان النموذج أو السنة...">
-                                <input type="file" id="file-exam5" accept=".pdf,.doc,.docx,.jpg,.png">
-                                <button class="btn-add" onclick="addExam('exam5')">رفع الملف</button>
+                                <input type="text" id="title-theory" placeholder="عنوان النموذج أو السنة...">
+                                <input type="file" id="file-theory" accept=".pdf,.doc,.docx,.jpg,.png">
+                                <button class="btn-add" onclick="addExam('theory')">رفع الملف</button>
                             </div>
                         </div>
                         <div class="table-responsive">
                             <table class="exams-table">
                                 <thead><tr><th>عنوان الامتحان / السنة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
-                                <tbody id="tbody-exam5">
-                                    <tr><td>أسئلة الامتحانات العملية والنظرية السابقة</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                <tbody id="tbody-theory">
+                                    <tr><td>امتحان الآلات المنتظمة ونظرية الحوسبة</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -296,47 +233,196 @@
                 </details>
             </div>
 
-        </section>
-    </main>
+            <!-- 3. تقانة الوسائط المتعددة -->
+            <div class="exam-section" style="border-right-color: #2c4a3e;">
+                <details>
+                    <summary>📁 امتحان تقانة الوسائط المتعددة (43) — د. هديل</summary>
+                    <div class="exam-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع امتحان أو نموذج جديد</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-multimedia" placeholder="عنوان النموذج أو السنة...">
+                                <input type="file" id="file-multimedia" accept=".pdf,.doc,.docx,.jpg,.png">
+                                <button class="btn-add" onclick="addExam('multimedia')">رفع الملف</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="exams-table">
+                                <thead><tr><th>عنوان الامتحان / السنة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-multimedia">
+                                    <tr><td>أسئلة الامتحانات السابقة للوسائط المتعددة</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
 
-    <!-- ================= FOOTER ================= -->
-    <footer>
-        <p>Student Portal & بوابة الطالب - جامعة الجزيرة © 2026</p>
-    </footer>
+            <!-- 4. إدارة وأمن شبكات الحاسوب -->
+            <div class="exam-section" style="border-right-color: #1e382d;">
+                <details>
+                    <summary>📁 امتحان إدارة وأمن شبكات الحاسوب (43) — د. سلمى</summary>
+                    <div class="exam-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع امتحان أو نموذج جديد</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-networks" placeholder="عنوان النموذج أو السنة...">
+                                <input type="file" id="file-networks" accept=".pdf,.doc,.docx,.jpg,.png">
+                                <button class="btn-add" onclick="addExam('networks')">رفع الملف</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="exams-table">
+                                <thead><tr><th>عنوان الامتحان / السنة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-networks">
+                                    <tr><td>امتحان أمن الشبكات والبروتوكولات (سابقة)</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
 
-    <script>
-        function addExam(sectionId) {
-            const titleInput = document.getElementById('title-' + sectionId);
-            const fileInput = document.getElementById('file-' + sectionId);
-            const tbody = document.getElementById('tbody-' + sectionId);
+            <!-- 5. إدارة مشروعات البرمجيات -->
+            <div class="exam-section" style="border-right-color: #b8860b;">
+                <details>
+                    <summary>📁 امتحان إدارة مشروعات البرمجيات (43) — د. رقية</summary>
+                    <div class="exam-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع امتحان أو نموذج جديد</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-projects" placeholder="عنوان النموذج أو السنة...">
+                                <input type="file" id="file-projects" accept=".pdf,.doc,.docx,.jpg,.png">
+                                <button class="btn-add" onclick="addExam('projects')">رفع الملف</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="exams-table">
+                                <thead><tr><th>عنوان الامتحان / السنة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-projects">
+                                    <tr><td>امتحان إدارة المشروعات البرمجية السابق</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
 
-            if (titleInput.value.trim() === "") {
-                alert("الرجاء إدخال عنوان الامتحان أو السنة!");
-                return;
-            }
+            <!-- 6. تصميم وتحليل الخوارزميات -->
+            <div class="exam-section" style="border-right-color: #2c4a3e;">
+                <details>
+                    <summary>📁 امتحان تصميم وتحليل الخوارزميات (43) — أ. هدى</summary>
+                    <div class="exam-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع امتحان أو نموذج جديد</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-algorithms" placeholder="عنوان النموذج أو السنة...">
+                                <input type="file" id="file-algorithms" accept=".pdf,.doc,.docx,.jpg,.png">
+                                <button class="btn-add" onclick="addExam('algorithms')">رفع الملف</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="exams-table">
+                                <thead><tr><th>عنوان الامتحان / السنة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-algorithms">
+                                    <tr><td>امتحان الخوارزميات والتعقيد الزمني (سابقة)</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
 
-            const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : "نموذج امتحان.pdf";
 
-            const newRow = document.createElement('tr');
-            newRow.innerHTML = `
-                <td>${titleInput.value}</td>
-                <td><a href="#" class="pdf-btn">${fileName} 📄</a></td>
-                <td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td>
-            `;
-            tbody.appendChild(newRow);
+            <!-- قسم الإحصاء -->
+            <h3 class="spec-header-title" style="color: #b8860b; border-color: #b8860b;">📊 تخصص الإحصاء (Statistics)</h3>
 
-            titleInput.value = "";
-            fileInput.value = "";
-            alert("تم رفع الملف بنجاح وإضافته إلى الأرشيف!");
-        }
+            <!-- 7. النماذج الخطية العامة -->
+            <div class="exam-section" style="border-right-color: #b8860b;">
+                <details>
+                    <summary>📁 امتحان النماذج الخطية العامة (43) — أ. سماح</summary>
+                    <div class="exam-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع امتحان أو نموذج جديد</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-stats1" placeholder="عنوان النموذج أو السنة...">
+                                <input type="file" id="file-stats1" accept=".pdf,.doc,.docx,.jpg,.png">
+                                <button class="btn-add" onclick="addExam('stats1')">رفع الملف</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="exams-table">
+                                <thead><tr><th>عنوان الامتحان / السنة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-stats1">
+                                    <tr><td>امتحان النماذج الخطية والانحدار (سابقة)</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
 
-        function deleteRow(btn) {
-            if (confirm("هل أنت متأكد من حذف هذا النموذج من الأرشيف؟")) {
-                const row = btn.closest('tr');
-                row.remove();
-            }
-        }
-    </script>
-</body>
-    </html>
-    
+            <!-- 8. إحصاءات بيز -->
+            <div class="exam-section" style="border-right-color: #2c4a3e;">
+                <details>
+                    <summary>📁 امتحان إحصاءات بيز (43) — د. سحر</summary>
+                    <div class="exam-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع امتحان أو نموذج جديد</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-stats2" placeholder="عنوان النموذج أو السنة...">
+                                <input type="file" id="file-stats2" accept=".pdf,.doc,.docx,.jpg,.png">
+                                <button class="btn-add" onclick="addExam('stats2')">رفع الملف</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="exams-table">
+                                <thead><tr><th>عنوان الامتحان / السنة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-stats2">
+                                    <tr><td>امتحان إحصاءات بيز والاحتمالات (سابقة)</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- 9. تحليل البيانات التصنيفية -->
+            <div class="exam-section" style="border-right-color: #1e382d;">
+                <details>
+                    <summary>📁 امتحان تحليل البيانات التصنيفية (43) — أ. سمية</summary>
+                    <div class="exam-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع امتحان أو نموذج جديد</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-stats3" placeholder="عنوان النموذج أو السنة...">
+                                <input type="file" id="file-stats3" accept=".pdf,.doc,.docx,.jpg,.png">
+                                <button class="btn-add" onclick="addExam('stats3')">رفع الملف</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="exams-table">
+                                <thead><tr><th>عنوان الامتحان / السنة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-stats3">
+                                    <tr><td>امتحان تحليل البيانات التصنيفية وجداول التوافق</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+
+            <!-- قسم الرياضيات -->
+            <h3 class="spec-header-title" style="color: #2c4a3e; border-color: #2c4a3e;">📐 تخصص الرياضيات (Mathematics)</h3>
+
+            <!-- 10. تحليل المتغيرات المتعددة -->
+            <div class="exam-section" style="border-right-color: #2c4a3e;">
+                <details>
+                    <summary>📁 امتحان تحليل المتغيرات المتعددة (43) — د. إسراء</summary>
+                    <div class="exam-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع امتحان أو نموذج جديد</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-math1" placeholder="عنوان النموذج أو السنة...">
+                                <input type="file" id="file-math1" accept=".pdf,
