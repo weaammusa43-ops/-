@@ -1,4 +1,4 @@
-/* ================= الإعدادات العامة ================= */
+/* ================= إعدادات التجاوب والشاملة لكل الصفحات ================= */
 * {
     box-sizing: border-box;
 }
@@ -10,31 +10,65 @@ body {
     margin: 0;
     padding: 0;
     direction: rtl;
+    line-height: 1.6;
 }
 
-header {
+/* الهيدر المتجاوب الموحد لكل الصفحات */
+header, .main-header {
     background-color: #1e382d;
     color: white;
     padding: 20px;
     text-align: center;
+    position: relative;
     border-bottom: 4px solid #b8860b;
 }
 
+header h1, .main-header h1 {
+    margin: 0 0 8px 0;
+    font-size: 1.5rem;
+}
+
+header p, .main-header p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* الأزرار العلوية (إن وجدت في الهيدر) */
+.header-buttons {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    left: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+/* المحتوى الرئيسي */
 main {
     max-width: 1000px;
     margin: 20px auto;
     padding: 0 15px;
 }
 
-.welcome-card {
+/* البطاقات الترحيبية والمعلوماتية في كل الصفحات */
+.welcome-card, .content-card, .section-box {
     background: #fff;
-    padding: 20px;
-    border-radius: 12px;
+    padding: 22px;
+    border-radius: 14px;
     margin: 20px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(184, 134, 11, 0.15);
 }
 
-/* ================= تنسيق الصورة (الشعار) بشكل دائري احترافي وحواف بارزة ================= */
+.welcome-card h2, .content-card h2 {
+    color: #1e382d;
+    margin-top: 0;
+}
+
+/* ================= تنسيق الشعار (الصورة الدائرية البارزة) ================= */
 .hero-logo-container {
     display: flex;
     justify-content: center;
@@ -42,22 +76,28 @@ main {
     margin: 15px 0;
 }
 
-.college-logo-large {
+.college-logo-large, .login-logo, img[src*="image.jpg"] {
     width: 180px;
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid #b8860b;
     box-shadow: 0 6px 20px rgba(30, 56, 45, 0.35), 0 0 0 4px #1e382d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ================= تنسيق قسم الإبداع والروابط السريعة (الأزرار زي الصورة الأصلية وأجمل) ================= */
+.college-logo-large:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 25px rgba(184, 134, 11, 0.4), 0 0 0 4px #1e382d;
+}
+
+/* ================= محطة الإبداع والروابط السريعة (الصفحة الرئيسية) ================= */
 .creative-hub {
     background: linear-gradient(135deg, #1e382d, #2c4a3e);
     color: #f7f4ed;
     padding: 30px;
     border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     margin-top: 25px;
     text-align: center;
     border-bottom: 5px solid #b8860b;
@@ -93,7 +133,7 @@ main {
     font-size: 14px;
     border: 1px solid rgba(212, 175, 55, 0.3);
     transition: all 0.3s ease;
-    display: inline-block;
+    display: block;
     text-align: center;
 }
 
@@ -108,7 +148,7 @@ main {
     transform: scale(0.97);
 }
 
-/* زر خاص لتسجيل الخروج بلون مميز */
+/* زر تسجيل الخروج الخاص */
 .logout-quick-btn {
     background: rgba(239, 68, 68, 0.2) !important;
     border-color: rgba(239, 68, 68, 0.5) !important;
@@ -119,9 +159,107 @@ main {
     border-color: #ef4444 !important;
 }
 
+/* ================= تنسيق الجداول (صفحة الجداول، المواد، الامتحانات) ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+table th {
+    background-color: #1e382d;
+    color: white;
+    padding: 14px 15px;
+    text-align: right;
+    font-weight: 600;
+}
+
+table td {
+    padding: 12px 15px;
+    text-align: right;
+    border-bottom: 1px solid #eee;
+}
+
+table tr:hover {
+    background-color: #fcf9f2;
+}
+
+/* ================= النماذج وأزرار الإدخال (صفحة تسجيل الدخول والحساب) ================= */
+.form-group, .input-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"], input[type="password"], input[type="email"], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #1e382d;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(30, 56, 45, 0.15);
+}
+
+button, .btn {
+    background-color: #1e382d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+}
+
+button:hover, .btn:hover {
+    background-color: #2c4a3e;
+    transform: translateY(-2px);
+}
+
+/* ================= الفوتر العام ================= */
 footer {
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     color: #666;
     font-size: 13px;
+    background-color: #f0ece1;
+    border-top: 1px solid #e2dac9;
+    margin-top: 40px;
+}
+
+/* ================= التجاوب مع شاشات الموبايل الصغيرة ================= */
+@media (max-width: 768px) {
+    header h1, .main-header h1 {
+        font-size: 1.2rem;
+    }
+
+    header p, .main-header p {
+        font-size: 0.8rem;
+    }
+
+    .college-logo-large, .login-logo, img[src*="image.jpg"] {
+        width: 130px;
+        height: 130px;
+        border-width: 4px;
+    }
+
+    .quick-links-grid {
+        grid-template-columns: 1fr;
+    }
+
+    table th, table td {
+        padding: 10px 8px;
+        font-size: 12.5px;
+    }
 }
