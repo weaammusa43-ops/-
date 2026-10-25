@@ -1,4 +1,4 @@
-/* ================= الإعدادات العامة والتصميم الأصلي ================= -->
+/* ================= الإعدادات العامة ================= */
 * {
     box-sizing: border-box;
 }
@@ -34,7 +34,7 @@ main {
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* الشعار الدائري البارز */
+/* ================= تنسيق الصورة (الشعار) بشكل دائري احترافي وحواف بارزة ================= */
 .hero-logo-container {
     display: flex;
     justify-content: center;
@@ -51,7 +51,7 @@ main {
     box-shadow: 0 6px 20px rgba(30, 56, 45, 0.35), 0 0 0 4px #1e382d;
 }
 
-/* تنسيق محطة الإبداع والروابط السريعة (شكل الأزرار المرتب زي الصورة الأصلية) */
+/* ================= تنسيق قسم الإبداع والروابط السريعة (الأزرار زي الصورة الأصلية وأجمل) ================= */
 .creative-hub {
     background: linear-gradient(135deg, #1e382d, #2c4a3e);
     color: #f7f4ed;
@@ -61,6 +61,12 @@ main {
     margin-top: 25px;
     text-align: center;
     border-bottom: 5px solid #b8860b;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.creative-hub:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(30, 56, 45, 0.25);
 }
 
 .creative-hub h3 {
@@ -86,18 +92,23 @@ main {
     font-weight: 600;
     font-size: 14px;
     border: 1px solid rgba(212, 175, 55, 0.3);
-    display: block;
-    text-align: center;
     transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
 }
 
 .quick-link-btn:hover {
     background: #b8860b;
     color: #fff;
     border-color: #b8860b;
+    transform: scale(1.03);
 }
 
-/* زر تسجيل الخروج */
+.quick-link-btn:active {
+    transform: scale(0.97);
+}
+
+/* زر خاص لتسجيل الخروج بلون مميز */
 .logout-quick-btn {
     background: rgba(239, 68, 68, 0.2) !important;
     border-color: rgba(239, 68, 68, 0.5) !important;
@@ -105,6 +116,7 @@ main {
 
 .logout-quick-btn:hover {
     background: #ef4444 !important;
+    border-color: #ef4444 !important;
 }
 
 footer {
