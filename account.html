@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal - إعدادات الحساب والدعم | Account & Help</title>
+    <title>Student Portal - إعدادات الحساب والمساعدة | Account & Help</title>
     <link rel="stylesheet" href="style.css">
     <style>
         .account-container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 30px auto;
             background: #fff;
             padding: 30px;
@@ -59,40 +59,59 @@
             line-height: 1.8;
         }
 
+        /* تنسيق مربع البحث التفاعلي للمشكلات */
+        .help-search-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .help-search-box input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        .help-search-box button {
+            background: #0369a1;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .help-search-box button:hover { background: #0284c7; }
+        
+        .solution-result {
+            margin-top: 12px;
+            padding: 12px;
+            background: #e0f2fe;
+            border-right: 4px solid #0284c7;
+            border-radius: 6px;
+            font-size: 13.5px;
+            color: #0369a1;
+            display: none; /* مخفي لحين البحث */
+        }
+
         .actions-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 15px;
             margin-top: 30px;
         }
 
-        .action-btn {
+        .btn-logout {
+            background: #ef4444;
+            color: white;
             padding: 12px;
             border-radius: 10px;
             text-align: center;
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
-            transition: all 0.3s ease;
             display: block;
-        }
-
-        .btn-help {
-            background: #0369a1;
-            color: white;
-        }
-        .btn-help:hover { background: #0284c7; }
-
-        .btn-contact {
-            background: #10b981;
-            color: white;
-        }
-        .btn-contact:hover { background: #059669; }
-
-        .btn-logout {
-            background: #ef4444;
-            color: white;
-            grid-column: span 2; /* لتكون في سطر منفرد وعريض */
+            transition: background 0.3s;
         }
         .btn-logout:hover { background: #dc2626; }
     </style>
@@ -101,7 +120,7 @@
 <body>
 
     <header>
-        <h1>Student Portal | إعدادات الحساب والمساعدة</h1>
+        <h1>Student Portal | مركز الحساب والإرشادات</h1>
         <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (الدفعة 43)</p>
     </header>
 
@@ -115,36 +134,47 @@
         <div class="account-container">
             
             <div class="account-header">
-                <h2>⚙️ مركز حساب الطالب والدعم</h2>
-                <p>إدارة حسابك الأكاديمي، التواصل مع الدعم، والحصول على المساعدة الفورية</p>
+                <h2>⚙️ مركز الدعم الفني والإرشادات الأكاديمية</h2>
+                <p>كل ما يحتاجه طالب الدفعة 43 من إرشادات، تواصل، وحل المشكلات الفورية</p>
             </div>
 
-            <!-- قسم المساعدة والدليل السريع -->
+            <!-- 1. صفحة الإرشادات ودليل الاستخدام -->
             <div class="menu-section">
-                <h3>❓ زر المساعدة والدليل السريع</h3>
+                <h3>📖 إرشادات استخدام البوابة الأكاديمية</h3>
                 <div class="menu-box">
-                    <strong>كيف تستخدم البوابة؟</strong><br>
-                    • انتقل إلى صفحة <strong>المحاضرات</strong> لاستعراض مواد الفصل الثامن ورفع/حذف ملفات PDF.<br>
-                    • استخدم صفحة <strong>الامتحانات</strong> للاطلاع على الأرشيف والأسئلة السابقة.<br>
-                    • يمكنك العودة للرئيسية في أي وقت عبر شريط التنقل أو الأزرار السريعة.
+                    • <strong>استعراض المواد:</strong> انتقل لصفحة المواد الدراسية لمعرفة مواد الفصل الثامن الـ 11 بالكامل.<br>
+                    • <strong>إدارة المحاضرات:</strong> في صفحة المحاضرات يمكنك تصفح الملفات ورفع ملفات PDF الجديدة للمقررات.<br>
+                    • <strong>الأرشيف:</strong> استخدم قسم الامتحانات للاطلاع على أسئلة السنوات السابقة.
                 </div>
             </div>
 
-            <!-- قسم تواصل معنا -->
+            <!-- 2. زر وتواصل معنا (الأرقام والبريد الإلكتروني) -->
             <div class="menu-section">
-                <h3>📞 معلومات تواصل معنا</h3>
+                <h3>📞 تواصل معنا (الأرقام والبريد الإلكتروني)</h3>
                 <div class="menu-box">
-                    <strong>الدعم الفني للدفعة 43:</strong><br>
-                    📧 البريد الإلكتروني: cs.math@uofg.edu.sd<br>
-                    🏛️ المقر: مجمع العلوم الرياضية والحاسوب - جامعة الجزيرة
+                    للتواصل المباشر مع لجنة الدفعة 43 والدعم الأكاديمي:<br>
+                    📧 <strong>البريد الإلكتروني:</strong> cs.math.batch43@uofg.edu.sd<br>
+                    📱 <strong>رقم الهاتف / واتساب (لجنة الدفعة):</strong> +249 912 345 678<br>
+                    🏛️ <strong>المكان:</strong> مجمع العلوم الرياضية والحاسوب - جامعة الجزيرة
                 </div>
             </div>
 
-            <!-- أزرار الإجراءات (تواصل، مساعدة، خروج) -->
+            <!-- 3. زر المساعدة التفاعلي (اكتب مشكلتك ويظهر حلها) -->
+            <div class="menu-section">
+                <h3>❓ مساعد الذكي لحل المشكلات الفورية</h3>
+                <div class="menu-box">
+                    <p style="margin: 0 0 8px 0; font-size: 13.5px; color: #555;">اكتب كلمتين عن مشكلتك (مثلاً: "رفع ملف"، "الصورة لا تظهر"، "تسجيل الخروج"):</p>
+                    <div class="help-search-box">
+                        <input type="text" id="problemInput" placeholder="اكتب مشكلتك هنا...">
+                        <button onclick="findSolution()">ابحث عن الحل</button>
+                    </div>
+                    <div id="solutionBox" class="solution-result"></div>
+                </div>
+            </div>
+
+            <!-- زر تسجيل الخروج النهائي -->
             <div class="actions-grid">
-                <a href="#help" onclick="alert('للمساعدة: تصفح المواد من القائمة الرئيسية، أو تواصل معنا عبر البريد الموضح أعلاه.'); return false;" class="action-btn btn-help">❓ دليل الاستخدام</a>
-                <a href="#contact" onclick="alert('البريد الإلكتروني للتمواصل: cs.math@uofg.edu.sd'); return false;" class="action-btn btn-contact">📞 الدعم الفوري</a>
-                <a href="login.html" onclick="return confirm('هل أنت متأكد من رغبتك في تسجيل الخروج؟');" class="action-btn btn-logout">🚪 تسجيل الخروج النهائي</a>
+                <a href="login.html" onclick="return confirm('هل أنت متأكد من رغبتك في تسجيل الخروج النهائي من البوابة؟');" class="btn-logout">🚪 تسجيل الخروج النهائي من الحساب</a>
             </div>
 
         </div>
@@ -154,5 +184,35 @@
         <p>Student Portal & بوابة الطالب - كلية العلوم الرياضية والحاسوب © 2026</p>
     </footer>
 
+    <script>
+        // دالة تفاعلية ذكية للبحث عن حل المشكلة
+        function findSolution() {
+            const input = document.getElementById('problemInput').value.trim().toLowerCase();
+            const solutionBox = document.getElementById('solutionBox');
+            
+            if (input === "") {
+                solutionBox.style.display = "block";
+                solutionBox.innerHTML = "⚠️ الرجاء كتابة وصف قصير للمشكلة أولاً.";
+                return;
+            }
+
+            let solutionText = "";
+
+            if (input.includes("رفع") || input.includes("ملف") || input.includes("pdf")) {
+                solutionText = "💡 <strong>الحل:</strong> يمكنك رفع ملفات PDF مباشرة عبر صفحة المحاضرات أو الامتحانات من خلال خانة 'رفع محاضرة جديدة' واختيار الملف ثم الضغط على زر الرفع.";
+            } else if (input.includes("صورة") || input.includes("شعار")) {
+                solutionText = "💡 <strong>الحل:</strong> تأكد أن الصورة مرفوعة داخل مجلد `image` باسم `image.jpg` وأن مسار الاستدعاء في الكود هو `image/image.jpg`.";
+            } else if (input.includes("خروج") || input.includes("تسجيل")) {
+                solutionText = "💡 <strong>الحل:</strong> يمكنك تسجيل الخروج الآمن في أي وقت بالضغط على زر 'تسجيل الخروج' الأحمر في أسفل هذه الصفحة أو من القائمة الرئيسية.";
+            } else if (input.includes("جدول") || input.includes("مادة") || input.includes("مواد")) {
+                solutionText = "💡 <strong>الحل:</strong> مواد الفصل الثامن الـ 11 موزعة بالكامل في صفحة 'المواد الدراسية' وصفحة 'المحاضرات' حسب الجدول الرسمي للكلية.";
+            } else {
+                solutionText = "💡 <strong>الحل العام:</strong> لم نتمكن من مطابقة مشكلتك بدقة، يمكنك مراسلتنا مباشرة عبر البريد الإلكتروني للكلية الموضح في قسم 'تواصل معنا' وسيقوم الدعم بمساعدتك فوراً!";
+            }
+
+            solutionBox.style.display = "block";
+            solutionBox.innerHTML = solutionText;
+        }
+    </script>
 </body>
 </html>
