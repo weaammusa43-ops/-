@@ -162,27 +162,14 @@
 
     <!-- ================= HEADER ================= -->
     <header>
-        <div class="header-actions">
-            <div>
-                <button id="themeToggleBtn" class="theme-toggle-btn">🌙 الوضع</button>
-            </div>
-            <div>
-                <a href="login.html" class="logout-btn">تسجيل الخروج | Logout</a>
-            </div>
-        </div>
-        
-        <h1>Student Portal | بوابة الطالب</h1>
-        <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (إدارة المحاضرات - الدفعة 43)</p>
+        <h1>Student Portal | بوابة المحاضرات الأكاديمية</h1>
+        <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (إدارة المحاضرات والمراجع - الدفعة 43)</p>
     </header>
 
-    <!-- ================= NAVIGATION ================= -->
+    <!-- ================= NAVIGATION (العودة للرئيسية فقط) ================= -->
     <nav>
         <ul>
-            <li><a href="index.html">الرئيسية | Home</a></li>
-            <li><a href="lectures.html">المحاضرات | Lectures</a></li>
-            <li><a href="schedules.html">الجداول | Schedules</a></li>
-            <li><a href="exams.html">الامتحانات السابقة | Past Exams</a></li>
-            <li><a href="subjects.html">المواد | Subjects</a></li>
+            <li><a href="index.html">🏠 العودة إلى الرئيسية | Home</a></li>
         </ul>
     </nav>
 
@@ -190,7 +177,7 @@
     <main>
         <section id="lectures">
             <h2>📚 المحاضرات الدراسية ورفع الملفات (الدفعة 43)</h2>
-            <p>يمكنك استعراض جميع المواد لكافة التخصصات (حاسوب، إحصاء، رياضيات) ورفع ملفات الـ PDF أو حذفها مباشرة:</p>
+            <p>مرحباً بك في ركن المحاضرات الحصري. يمكنك استعراض جميع المواد لكافة التخصصات (حاسوب، إحصاء، رياضيات) ورفع ملفات الـ PDF أو حذفها مباشرة:</p>
 
             <!-- 1. علوم الحاسوب -->
             <div id="web-sec" class="lecture-section">
@@ -426,4 +413,15 @@
                         <div class="table-responsive">
                             <table class="lectures-table">
                                 <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
-                         
+                                <tbody id="tbody-math1">
+                                    <tr><td>مدخل إلى الفضاءات المعيارية</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ==
