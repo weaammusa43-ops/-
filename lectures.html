@@ -133,7 +133,7 @@
         <p>جامعة الجزيرة - كلية العلوم الرياضية والحاسوب (إدارة المحاضرات حسب جدول الدفعة 43)</p>
     </header>
 
-    <!-- شريط الأزرار العلوي (متمركز في المنتصف بشكل جميل ومتفاعل) -->
+    <!-- شريط الأزرار العلوي -->
     <div class="portal-nav-bar">
         <a href="index.html">🏠 الرئيسية | Home</a>
         <a href="login.html" class="logout-nav-btn">🚪 تسجيل الخروج | Logout</a>
@@ -144,8 +144,32 @@
             <h2>📚 المحاضرات الدراسية ورفع الملفات</h2>
             <p style="color: #666; font-size: 14px; margin-bottom: 20px;">استعرض محاضرات الفصل الدراسي الثامن كاملة مصنفة حسب الجدول الرسمي المعتمد للدفعة 43[span_0](start_span)[span_0](end_span):</p>
 
-            <!-- 1. المقررات المشتركة (3 مواد) -->
+            <!-- 1. المقررات المشتركة (4 مواد) -->
             <h3 class="spec-header-title" style="color: #0369a1; border-color: #0369a1;">🔗 المقررات المشتركة (تخص جميع التخصصات)</h3>
+
+            <div id="multivar-sec" class="lecture-section" style="border-right-color: #0369a1;">
+                <details>
+                    <summary>📐 تحليل المتغيرات المتعددة (43) — د. إسراء</summary>
+                    <div class="lecture-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع محاضرة جديدة</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-multivar" placeholder="عنوان المحاضرة...">
+                                <input type="file" id="file-multivar" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                <button class="btn-add" onclick="addLecture('multivar')">رفع ورابط</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="lectures-table">
+                                <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-multivar">
+                                    <tr><td>مقدمة في المتغيرات المتعددة والدوال المتجهية</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
 
             <div id="web-sec" class="lecture-section" style="border-right-color: #0369a1;">
                 <details>
@@ -164,30 +188,6 @@
                                 <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
                                 <tbody id="tbody-web">
                                     <tr><td>مقدمة HTML/CSS وتجهيز البيئة</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </details>
-            </div>
-
-            <div id="multimedia-sec" class="lecture-section" style="border-right-color: #0369a1;">
-                <details>
-                    <summary>🎬 تقانة الوسائط المتعددة (43) — د. هديل</summary>
-                    <div class="lecture-content">
-                        <div class="admin-controls-box">
-                            <h4>➕ رفع محاضرة جديدة</h4>
-                            <div class="input-group">
-                                <input type="text" id="title-multimedia" placeholder="عنوان المحاضرة...">
-                                <input type="file" id="file-multimedia" accept=".pdf,.doc,.docx,.ppt,.pptx">
-                                <button class="btn-add" onclick="addLecture('multimedia')">رفع ورابط</button>
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="lectures-table">
-                                <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
-                                <tbody id="tbody-multimedia">
-                                    <tr><td>مفاهيم الوسائط المتعددة والرسوميات</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -219,8 +219,32 @@
                 </details>
             </div>
 
+            <div id="multimedia-sec" class="lecture-section" style="border-right-color: #0369a1;">
+                <details>
+                    <summary>🎬 تقانة الوسائط المتعددة (43) — د. هديل</summary>
+                    <div class="lecture-content">
+                        <div class="admin-controls-box">
+                            <h4>➕ رفع محاضرة جديدة</h4>
+                            <div class="input-group">
+                                <input type="text" id="title-multimedia" placeholder="عنوان المحاضرة...">
+                                <input type="file" id="file-multimedia" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                                <button class="btn-add" onclick="addLecture('multimedia')">رفع ورابط</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="lectures-table">
+                                <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
+                                <tbody id="tbody-multimedia">
+                                    <tr><td>مفاهيم الوسائط المتعددة والرسوميات</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
 
-            <!-- 2. علوم الحاسوب (3 مواد كاملة) -->
+
+            <!-- 2. علوم الحاسوب (3 مواد) -->
             <h3 class="spec-header-title" style="color: #1e382d; border-color: #1e382d;">💻 تخصص علوم الحاسوب (Computer Science)</h3>
 
             <div id="theory-sec" class="lecture-section" style="border-right-color: #1e382d;">
@@ -296,32 +320,8 @@
             </div>
 
 
-            <!-- 3. تخصص الإحصاء (3 مواد كاملة) -->
+            <!-- 3. تخصص الإحصاء (3 مواد) -->
             <h3 class="spec-header-title" style="color: #b8860b; border-color: #b8860b;">📊 تخصص الإحصاء (Statistics)</h3>
-
-            <div id="stats1-sec" class="lecture-section" style="border-right-color: #b8860b;">
-                <details>
-                    <summary>📈 النماذج الخطية العامة (43) — أ. سماح</summary>
-                    <div class="lecture-content">
-                        <div class="admin-controls-box">
-                            <h4>➕ رفع محاضرة جديدة</h4>
-                            <div class="input-group">
-                                <input type="text" id="title-stats1" placeholder="عنوان المحاضرة...">
-                                <input type="file" id="file-stats1" accept=".pdf,.doc,.docx,.ppt,.pptx">
-                                <button class="btn-add" onclick="addLecture('stats1')">رفع ورابط</button>
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="lectures-table">
-                                <thead><tr><th>عنوان المحاضرة</th><th>الملف المرفوع</th><th>الإجراء</th></tr></thead>
-                                <tbody id="tbody-stats1">
-                                    <tr><td>مقدمة في الانحدار الخطي المتعدد</td><td><a href="#" class="pdf-btn">تحميل PDF 📄</a></td><td><button class="delete-btn" onclick="deleteRow(this)">حذف 🗑️</button></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </details>
-            </div>
 
             <div id="stats2-sec" class="lecture-section" style="border-right-color: #b8860b;">
                 <details>
@@ -371,14 +371,13 @@
                 </details>
             </div>
 
-
-            <!-- 4. تخصص الرياضيات (4 مواد كاملة ومطابقة للجدول) -->
-            <h3 class="spec-header-title" style="color: #2c4a3e; border-color: #2c4a3e;">📐 تخصص الرياضيات (Mathematics)</h3>
-
-            <div id="math1-sec" class="lecture-section" style="border-right-color: #2c4a3e;">
+            <div id="stats1-sec" class="lecture-section" style="border-right-color: #b8860b;">
                 <details>
-                    <summary>📐 تحليل المتغيرات المتعددة (43) — د. إسراء</summary>
+                    <summary>📈 النماذج الخطية العامة (43) — أ. سماح</summary>
                     <div class="lecture-content">
                         <div class="admin-controls-box">
                             <h4>➕ رفع محاضرة جديدة</h4>
-                            <div class="inp
+                            <div class="input-group">
+                                <input type="text" id="title-stats1" placeholder="عنوان المحاضرة...">
+                                <input type="file" id="file-stats1" accept=".pdf,.doc,.docx,.ppt,.pptx">
+     
