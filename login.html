@@ -95,14 +95,14 @@
 <body class="login-body">
 
     <div class="login-card">
-        <!-- شعار الكلية (تم ضبط المسار بدقة لضمان ظهوره) -->
+        <!-- شعار الكلية -->
         <img src="image/image.jpg" alt="شعار كلية العلوم الرياضية والحاسوب" class="login-logo" onerror="this.onerror=null; this.src='image.jpg';">
         
         <h2 style="color: #1e382d; margin-top: 5px; font-size: 22px;">بوابة الطالب</h2>
         <p style="color: #666; font-size: 13px; margin-bottom: 25px;">تسجيل الدخول للدفعة 43 - جامعة الجزيرة</p>
 
-        <!-- نموذج تسجيل الدخول المربوط بالصفحة الرئيسية -->
-        <form id="loginForm" onsubmit="handleLogin(event)">
+        <!-- نموذج تسجيل الدخول بدون onsubmit خارجي -->
+        <form id="loginForm">
             <div class="form-group">
                 <label for="reg_number">رقم التسجيل الجامعي:</label>
                 <input type="text" id="reg_number" name="reg_number" placeholder="مثال: 43..." required autocomplete="off">
@@ -116,7 +116,9 @@
             <button type="submit" class="login-btn">تسجيل الدخول [Execute]</button>
         </form>
     </div>
-</body>
+
+    <!-- تم نقل السكريبت هنا لنضمن تحميل عناصر الصفحة أولاً -->
     <script src="js/script.js"></script>
-    
+</body>
+
 </html>
