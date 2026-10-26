@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("تم تسجيل الدخول بنجاح! جاري الانتقال للبوابة...");
             
             // الحل الجذري: توجيه الطالب للصفحة الرئيسية (تأكدي أن الصفحة الرئيسية اسمها home.html أو index.html حسب ما متفقين، والأفضل تكون الرئيسية هي home.html عشان ما يحصل تداخل مع login.html)
-            window.location.href = "home.html"; 
+            window.location.href = "index.html"; 
         });
     }
 
