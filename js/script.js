@@ -1,3 +1,29 @@
+// الكود الخاص بحماية الصفحات وتحويل غير المسجلين لصفحة تسجيل الدخول
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // معرفة اسم الصفحة الحالية
+    let currentPage = window.location.pathname.split("/").pop();
+    
+    // التحقق مما إذا كان المستخدم مسجلاً للدخول
+    let isLoggedIn = localStorage.getItem("isLoggedIn");
+    
+    // إذا لم يكن في صفحة تسجيل الدخول ولم يسجل دخول بعد، يتم توجيهه لصفحة الدخول
+    if (currentPage !== "login.html" && isLoggedIn !== "true") {
+        window.location.href = "login.html";
+    }
+});
+
+// دالة لتسجيل الدخول (توضع عند الضغط على زر دخول في صفحة login.html)
+function loginSuccess() {
+    localStorage.setItem("isLoggedIn", "true");
+    window.location.href = "index.html";
+}
+
+// دالة لتسجيل الخروج (توضع عند الضغط على زر تسجيل الخروج)
+function logout() {
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "login.html";
+}
 document.addEventListener("DOMContentLoaded", function () {
     
     // أ) كود تسجيل الدخول (يعمل فقط في صفحة login.html)
