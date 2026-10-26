@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     
-    // أ) كود تسجيل الدخول (يعمل فقط لو كنا في صفحة login.html)
+    const currentPage = window.location.pathname;
+    console.log("الصفحة الحالية هي:", currentPage);
+
+    // أ) كود تسجيل الدخول (يعمل فقط في صفحة login.html)
     const loginForm = document.getElementById("loginForm");
     if (loginForm) {
         loginForm.addEventListener("submit", function (event) {
@@ -14,20 +17,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            // تسجيل حالة الدخول
+            // حفظ حالة الدخول
             localStorage.setItem("isLoggedIn", "true");
             localStorage.setItem("studentReg", regNumber);
 
             alert("تم تسجيل الدخول بنجاح! جاري الانتقال للبوابة...");
             
-            // الحل الجذري: توجيه الطالب للصفحة الرئيسية (تأكدي أن الصفحة الرئيسية اسمها home.html أو index.html حسب ما متفقين، والأفضل تكون الرئيسية هي home.html عشان ما يحصل تداخل مع login.html)
+            // استخدام مسار واضح للانتقال للرئيسية
             window.location.href = "index.html"; 
         });
     }
 
-    // ب) حراسة الصفحات الأخرى (لو حاول زول يفتح الموقع وما مسجل دخول)
-    if (!window.location.pathname.includes("login.html")) {
+    // ب) حراسة الصفحات الأخرى (إذا لم يكن في صفحة تسجيل الدخول ولم يسجل دخول)
+    // بنتاكد إننا ما في صفحة login.html ولا index.html (لو الـ index هي صفحة الدخول، لكن لو الـ index هي الرئيسية، نخلي الفحص لـ login.html بس)
+    const isLoginPge = currentPage.includes("login.html") || currentPage.endsWith("/"); 
+
+    if (!isLoginPge) {
         if (localStorage.getItem("isLoggedIn") !== "true") {
+            console.log("المستخدم غير مسجل دخول، جاري تحويله لصفحة تسجيل الدخول...");
             window.location.href = "login.html";
         }
     }
