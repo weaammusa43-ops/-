@@ -1,0 +1,221 @@
+<?php
+// تحديد الصفحة الحالية بناءً على الرابط (افتراضياً هي صفحة تسجيل الدخول)
+$action = isset($_GET['action']) ? $_GET['action'] : 'login';
+?>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الطالب - الدفعة 43</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body.login-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f7f4ed;
+            margin: 0;
+            padding: 15px;
+        }
+
+        .login-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border-top: 6px solid #1e382d;
+            border-bottom: 6px solid #b8860b;
+        }
+
+        .login-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #b8860b;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1e382d;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dcd6c8;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+            background-color: #faf8f5;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #1e382d;
+            background-color: #fff;
+        }
+
+        .login-btn {
+            background-color: #1e382d;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #2c4a3e;
+        }
+
+        .extra-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+
+        .extra-links a {
+            color: #1e382d;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .extra-links a:hover {
+            color: #b8860b;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body class="login-body">
+
+    <div class="login-card">
+        <!-- شعار الكلية الدائري الثابت -->
+        <img src="image/image.jpg" alt="شعار كلية العلوم الرياضية والحاسوب" class="login-logo" onerror="this.onerror=null; this.src='image.jpg';">
+
+        <?php if ($action == 'login'): ?>
+            <!-- ================= واجهة تسجيل الدخول ================= -->
+            <h2 style="color: #1e382d; margin-top: 5px; font-size: 22px;">بوابة الطالب</h2>
+            <p style="color: #666; font-size: 13px; margin-bottom: 25px;">تسجيل الدخول للدفعة 43 - جامعة الجزيرة</p>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="reg_number">رقم التسجيل الجامعي:</label>
+                    <input type="text" id="reg_number" name="reg_number" placeholder="مثال: 43..." required autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">كلمة المرور:</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="login-btn">تسجيل الدخول [Execute]</button>
+            </form>
+
+            <div class="extra-links">
+                <a href="index.php?action=register">إنشاء حساب جديد</a>
+                <a href="index.php?action=forgot">نسيت كلمة المرور؟</a>
+            </div>
+
+        <?php elseif ($action == 'register'): ?>
+            <!-- ================= واجهة إنشاء حساب جديد ================= -->
+            <h2 style="color: #1e382d; margin-top: 5px; font-size: 22px;">إنشاء حساب جديد</h2>
+            <p style="color: #666; font-size: 13px; margin-bottom: 20px;">تسجيل طالب جديد - الدفعة 43</p>
+
+            <form action="register_process.php" method="POST">
+                <div class="form-group">
+                    <label for="fullname">الاسم الكامل:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="أدخل اسمك الثلاثي..." required autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="reg_number">رقم التسجيل الجامعي:</label>
+                    <input type="text" id="reg_number" name="reg_number" placeholder="مثال: 43..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">كلمة المرور:</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="login-btn">إنشاء الحساب</button>
+            </form>
+
+            <div class="extra-links" style="justify-content: center;">
+                <a href="index.php?action=login">← العودة لتسجيل الدخول</a>
+            </div>
+
+        <?php elseif ($action == 'forgot'): ?>
+            <!-- ================= واجهة استعادة كلمة المرور ================= -->
+            <h2 style="color: #1e382d; margin-top: 5px; font-size: 20px;">استعادة كلمة المرور</h2>
+            <p style="color: #666; font-size: 13px; margin-bottom: 20px;">أدخل رقم التسجيل لإرسال تعليمات إعادة التعيين</p>
+
+            <form onsubmit="event.preventDefault(); alert('تم إرسال تعليمات الاستعادة بنجاح!');">
+                <div class="form-group">
+                    <label for="reset_reg">رقم التسجيل الجامعي:</label>
+                    <input type="text" id="reset_reg" name="reset_reg" placeholder="مثال: 43..." required autocomplete="off">
+                </div>
+
+                <button type="submit" class="login-btn">إرسال طلب الاستعادة</button>
+            </form>
+
+            <div class="extra-links" style="justify-content: center;">
+                <a href="index.php?action=login">← العودة لتسجيل الدخول</a>
+            </div>
+
+        <?php endif; ?>
+
+    </div>
+
+    <!-- كود الجافاسكريبت الخاص بتسجيل الدخول والانتقال -->
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        if (loginForm) {
+            loginForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                
+                const regNumber = document.getElementById("reg_number").value.trim();
+                const password = document.getElementById("password").value.trim();
+
+                if (regNumber === "" || password === "") {
+                    alert("الرجاء إدخال البيانات كاملة!");
+                    return;
+                }
+
+                localStorage.setItem("isLoggedIn", "true");
+                localStorage.setItem("studentReg", regNumber);
+
+                window.location.href = "home.html";
+            });
+        }
+    </script>
+</body>
+
+</html>
