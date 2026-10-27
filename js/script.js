@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
 
     // أ) كود تسجيل الدخول
@@ -34,3 +35,19 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.assign("index.html");
     }
 });
+<script>
+    // دالة تسجيل خروج آمنة ومتوافقة مع GitHub Pages
+    function handleLogout(event) {
+        event.preventDefault();
+        if (confirm('هل أنت متأكد من رغبتك في تسجيل الخروج النهائي من البوابة؟')) {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('studentReg');
+            
+            // التوجيه المباشر لجذر الموقع على غيت هاب
+            window.location.href = "index.html";
+        }
+    }
+
+    // باقي الدواّل كما هي (handleContactSubmit و findSolution) ...
+</script>
+
