@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
-    // أ) كود تسجيل الدخول (يعمل في صفحة index.html)
+
+    // أ) كود تسجيل الدخول
     const loginForm = document.getElementById("loginForm");
     if (loginForm) {
         loginForm.addEventListener("submit", function (event) {
-            event.preventDefault(); // منع إعادة تحميل الصفحة
+            event.preventDefault(); // منع إعادة إنعاش الصفحة
 
             const regNumber = document.getElementById("reg_number").value.trim();
             const password = document.getElementById("password").value.trim();
@@ -18,18 +18,19 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("isLoggedIn", "true");
             localStorage.setItem("studentReg", regNumber);
 
-            // الانتقال إلى الصفحة الرئيسية (home.html)
-            window.location.href = "home.html"; 
+            // الانتقال الفوري للصفحة الرئيسية home.html
+            window.location.assign("home.html");
         });
     }
 
-    // ب) حراسة الصفحات (تأمين صفحة home.html)
-    const currentPage = window.location.pathname;
-    
-    // إذا كنا في صفحة home.html والمستخدم غير مسجل دخول، ارجِع بيه لصفحة index.html
-    if (currentPage.includes("home.html")) {
-        if (localStorage.getItem("isLoggedIn") !== "true") {
-            window.location.href = "index.html";
-        }
+    // ب) حراسة الصفحات (التأكد من تسجيل الدخول)
+    const path = window.location.pathname.toLowerCase();
+
+    // نحدد هل نحن في صفحة الصفحة الرئيسية (home.html) أم لا
+    const isHomePage = path.endsWith("home.html");
+
+    // لو الطالب في صفحة الرئيسية وهو ما مسجل دخول -> ارجعه لـ index.html
+    if (isHomePage && localStorage.getItem("isLoggedIn") !== "true") {
+        window.location.assign("index.html");
     }
 });
