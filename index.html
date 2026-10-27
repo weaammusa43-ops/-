@@ -101,7 +101,7 @@
         <h2 style="color: #1e382d; margin-top: 5px; font-size: 22px;">بوابة الطالب</h2>
         <p style="color: #666; font-size: 13px; margin-bottom: 25px;">تسجيل الدخول للدفعة 43 - جامعة الجزيرة</p>
 
-        <!-- نموذج تسجيل الدخول بدون onsubmit خارجي -->
+        <!-- نموذج تسجيل الدخول -->
         <form id="loginForm">
             <div class="form-group">
                 <label for="reg_number">رقم التسجيل الجامعي:</label>
@@ -117,8 +117,26 @@
         </form>
     </div>
 
-    <!-- تم نقل السكريبت هنا لنضمن تحميل عناصر الصفحة أولاً -->
-    <script src="js/script.js"></script>
+    <!-- كود الجافاسكريبت لضمان فتح هذه الصفحة أولاً، ثم الانتقال لـ home.html بعد التسجيل -->
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // منع إعادة التحميل
+            
+            const regNumber = document.getElementById("reg_number").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (regNumber === "" || password === "") {
+                alert("الرجاء إدخال البيانات كاملة!");
+                return;
+            }
+
+            // حفظ الحالة والانتقال لصفحة الرئيسية
+            localStorage.setItem("isLoggedIn", "true");
+            localStorage.setItem("studentReg", regNumber);
+
+            window.location.href = "home.html";
+        });
+    </script>
 </body>
 
 </html>
