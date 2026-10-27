@@ -89,13 +89,33 @@
         .login-btn:hover {
             background-color: #2c4a3e;
         }
+
+        /* تنسيق روابط إضافية (إنشاء حساب / نسيت كلمة المرور) بأناقة متوافقة */
+        .extra-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+
+        .extra-links a {
+            color: #1e382d;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .extra-links a:hover {
+            color: #b8860b;
+            text-decoration: underline;
+        }
     </style>
 </head>
 
 <body class="login-body">
 
     <div class="login-card">
-        <!-- شعار الكلية -->
+        <!-- شعار الكلية الدائري الفخم -->
         <img src="image/image.jpg" alt="شعار كلية العلوم الرياضية والحاسوب" class="login-logo" onerror="this.onerror=null; this.src='image.jpg';">
         
         <h2 style="color: #1e382d; margin-top: 5px; font-size: 22px;">بوابة الطالب</h2>
@@ -115,12 +135,18 @@
 
             <button type="submit" class="login-btn">تسجيل الدخول [Execute]</button>
         </form>
+
+        <!-- روابط إضافية لإنشاء حساب واستعادة كلمة المرور -->
+        <div class="extra-links">
+            <a href="register.php">إنشاء حساب جديد</a>
+            <a href="forgot-password.php">نسيت كلمة المرور؟</a>
+        </div>
     </div>
 
-    <!-- كود الجافاسكريبت لضمان فتح هذه الصفحة أولاً، ثم الانتقال لـ home.html بعد التسجيل -->
+    <!-- كود الجافاسكريبت للانتقال السلس وتخزين بيانات الجلسة المؤقتة لحين اكتمال الـ Backend -->
     <script>
         document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // منع إعادة التحميل
+            event.preventDefault(); // منع إعادة التحميل العشوائي
             
             const regNumber = document.getElementById("reg_number").value.trim();
             const password = document.getElementById("password").value.trim();
@@ -130,10 +156,11 @@
                 return;
             }
 
-            // حفظ الحالة والانتقال لصفحة الرئيسية
+            // حفظ حالة الدخول ورقم التسجيل لاستخدامه في عرض اسم الطالب والترحيب به لاحقاً
             localStorage.setItem("isLoggedIn", "true");
             localStorage.setItem("studentReg", regNumber);
 
+            // الانتقال المباشر للصفحة الرئيسية
             window.location.href = "home.html";
         });
     </script>
