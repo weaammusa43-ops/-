@@ -312,9 +312,9 @@
                 </div>
             </div>
 
-            <!-- زر تسجيل الخروج النهائي -->
+            <!-- زر تسجيل الخروج النهائي (تم تعديله ليوجه إلى index.html الصحيحة) -->
             <div class="actions-grid">
-                <a href="login.html" onclick="return confirm('هل أنت متأكد من رغبتك في تسجيل الخروج النهائي من البوابة؟');" class="btn-logout">🚪 تسجيل الخروج النهائي من الحساب</a>
+                <a href="index.html" onclick="localStorage.removeItem('isLoggedIn'); return confirm('هل أنت متأكد من رغبتك في تسجيل الخروج النهائي من البوابة؟');" class="btn-logout">🚪 تسجيل الخروج النهائي من الحساب</a>
             </div>
 
         </div>
