@@ -312,9 +312,9 @@
                 </div>
             </div>
 
-            <!-- زر تسجيل الخروج النهائي (تم تعديله ليوجه إلى index.html الصحيحة) -->
+            <!-- زر تسجيل الخروج النهائي (تم تعديله بحل جذرى للمسارات لضمان عدم ظهور 404) -->
             <div class="actions-grid">
-                <a href="index.html" onclick="localStorage.removeItem('isLoggedIn'); return confirm('هل أنت متأكد من رغبتك في تسجيل الخروج النهائي من البوابة؟');" class="btn-logout">🚪 تسجيل الخروج النهائي من الحساب</a>
+                <a href="#" onclick="handleLogout(event)" class="btn-logout">🚪 تسجيل الخروج النهائي من الحساب</a>
             </div>
 
         </div>
@@ -325,6 +325,21 @@
     </footer>
 
     <script>
+        // دالة آمنة لمعالجة تسجيل الخروج وحل مشكلة المسارات في الاستضافات
+        function handleLogout(event) {
+            event.preventDefault();
+            if (confirm('هل أنت متأكد من رغبتك في تسجيل الخروج النهائي من البوابة؟')) {
+                localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('studentReg');
+                
+                // استخراج المسار الأساسي للموقع وتوجيهه لصفحة index.html بدقة
+                const pathParts = window.location.pathname.split('/');
+                pathParts.pop(); // حذف اسم الصفحة الحالية
+                const basePath = pathParts.join('/');
+                window.location.href = window.location.origin + basePath + '/index.html';
+            }
+        }
+
         // دالة لمعالجة إرسال نموذج تواصل معنا
         function handleContactSubmit(event) {
             event.preventDefault(); // منع إعادة تحميل الصفحة
